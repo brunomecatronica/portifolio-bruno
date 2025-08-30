@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno Oliveira - Criador Audiovisual & Tecnológico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #111111;
+            --card-bg: #1a1a1a;
+            --accent-color: #00d4ff;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --text-muted: #666666;
+            --border-color: #2a2a2a;
+            --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            --shadow-light: 0 4px 20px rgba(0, 212, 255, 0.1);
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--primary-bg);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section - Minimalista e Impactante */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(0, 153, 204, 0.05) 0%, transparent 50%),
+                        var(--primary-bg);
+            position: relative;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0px); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Container Global */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 8rem 0;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 5rem;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        /* About Section - Mais Limpa */
+        .about-section {
+            background: linear-gradient(180deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            line-height: 1.8;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .skill-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
+            box-shadow: var(--shadow-light);
+        }
+
+        .skill-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .skill-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Projects Section - Layout Moderno */
+        .projects-section {
+            background: var(--primary-bg);
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 4rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--accent-color);
+        }
+
+        .project-image-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        /* Layout especial para múltiplas imagens */
+        .multi-image-grid {
+            display: grid;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--secondary-bg);
+        }
+
+        .volx-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .vaso-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .multi-main {
+            grid-column: 1 / -1;
+            height: 250px;
+            border-radius: 0.75rem;
+            object-fit: cover;
+        }
+
+        .multi-secondary {
+            height: 150px;
+            border-radius: 0.75rem;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-category {
+            display: inline-block;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .project-challenge {
+            background: var(--secondary-bg);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border-left: 3px solid var(--accent-color);
+            margin: 1.5rem 0;
+        }
+
+        .project-challenge h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .project-challenge p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-primary);
+            color: var(--primary-bg);
+            text-decoration: none;
+            border-radius: 2rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--primary-bg) 100%);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .contact-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--gradient-primary);
+            color: var(--primary-bg);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-light);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-bg);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .footer p {
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsividade Aprimorada */
+        @media (max-width: 768px) {
+            .section {
+                padding: 4rem 0;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .projects-grid {
+                gap: 2.5rem;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+            }
+
+            .multi-image-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .multi-main {
+                height: 200px;
+            }
+
+            .multi-secondary {
+                height: 150px;
+            }
+
+            .project-links {
+                gap: 0.75rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+        }
+
+        /* Animações de Scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Melhor loading das imagens */
+        .project-image {
+            background: var(--secondary-bg);
+        }
+
+        .project-image[src=""] {
+            background: var(--secondary-bg) url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23222"/><text x="50" y="50" text-anchor="middle" dy=".3em" fill="%23666" font-size="12">Carregando...</text></svg>');
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bruno Oliveira</h1>
+            <p class="hero-subtitle">Criador Audiovisual & Tecnológico</p>
+            <p class="hero-description">
+                Um Leonardo da Vinci moderno, inquieto e versátil. Produtor de conteúdo audiovisual, 
+                designer de sistemas mecatrônicos e criador de experiências digitais inovadoras.
+            </p>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">Sobre Mim</h2>
+                <p class="about-text">
+                    Sou um criador multidisciplinar que combina arte, tecnologia e inovação. 
+                    Minha jornada abrange desde a produção fonográfica até o desenvolvimento de sistemas mecatrônicos, 
+                    sempre buscando conectar diferentes áreas do conhecimento para criar soluções únicas e impactantes.
+                </p>
+                
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3 class="skill-title">Produção Fonográfica</h3>
+                        <p class="skill-description">Criação e produção de conteúdo musical</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="skill-title">Produção Audiovisual</h3>
+                        <p class="skill-description">Vídeos, filmes e conteúdo visual</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="skill-title">Design & Marca</h3>
+                        <p class="skill-description">Identidade visual e branding</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="skill-title">Mecatrônica</h3>
+                        <p class="skill-description">Sistemas automatizados e IoT</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="skill-title">Programação</h3>
+                        <p class="skill-description">Desenvolvimento web e aplicações</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects-section">
+        <div class="container">
+            <h2 class="section-title">Meus Projetos</h2>
+            
+            <div class="projects-grid">
+                <!-- Casa das Janas -->
+                <div class="project-card fade-in">
+                    <div class="project-image-container">
+                        <img src="images/desenvolvimento-casa-das-janas/janas-1.png" alt="Casa das Janas" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Design & Desenvolvimento Web</div>
+                        <h3 class="project-title">Casa das Janas</h3>
+                        <p class="project-description">
+                            Website completo para pousada boutique em Trancoso-BA, incluindo sistema de reservas, 
+                            galeria de fotos e design responsivo que captura a essência acolhedora do local.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Criar uma experiência digital que transmitisse a atmosfera intimista e descontraída da pousada, 
+                            mantendo funcionalidade para reservas online e navegação intuitiva.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.casadasjanas.com/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amolde -->
+                <div class="project-card fade-in">
+                    <div class="project-image-container">
+                        <img src="images/desenvolvimento-ecommerce-amolde/amolde-1.png" alt="Amolde" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">E-commerce & Branding</div>
+                        <h3 class="project-title">Amolde</h3>
+                        <p class="project-description">
+                            Plataforma de e-commerce especializada em moldes profissionais para moda íntima, 
+                            com sistema de categorização avançada e identidade visual que transmite profissionalismo e confiança.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Desenvolver uma plataforma que facilitasse a busca e compra de moldes técnicos, 
+                            criando uma experiência de usuário intuitiva para confeccionistas profissionais.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.amolde.com.br/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VOLX -->
+                <div class="project-card fade-in">
+                    <div class="multi-image-grid volx-grid">
+                        <img src="images/desenvolvimento-de-ecommerce-volx/volx-1.png" alt="VOLX - Site Principal" class="multi-main">
+                        <img src="images/desenvolvimento-de-ecommerce-volx/volx-2.png" alt="VOLX - Detalhes" class="multi-secondary">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Marca & Identidade Visual</div>
+                        <h3 class="project-title">VOLX</h3>
+                        <p class="project-description">
+                            Criação de marca e identidade visual para linha de camisetas, 
+                            desenvolvendo conceito visual que reflete a essência urbana e contemporânea da marca.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Desenvolver uma identidade visual única e memorável que se destacasse no mercado de moda urbana, 
+                            criando conexão emocional com o público-alvo.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.volx.com.br/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produção Fonográfica - Zambe -->
+                <div class="project-card fade-in">
+                    <div class="project-image-container">
+                        <img src="images/producao-fonografica-zambe/zambe-spotfy1.png" alt="Zambe" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Produção Fonográfica</div>
+                        <h3 class="project-title">Zambe - Artista Musical</h3>
+                        <p class="project-description">
+                            Produção fonográfica completa para artista friburguense, incluindo álbum "Encontro dos Rios" 
+                            e desenvolvimento de identidade sonora que mistura hip-hop, trap e reggae.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Capturar a essência cultural do Cordoeira e traduzir em produção musical profissional, 
+                            mantendo a autenticidade do artista e criando material comercialmente viável.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://open.spotify.com/intl-pt/artist/4OfXoTBw6GBUBxJJt6TfIq" target="_blank" class="project-link">
+                                <i class="fab fa-spotify"></i>
+                                Spotify
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cortina Automatizada -->
+                <div class="project-card fade-in">
+                    <div class="project-image-container">
+                        <img src="images/desenvolvimento-cortina-automatizada/20210217_164909.jpg" alt="Cortina Automatizada" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Mecatrônica & Automação</div>
+                        <h3 class="project-title">Sistema de Cortina Automatizada</h3>
+                        <p class="project-description">
+                            Desenvolvimento de sistema mecatrônico para automação de cortinas residenciais, 
+                            integrando sensores, atuadores e controle inteligente para conforto e eficiência energética.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Criar um sistema robusto e confiável que funcionasse em diferentes condições ambientais, 
+                            com interface de usuário intuitiva e integração com sistemas de automação residencial.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-Vaso Regui - Sistema de Vaso Automatizado -->
+                <div class="project-card fade-in">
+                    <div class="multi-image-grid vaso-grid">
+                        <img src="images/vaso-automatizado/vaso-1.png" alt="E-Vaso Regui - Protótipo" class="multi-main">
+                        <img src="images/vaso-automatizado/IMG_2922.JPG" alt="E-Vaso Regui - Sistema de Sensores" class="multi-secondary">
+                        <img src="images/vaso-automatizado/vaso-2.JPG" alt="E-Vaso Regui - Interface do App" class="multi-secondary">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">IoT & Automação Residencial</div>
+                        <h3 class="project-title">E-Vaso Regui - Sistema de Vaso Automatizado</h3>
+                        <p class="project-description">
+                            Sistema inteligente de vaso automatizado que monitora umidade do solo, temperatura ambiente, 
+                            luminosidade e envia dados em tempo real para aplicativo móvel, permitindo controle remoto 
+                            da irrigação e acompanhamento da saúde das plantas.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Desenvolver um sistema IoT robusto que integrasse sensores múltiplos, atuadores de irrigação, 
+                            conectividade Wi-Fi e aplicativo móvel para monitoramento e controle remoto, garantindo 
+                            precisão nos dados e confiabilidade na operação.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-play"></i>
+                                Ver Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto da Leira -->
+                <div class="project-card fade-in">
+                    <div class="project-image-container">
+                        <img src="images/projeto-leira-uerj/leira-1-20240328_141041.jpg" alt="Projeto da Leira" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Desenvolvimento Web & Design</div>
+                        <h3 class="project-title">Projeto da Leira</h3>
+                        <p class="project-description">
+                            Desenvolvimento de plataforma digital focada em soluções sustentáveis e tecnológicas, 
+                            combinando design moderno com funcionalidades avançadas para experiência do usuário otimizada.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Criar uma plataforma que integrasse múltiplas funcionalidades mantendo a simplicidade 
+                            na navegação e enfatizando os valores de sustentabilidade e inovação.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artefá Produções -->
+                <div class="project-card fade-in">
+                    <div class="project-image-container">
+                        <img src="images/artefa-producoes/artefa-1.png" alt="Artefá" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Produção Audiovisual</div>
+                        <h3 class="project-title">Artefá - Produções Audiovisuais</h3>
+                        <p class="project-description">
+                            Estúdio de produção audiovisual especializado em conteúdo musical, 
+                            videoclipes e produções cinematográficas com equipamentos profissionais.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Estabelecer um estúdio completo que atendesse às demandas do mercado audiovisual local, 
+                            oferecendo qualidade profissional e criatividade artística.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Strada -->
+                <div class="project-card fade-in">
+                    <div class="project-image-container">
+                        <img src="images/producao-fonografica-project-strada/project-strada-1.png" alt="Project Strada" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Produção Fonográfica</div>
+                        <h3 class="project-title">Project Strada</h3>
+                        <p class="project-description">
+                            Produção fonográfica para projeto musical inovador, 
+                            combinando diferentes gêneros e técnicas de gravação para criar sonoridade única.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Fusão de estilos musicais distintos em uma produção coesa, 
+                            mantendo qualidade técnica e expressão artística autêntica.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="contact-title">Vamos Criar Juntos?</h2>
+                <p class="contact-text">
+                    Estou sempre aberto a novos desafios e colaborações criativas. 
+                    Se você tem um projeto em mente ou quer explorar possibilidades, 
+                    vamos conversar sobre como podemos transformar suas ideias em realidade.
+                </p>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Bruno Oliveira. Todos os direitos reservados.</p>
+            <p>Um Leonardo da Vinci moderno, criando o futuro através da arte e tecnologia.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Configuração do Intersection Observer para animações suaves
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos os elementos com animação
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll aprimorado
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax sutil para o hero
+        let ticking = false;
+        
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            
+            if (hero && scrolled < window.innerHeight) {
+                const rate = scrolled * -0.3;
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+            
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
+
+        // Tratamento de erro para imagens
+        document.querySelectorAll('.project-image').forEach(img => {
+            img.addEventListener('error', function() {
+                this.style.background = 'var(--secondary-bg)';
+                this.style.display = 'flex';
+                this.style.alignItems = 'center';
+                this.style.justifyContent = 'center';
+                this.style.color = 'var(--text-muted)';
+                this.style.fontSize = '0.9rem';
+                this.innerHTML = '<div style="text-align: center;"><i class="fas fa-image" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>Imagem não encontrada</div>';
+            });
+        });
+
+        // Lazy loading para melhor performance
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Animação de loading inicial
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
