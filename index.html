@@ -245,46 +245,127 @@
         }
 
         .volx-grid {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
+            gap: 0.75rem;
+        }
+
+        .volx-grid .multi-main {
+            grid-column: 1;
+            grid-row: 1;
+            height: 200px;
+        }
+
+        .volx-grid .multi-secondary {
+            height: 200px;
+        }
+
+        .volx-grid .multi-secondary:nth-child(3) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .cortina-grid {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr;
+            gap: 0.75rem;
+        }
+
+        .cortina-grid .multi-main {
+            grid-column: 1;
+            grid-row: 1;
+            height: 200px;
+        }
+
+        .cortina-grid .multi-secondary {
+            height: 200px;
+        }
+
+        .cortina-grid .multi-secondary:nth-child(3) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .cortina-grid .multi-secondary:nth-child(4) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .cortina-grid .multi-secondary:nth-child(5) {
+            grid-column: 4;
+            grid-row: 1;
         }
 
         .vaso-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 1fr;
+            gap: 0.75rem;
+        }
+
+        .vaso-grid .multi-main {
+            grid-column: 1;
+            grid-row: 1;
+            height: 200px;
+        }
+
+        .vaso-grid .multi-secondary {
+            height: 200px;
+        }
+
+        .vaso-grid .multi-secondary:nth-child(3) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .vaso-grid .multi-secondary:nth-child(4) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .vaso-grid .multi-secondary:nth-child(5) {
+            grid-column: 4;
+            grid-row: 1;
+        }
+
+        .vaso-grid .multi-secondary:nth-child(6) {
+            grid-column: 5;
+            grid-row: 1;
         }
 
         .leira-grid {
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 1fr;
+            gap: 0.75rem;
         }
 
         .leira-grid .multi-main {
-            grid-column: 1 / 3;
-            grid-row: 1 / 3;
-            height: 300px;
+            grid-column: 1;
+            grid-row: 1;
+            height: 200px;
         }
 
         .leira-grid .multi-secondary {
-            height: 140px;
+            height: 200px;
         }
 
         .leira-grid .multi-secondary:nth-child(3) {
-            grid-column: 3;
+            grid-column: 2;
             grid-row: 1;
         }
 
         .leira-grid .multi-secondary:nth-child(4) {
             grid-column: 3;
-            grid-row: 2;
+            grid-row: 1;
         }
 
         .leira-grid .multi-secondary:nth-child(5) {
-            grid-column: 1;
-            grid-row: 3;
+            grid-column: 4;
+            grid-row: 1;
         }
 
         .leira-grid .multi-secondary:nth-child(6) {
-            grid-column: 2;
-            grid-row: 3;
+            grid-column: 5;
+            grid-row: 1;
         }
 
         .multi-main {
@@ -474,9 +555,58 @@
                 grid-template-columns: 1fr !important;
             }
 
+            .vaso-grid {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto !important;
+                gap: 0.5rem !important;
+            }
+
+            .volx-grid {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto !important;
+                gap: 0.5rem !important;
+            }
+
+            .cortina-grid {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto !important;
+                gap: 0.5rem !important;
+            }
+
+            .cortina-grid .multi-main {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+                height: 200px;
+            }
+
+            .cortina-grid .multi-secondary {
+                height: 200px;
+            }
+
+            .volx-grid .multi-main {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+                height: 200px;
+            }
+
+            .volx-grid .multi-secondary {
+                height: 200px;
+            }
+
+            .vaso-grid .multi-main {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+                height: 200px;
+            }
+
+            .vaso-grid .multi-secondary {
+                height: 200px;
+            }
+
             .leira-grid {
                 grid-template-columns: 1fr !important;
                 grid-template-rows: auto !important;
+                gap: 0.5rem !important;
             }
 
             .leira-grid .multi-main {
@@ -709,8 +839,11 @@
 
                 <!-- Cortina Automatizada -->
                 <div class="project-card fade-in">
-                    <div class="project-image-container">
-                        <img src="images/desenvolvimento-cortina-automatizada/20210217_164909.jpg" alt="Cortina Automatizada" class="project-image">
+                    <div class="multi-image-grid cortina-grid">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled-1.jpg" alt="Cortina Automatizada - Sistema Principal" class="multi-main">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled-2.jpg" alt="Cortina Automatizada - Detalhes" class="multi-secondary">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled-3.jpg" alt="Cortina Automatizada - Componentes" class="multi-secondary">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled-4.jpg" alt="Cortina Automatizada - Implementação" class="multi-secondary">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Mecatrônica & Automação</div>
@@ -730,9 +863,10 @@
                 <!-- E-Vaso Regui - Sistema de Vaso Automatizado -->
                 <div class="project-card fade-in">
                     <div class="multi-image-grid vaso-grid">
-                        <img src="images/vaso-automatizado/vaso-1.png" alt="E-Vaso Regui - Protótipo" class="multi-main">
-                        <img src="images/vaso-automatizado/IMG_2922.JPG" alt="E-Vaso Regui - Sistema de Sensores" class="multi-secondary">
-                        <img src="images/vaso-automatizado/vaso-2.JPG" alt="E-Vaso Regui - Interface do App" class="multi-secondary">
+                        <img src="images/vaso-automatizado/vaso-1.JPG" alt="E-Vaso Regui - Protótipo" class="multi-main">
+                        <img src="images/vaso-automatizado/vaso-2.png" alt="E-Vaso Regui - Sistema de Sensores" class="multi-secondary">
+                        <img src="images/vaso-automatizado/vaso-3.JPG" alt="E-Vaso Regui - Interface do App" class="multi-secondary">
+                        <img src="images/vaso-automatizado/vaso-4.JPG" alt="E-Vaso Regui - Componentes" class="multi-secondary">
                     </div>
                     <div class="project-content">
                         <div class="project-category">IoT & Automação Residencial</div>
