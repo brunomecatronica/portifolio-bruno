@@ -252,6 +252,41 @@
             grid-template-columns: repeat(2, 1fr);
         }
 
+        .leira-grid {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .leira-grid .multi-main {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+            height: 300px;
+        }
+
+        .leira-grid .multi-secondary {
+            height: 140px;
+        }
+
+        .leira-grid .multi-secondary:nth-child(3) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .leira-grid .multi-secondary:nth-child(4) {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        .leira-grid .multi-secondary:nth-child(5) {
+            grid-column: 1;
+            grid-row: 3;
+        }
+
+        .leira-grid .multi-secondary:nth-child(6) {
+            grid-column: 2;
+            grid-row: 3;
+        }
+
         .multi-main {
             grid-column: 1 / -1;
             height: 250px;
@@ -437,6 +472,21 @@
 
             .multi-image-grid {
                 grid-template-columns: 1fr !important;
+            }
+
+            .leira-grid {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto !important;
+            }
+
+            .leira-grid .multi-main {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+                height: 200px;
+            }
+
+            .leira-grid .multi-secondary {
+                height: 150px;
             }
 
             .multi-main {
@@ -709,8 +759,12 @@
 
                 <!-- Projeto da Leira -->
                 <div class="project-card fade-in">
-                    <div class="project-image-container">
-                        <img src="images/projeto-leira-uerj/leira-1-20240328_141041.jpg" alt="Projeto da Leira" class="project-image">
+                    <div class="multi-image-grid leira-grid">
+                        <img src="images/projeto-leira-uerj/leira-1-20240328_141041.jpg" alt="Projeto da Leira - Visão Geral" class="multi-main">
+                        <img src="images/projeto-leira-uerj/leira-2-IMG-20220423-WA0014.jpg" alt="Projeto da Leira - Detalhes" class="multi-secondary">
+                        <img src="images/projeto-leira-uerj/leira-3-20240426_142716.jpg" alt="Projeto da Leira - Implementação" class="multi-secondary">
+                        <img src="images/projeto-leira-uerj/leira-4-20240316_122711.jpg" alt="Projeto da Leira - Sistema" class="multi-secondary">
+                        <img src="images/projeto-leira-uerj/leira-5-20220327_142119.jpg" alt="Projeto da Leira - Resultados" class="multi-secondary">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Desenvolvimento Web & Design</div>
