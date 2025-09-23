@@ -36,18 +36,59 @@
             scroll-behavior: smooth;
         }
 
+        /* Header Fixo */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: transparent;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .whatsapp-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--text-primary);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-header:hover {
+            background: var(--text-primary);
+            color: var(--primary-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .whatsapp-header i {
+            font-size: 1.5rem;
+        }
+
         /* Hero Section - Minimalista e Impactante */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(0, 153, 204, 0.05) 0%, transparent 50%),
-                        var(--primary-bg);
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                        url('images/home-images/Alien-home.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             position: relative;
             text-align: center;
-            padding: 2rem;
+            padding: 6rem 2rem 2rem;
         }
 
         .hero-content {
@@ -71,13 +112,13 @@
             font-size: clamp(1.2rem, 3vw, 1.8rem);
             font-weight: 300;
             margin-bottom: 2rem;
-            color: var(--text-secondary);
+            color: #d9d9d9;
             letter-spacing: 0.5px;
         }
 
         .hero-description {
             font-size: 1.1rem;
-            color: var(--text-muted);
+            color: #999999;
             max-width: 600px;
             margin: 0 auto 3rem;
             line-height: 1.8;
@@ -177,6 +218,10 @@
             transform: scaleX(1);
         }
 
+        .skill-item {
+            cursor: pointer;
+        }
+
         .skill-icon {
             font-size: 2.5rem;
             color: var(--accent-color);
@@ -229,6 +274,7 @@
             width: 100%;
             height: 350px;
             object-fit: cover;
+            object-position: top;
             transition: transform 0.4s ease;
         }
 
@@ -266,7 +312,7 @@
         }
 
         .cortina-grid {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             grid-template-rows: 1fr;
             gap: 0.75rem;
         }
@@ -293,6 +339,11 @@
 
         .cortina-grid .multi-secondary:nth-child(5) {
             grid-column: 4;
+            grid-row: 1;
+        }
+
+        .cortina-grid .multi-secondary:nth-child(6) {
+            grid-column: 5;
             grid-row: 1;
         }
 
@@ -526,6 +577,19 @@
 
         /* Responsividade Aprimorada */
         @media (max-width: 768px) {
+            .header {
+                padding: 0.75rem 1rem;
+            }
+
+            .whatsapp-header {
+                width: 45px;
+                height: 45px;
+            }
+
+            .whatsapp-header i {
+                font-size: 1.3rem;
+            }
+
             .section {
                 padding: 4rem 0;
             }
@@ -535,7 +599,7 @@
             }
 
             .hero {
-                padding: 1rem;
+                padding: 5rem 1rem 1rem;
             }
 
             .skills-grid {
@@ -659,14 +723,24 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <a href="https://wa.me/5522999094530" target="_blank" class="whatsapp-header">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Bruno Oliveira</h1>
             <p class="hero-subtitle">Criador Audiovisual & Tecnológico</p>
             <p class="hero-description">
-                Um Leonardo da Vinci moderno, inquieto e versátil. Produtor de conteúdo audiovisual, 
-                designer de sistemas mecatrônicos e criador de experiências digitais inovadoras.
+                Um criador inquieto e versátil, especializado em conectar mundos distintos através da tecnologia e da arte. 
+                Produtor de conteúdo audiovisual, designer de sistemas mecatrônicos e criador de experiências digitais inovadoras 
+                que transformam ideias complexas em soluções práticas e impactantes. 
+                Formado em Tecnologias de Gravação e Produção Fonográfica pela UNESA, Técnico em Mecatrônica pelo SENAI, 
+                autodidata e apaixonado por tecnologia e inteligência artificial.
             </p>
         </div>
         <div class="scroll-indicator">
@@ -680,283 +754,39 @@
             <div class="about-content">
                 <h2 class="section-title">Sobre Mim</h2>
                 <p class="about-text">
-                    Sou um criador multidisciplinar que combina arte, tecnologia e inovação. 
-                    Minha jornada abrange desde a produção fonográfica até o desenvolvimento de sistemas mecatrônicos, 
-                    sempre buscando conectar diferentes áreas do conhecimento para criar soluções únicas e impactantes.
+                    Sou um criador que transforma ideias em soluções tecnológicas e artísticas funcionais. 
+                    Desenvolvo desde sistemas de automação e aplicativos mobile até produções musicais completas e identidades visuais para marcas. 
+                    Minha abordagem combina conhecimento técnico profundo com sensibilidade artística, resultando em projetos que atendem tanto às necessidades comerciais quanto à expressão criativa. 
+                    Especializo-me em conectar diferentes áreas do conhecimento para criar soluções únicas e impactantes.
                 </p>
                 
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fas fa-music"></i>
-                        </div>
-                        <h3 class="skill-title">Produção Fonográfica</h3>
-                        <p class="skill-description">Criação e produção de conteúdo musical</p>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fas fa-video"></i>
-                        </div>
-                        <h3 class="skill-title">Produção Audiovisual</h3>
-                        <p class="skill-description">Vídeos, filmes e conteúdo visual</p>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3 class="skill-title">Design & Marca</h3>
-                        <p class="skill-description">Identidade visual e branding</p>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3 class="skill-title">Mecatrônica</h3>
-                        <p class="skill-description">Sistemas automatizados e IoT</p>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3 class="skill-title">Programação</h3>
-                        <p class="skill-description">Desenvolvimento web e aplicações</p>
-                    </div>
+        <div class="skills-grid">
+            <div class="skill-item" onclick="window.location.href='programacao-mecatronica.html'">
+                <div class="skill-icon">
+                    <i class="fas fa-code"></i>
                 </div>
+                <h3 class="skill-title">Programação & Mecatrônica</h3>
+                <p class="skill-description">Desenvolvimento web, aplicações e sistemas automatizados</p>
+            </div>
+            <div class="skill-item" onclick="window.location.href='producao-audiovisual-design.html'">
+                <div class="skill-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3 class="skill-title">Produção Audiovisual & Design</h3>
+                <p class="skill-description">Vídeos, filmes, design e identidade visual</p>
+            </div>
+            <div class="skill-item" onclick="window.location.href='producao-fonografica.html'">
+                <div class="skill-icon">
+                    <i class="fas fa-music"></i>
+                </div>
+                <h3 class="skill-title">Produção Fonográfica</h3>
+                <p class="skill-description">Criação e produção de conteúdo musical</p>
+            </div>
+        </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="section projects-section">
-        <div class="container">
-            <h2 class="section-title">Meus Projetos</h2>
-            
-            <div class="projects-grid">
-                <!-- Casa das Janas -->
-                <div class="project-card fade-in">
-                    <div class="project-image-container">
-                        <img src="images/desenvolvimento-casa-das-janas/janas-1.png" alt="Casa das Janas" class="project-image">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Design & Desenvolvimento Web</div>
-                        <h3 class="project-title">Casa das Janas</h3>
-                        <p class="project-description">
-                            Website completo para pousada boutique em Trancoso-BA, incluindo sistema de reservas, 
-                            galeria de fotos e design responsivo que captura a essência acolhedora do local.
-                        </p>
-                        <div class="project-challenge">
-                            <h4>Desafio</h4>
-                            <p>Criar uma experiência digital que transmitisse a atmosfera intimista e descontraída da pousada, 
-                            mantendo funcionalidade para reservas online e navegação intuitiva.</p>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.casadasjanas.com/" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                Ver Site
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Amolde -->
-                <div class="project-card fade-in">
-                    <div class="project-image-container">
-                        <img src="images/desenvolvimento-ecommerce-amolde/amolde-1.png" alt="Amolde" class="project-image">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">E-commerce & Branding</div>
-                        <h3 class="project-title">Amolde</h3>
-                        <p class="project-description">
-                            Plataforma de e-commerce especializada em moldes profissionais para moda íntima, 
-                            com sistema de categorização avançada e identidade visual que transmite profissionalismo e confiança.
-                        </p>
-                        <div class="project-challenge">
-                            <h4>Desafio</h4>
-                            <p>Desenvolver uma plataforma que facilitasse a busca e compra de moldes técnicos, 
-                            criando uma experiência de usuário intuitiva para confeccionistas profissionais.</p>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.amolde.com.br/" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                Ver Site
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- VOLX -->
-                <div class="project-card fade-in">
-                    <div class="multi-image-grid volx-grid">
-                        <img src="images/desenvolvimento-de-ecommerce-volx/volx-1.png" alt="VOLX - Site Principal" class="multi-main">
-                        <img src="images/desenvolvimento-de-ecommerce-volx/volx-2.png" alt="VOLX - Detalhes" class="multi-secondary">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Marca & Identidade Visual</div>
-                        <h3 class="project-title">VOLX</h3>
-                        <p class="project-description">
-                            Criação de marca e identidade visual para linha de camisetas, 
-                            desenvolvendo conceito visual que reflete a essência urbana e contemporânea da marca.
-                        </p>
-                        <div class="project-challenge">
-                            <h4>Desafio</h4>
-                            <p>Desenvolver uma identidade visual única e memorável que se destacasse no mercado de moda urbana, 
-                            criando conexão emocional com o público-alvo.</p>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.volx.com.br/" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                Ver Site
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produção Fonográfica - Zambe -->
-                <div class="project-card fade-in">
-                    <div class="project-image-container">
-                        <img src="images/producao-fonografica-zambe/zambe-spotfy1.png" alt="Zambe" class="project-image">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Produção Fonográfica</div>
-                        <h3 class="project-title">Zambe - Artista Musical</h3>
-                        <p class="project-description">
-                            Produção fonográfica completa para artista friburguense, incluindo álbum "Encontro dos Rios" 
-                            e desenvolvimento de identidade sonora que mistura hip-hop, trap e reggae.
-                        </p>
-                        <div class="project-challenge">
-                            <h4>Desafio</h4>
-                            <p>Capturar a essência cultural do Cordoeira e traduzir em produção musical profissional, 
-                            mantendo a autenticidade do artista e criando material comercialmente viável.</p>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://open.spotify.com/intl-pt/artist/4OfXoTBw6GBUBxJJt6TfIq" target="_blank" class="project-link">
-                                <i class="fab fa-spotify"></i>
-                                Spotify
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cortina Automatizada -->
-                <div class="project-card fade-in">
-                    <div class="multi-image-grid cortina-grid">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled-1.jpg" alt="Cortina Automatizada - Sistema Principal" class="multi-main">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled-2.jpg" alt="Cortina Automatizada - Detalhes" class="multi-secondary">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled-3.jpg" alt="Cortina Automatizada - Componentes" class="multi-secondary">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled-4.jpg" alt="Cortina Automatizada - Implementação" class="multi-secondary">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Mecatrônica & Automação</div>
-                        <h3 class="project-title">Sistema de Cortina Automatizada</h3>
-                        <p class="project-description">
-                            Desenvolvimento de sistema mecatrônico para automação de cortinas residenciais, 
-                            integrando sensores, atuadores e controle inteligente para conforto e eficiência energética.
-                        </p>
-                        <div class="project-challenge">
-                            <h4>Desafio</h4>
-                            <p>Criar um sistema robusto e confiável que funcionasse em diferentes condições ambientais, 
-                            com interface de usuário intuitiva e integração com sistemas de automação residencial.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- E-Vaso Regui - Sistema de Vaso Automatizado -->
-                <div class="project-card fade-in">
-                    <div class="multi-image-grid vaso-grid">
-                        <img src="images/vaso-automatizado/vaso-1.JPG" alt="E-Vaso Regui - Protótipo" class="multi-main">
-                        <img src="images/vaso-automatizado/vaso-2.png" alt="E-Vaso Regui - Sistema de Sensores" class="multi-secondary">
-                        <img src="images/vaso-automatizado/vaso-3.JPG" alt="E-Vaso Regui - Interface do App" class="multi-secondary">
-                        <img src="images/vaso-automatizado/vaso-4.JPG" alt="E-Vaso Regui - Componentes" class="multi-secondary">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">IoT & Automação Residencial</div>
-                        <h3 class="project-title">E-Vaso Regui - Sistema de Vaso Automatizado</h3>
-                        <p class="project-description">
-                            Sistema inteligente de vaso automatizado que monitora umidade do solo, temperatura ambiente, 
-                            luminosidade e envia dados em tempo real para aplicativo móvel, permitindo controle remoto 
-                            da irrigação e acompanhamento da saúde das plantas.
-                        </p>
-                        <div class="project-challenge">
-                            <h4>Desafio</h4>
-                            <p>Desenvolver um sistema IoT robusto que integrasse sensores múltiplos, atuadores de irrigação, 
-                            conectividade Wi-Fi e aplicativo móvel para monitoramento e controle remoto, garantindo 
-                            precisão nos dados e confiabilidade na operação.</p>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-play"></i>
-                                Ver Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projeto da Leira -->
-                <div class="project-card fade-in">
-                    <div class="multi-image-grid leira-grid">
-                        <img src="images/projeto-leira-uerj/leira-1-20240328_141041.jpg" alt="Projeto da Leira - Visão Geral" class="multi-main">
-                        <img src="images/projeto-leira-uerj/leira-2-IMG-20220423-WA0014.jpg" alt="Projeto da Leira - Detalhes" class="multi-secondary">
-                        <img src="images/projeto-leira-uerj/leira-3-20240426_142716.jpg" alt="Projeto da Leira - Implementação" class="multi-secondary">
-                        <img src="images/projeto-leira-uerj/leira-4-20240316_122711.jpg" alt="Projeto da Leira - Sistema" class="multi-secondary">
-                        <img src="images/projeto-leira-uerj/leira-5-20220327_142119.jpg" alt="Projeto da Leira - Resultados" class="multi-secondary">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Desenvolvimento Web & Design</div>
-                        <h3 class="project-title">Projeto da Leira</h3>
-                        <p class="project-description">
-                            Desenvolvimento de plataforma digital focada em soluções sustentáveis e tecnológicas, 
-                            combinando design moderno com funcionalidades avançadas para experiência do usuário otimizada.
-                        </p>
-                        <div class="project-challenge">
-                            <h4>Desafio</h4>
-                            <p>Criar uma plataforma que integrasse múltiplas funcionalidades mantendo a simplicidade 
-                            na navegação e enfatizando os valores de sustentabilidade e inovação.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Artefá Produções -->
-                <div class="project-card fade-in">
-                    <div class="project-image-container">
-                        <img src="images/artefa-producoes/artefa-1.png" alt="Artefá" class="project-image">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Produção Audiovisual</div>
-                        <h3 class="project-title">Artefá - Produções Audiovisuais</h3>
-                        <p class="project-description">
-                            Estúdio de produção audiovisual especializado em conteúdo musical, 
-                            videoclipes e produções cinematográficas com equipamentos profissionais.
-                        </p>
-                        <div class="project-challenge">
-                            <h4>Desafio</h4>
-                            <p>Estabelecer um estúdio completo que atendesse às demandas do mercado audiovisual local, 
-                            oferecendo qualidade profissional e criatividade artística.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Strada -->
-                <div class="project-card fade-in">
-                    <div class="project-image-container">
-                        <img src="images/producao-fonografica-project-strada/project-strada-1.png" alt="Project Strada" class="project-image">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Produção Fonográfica</div>
-                        <h3 class="project-title">Project Strada</h3>
-                        <p class="project-description">
-                            Produção fonográfica para projeto musical inovador, 
-                            combinando diferentes gêneros e técnicas de gravação para criar sonoridade única.
-                        </p>
-                        <div class="project-challenge">
-                            <h4>Desafio</h4>
-                            <p>Fusão de estilos musicais distintos em uma produção coesa, 
-                            mantendo qualidade técnica e expressão artística autêntica.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Section -->
     <section class="section contact-section">
@@ -970,17 +800,8 @@
                 </p>
                 
                 <div class="social-links">
-                    <a href="#" class="social-link" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="social-link" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-link" title="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="#" class="social-link" title="Email">
-                        <i class="fas fa-envelope"></i>
+                    <a href="https://wa.me/5522999094530" target="_blank" class="social-link" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
             </div>
@@ -991,7 +812,7 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Bruno Oliveira. Todos os direitos reservados.</p>
-            <p>Um Leonardo da Vinci moderno, criando o futuro através da arte e tecnologia.</p>
+            <p>Um criador inquieto e versátil, criando o futuro através da arte e tecnologia.</p>
         </div>
     </footer>
 

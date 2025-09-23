@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produção Audiovisual & Design - Bruno Oliveira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #111111;
+            --card-bg: #1a1a1a;
+            --accent-color: #00d4ff;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --text-muted: #666666;
+            --border-color: #2a2a2a;
+            --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            --shadow-light: 0 4px 20px rgba(0, 212, 255, 0.1);
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--primary-bg);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        .header {
+            background: var(--primary-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(0, 153, 204, 0.05) 0%, transparent 50%),
+                        var(--primary-bg);
+            position: relative;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        /* Container Global */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 8rem 0;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 5rem;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            background: var(--primary-bg);
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 4rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--accent-color);
+        }
+
+        .project-image-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        /* Layout especial para múltiplas imagens */
+        .multi-image-grid {
+            display: grid;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--secondary-bg);
+        }
+
+        .volx-grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
+            gap: 0.75rem;
+        }
+
+        .volx-grid .multi-main {
+            grid-column: 1;
+            grid-row: 1;
+            height: 200px;
+        }
+
+        .volx-grid .multi-secondary {
+            height: 200px;
+        }
+
+        .volx-grid .multi-secondary:nth-child(3) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .multi-main {
+            grid-column: 1 / -1;
+            height: 250px;
+            border-radius: 0.75rem;
+            object-fit: cover;
+        }
+
+        .multi-secondary {
+            height: 150px;
+            border-radius: 0.75rem;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-category {
+            display: inline-block;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .project-challenge {
+            background: var(--secondary-bg);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border-left: 3px solid var(--accent-color);
+            margin: 1.5rem 0;
+        }
+
+        .project-challenge h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .project-challenge p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-primary);
+            color: var(--primary-bg);
+            text-decoration: none;
+            border-radius: 2rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--primary-bg) 100%);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .contact-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--gradient-primary);
+            color: var(--primary-bg);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-light);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-bg);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .footer p {
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .section {
+                padding: 4rem 0;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .projects-grid {
+                gap: 2.5rem;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+            }
+
+            .multi-image-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .volx-grid {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto !important;
+                gap: 0.5rem !important;
+            }
+
+            .volx-grid .multi-main {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+                height: 200px;
+            }
+
+            .volx-grid .multi-secondary {
+                height: 200px;
+            }
+
+            .multi-main {
+                height: 200px;
+            }
+
+            .multi-secondary {
+                height: 150px;
+            }
+
+            .project-links {
+                gap: 0.75rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+        }
+
+        /* Animações de Scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Bruno Oliveira</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="programacao-mecatronica.html">Programação & Mecatrônica</a></li>
+                <li><a href="producao-audiovisual-design.html" class="active">Audiovisual & Design</a></li>
+                <li><a href="producao-fonografica.html">Produção Fonográfica</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Produção Audiovisual & Design</h1>
+            <p class="hero-subtitle">Vídeos, filmes, design e identidade visual</p>
+            <p class="hero-description">
+                Criação de conteúdo audiovisual impactante e design visual que conecta marcas com seu público, 
+                combinando criatividade artística com estratégia de comunicação.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects-section">
+        <div class="container">
+            <h2 class="section-title">Projetos de Produção Audiovisual & Design</h2>
+            
+            <div class="projects-grid">
+                <!-- Casa das Janas -->
+                <div class="project-card fade-in">
+                    <div class="project-image-container">
+                        <a href="https://www.casadasjanas.com/" target="_blank">
+                            <img src="images/desenvolvimento-casa-das-janas/janas-1.png" alt="Casa das Janas" class="project-image">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Design & Desenvolvimento Web</div>
+                        <h3 class="project-title">Casa das Janas</h3>
+                        <p class="project-description">
+                            Website completo para pousada boutique em Trancoso-BA, incluindo sistema de reservas, 
+                            galeria de fotos e design responsivo que captura a essência acolhedora do local.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Criar uma experiência digital que transmitisse a atmosfera intimista e descontraída da pousada, 
+                            mantendo funcionalidade para reservas online e navegação intuitiva.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.casadasjanas.com/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Amolde -->
+                <div class="project-card fade-in">
+                    <div class="project-image-container">
+                        <a href="https://www.amolde.com.br/" target="_blank">
+                            <img src="images/desenvolvimento-ecommerce-amolde/amolde-1.png" alt="Amolde" class="project-image">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">E-commerce & Branding</div>
+                        <h3 class="project-title">Amolde</h3>
+                        <p class="project-description">
+                            Plataforma de e-commerce especializada em moldes profissionais para moda íntima, 
+                            com sistema de categorização avançada e identidade visual que transmite profissionalismo e confiança.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Desenvolver uma plataforma que facilitasse a busca e compra de moldes técnicos, 
+                            criando uma experiência de usuário intuitiva para confeccionistas profissionais.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.amolde.com.br/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VOLX -->
+                <div class="project-card fade-in">
+                    <div class="multi-image-grid volx-grid">
+                        <a href="https://www.volx.com.br/" target="_blank">
+                            <img src="images/desenvolvimento-de-ecommerce-volx/volx-1.png" alt="VOLX - Site Principal" class="multi-main">
+                        </a>
+                        <img src="images/desenvolvimento-de-ecommerce-volx/volx-2.png" alt="VOLX - Detalhes" class="multi-secondary">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Marca & Identidade Visual</div>
+                        <h3 class="project-title">VOLX</h3>
+                        <p class="project-description">
+                            Criação de marca e identidade visual para linha de camisetas, 
+                            desenvolvendo conceito visual que reflete a essência urbana e contemporânea da marca.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Desenvolver uma identidade visual única e memorável que se destacasse no mercado de moda urbana, 
+                            criando conexão emocional com o público-alvo.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.volx.com.br/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artefá Produções -->
+                <div class="project-card fade-in">
+                    <div class="project-image-container">
+                        <a href="https://brunoaudiovisual.wixsite.com/back-up-artefa-2015" target="_blank">
+                            <img src="images/artefa-producoes/artefa-1.png" alt="Artefá" class="project-image">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Produção Audiovisual</div>
+                        <h3 class="project-title">Artefá - Produções Audiovisuais</h3>
+                        <p class="project-description">
+                            Estúdio de produção audiovisual especializado em conteúdo musical, 
+                            videoclipes e produções cinematográficas com equipamentos profissionais.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Estabelecer um estúdio completo que atendesse às demandas do mercado audiovisual local, 
+                            oferecendo qualidade profissional e criatividade artística.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="contact-title">Vamos Criar Juntos?</h2>
+                <p class="contact-text">
+                    Estou sempre aberto a novos desafios e colaborações criativas. 
+                    Se você tem um projeto audiovisual ou de design em mente ou quer explorar possibilidades, 
+                    vamos conversar sobre como podemos transformar suas ideias em realidade.
+                </p>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Bruno Oliveira. Todos os direitos reservados.</p>
+            <p>Um Leonardo da Vinci moderno, criando o futuro através da arte e tecnologia.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Configuração do Intersection Observer para animações suaves
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos os elementos com animação
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll aprimorado
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Tratamento de erro para imagens
+        document.querySelectorAll('.project-image').forEach(img => {
+            img.addEventListener('error', function() {
+                this.style.background = 'var(--secondary-bg)';
+                this.style.display = 'flex';
+                this.style.alignItems = 'center';
+                this.style.justifyContent = 'center';
+                this.style.color = 'var(--text-muted)';
+                this.style.fontSize = '0.9rem';
+                this.innerHTML = '<div style="text-align: center;"><i class="fas fa-image" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>Imagem não encontrada</div>';
+            });
+        });
+
+        // Animação de loading inicial
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
