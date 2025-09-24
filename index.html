@@ -755,26 +755,7 @@
             }
         }
 
-        /* Animações de Scroll */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Melhor loading das imagens */
-        .project-image {
-            background: var(--secondary-bg);
-        }
-
-        .project-image[src=""] {
-            background: var(--secondary-bg) url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23222"/><text x="50" y="50" text-anchor="middle" dy=".3em" fill="%23666" font-size="12">Carregando...</text></svg>');
-        }
+        
     </style>
 </head>
 <body>
@@ -886,24 +867,7 @@
     </footer>
 
     <script>
-        // Configuração do Intersection Observer para animações suaves
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -80px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observar todos os elementos com animação
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+        
 
         // Toggle do menu mobile
         const headerEl = document.querySelector('.header');
@@ -961,36 +925,9 @@
             }
         });
 
-        // Tratamento de erro para imagens
-        document.querySelectorAll('.project-image').forEach(img => {
-            img.addEventListener('error', function() {
-                this.style.background = 'var(--secondary-bg)';
-                this.style.display = 'flex';
-                this.style.alignItems = 'center';
-                this.style.justifyContent = 'center';
-                this.style.color = 'var(--text-muted)';
-                this.style.fontSize = '0.9rem';
-                this.innerHTML = '<div style="text-align: center;"><i class="fas fa-image" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>Imagem não encontrada</div>';
-            });
-        });
+        
 
-        // Lazy loading para melhor performance
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src || img.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
+        
 
         // Animação de loading inicial
         window.addEventListener('load', () => {

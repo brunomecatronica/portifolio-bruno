@@ -460,17 +460,7 @@
             }
         }
 
-        /* Animações de Scroll */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        
     </style>
 </head>
 <body>
@@ -660,24 +650,7 @@
     </footer>
 
     <script>
-        // Configuração do Intersection Observer para animações suaves
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -80px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observar todos os elementos com animação
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+        
 
         // Toggle do menu mobile
         const headerEl = document.querySelector('.header');
