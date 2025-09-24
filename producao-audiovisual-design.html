@@ -51,7 +51,7 @@
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: space_between;
             align-items: center;
         }
 
@@ -65,22 +65,33 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
-            list-style: none;
+            align-items: center;
+            gap: 1rem;
         }
 
-        .nav-links a {
+        .nav-link {
             color: var(--text-secondary);
             text-decoration: none;
-            transition: color 0.3s ease;
+            padding: 0.4rem 0.6rem;
+            border-radius: 0.5rem;
+            transition: background 0.2s ease, color 0.2s ease;
+            font-weight: 500;
         }
 
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
+        .nav-link:hover { background: rgba(255,255,255,0.06); color: var(--text-primary); }
+        .nav-link.active { color: var(--accent-color); }
 
-        .nav-links a.active {
-            color: var(--accent-color);
+        .nav-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
         }
 
         /* Hero Section */
@@ -392,9 +403,17 @@
                 padding: 1rem;
             }
 
-            .nav-links {
-                gap: 1rem;
+            .nav-toggle { display: inline-flex; }
+            .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; padding: 0.75rem; }
+            .mobile-menu {
+                display: grid;
+                gap: 0.5rem;
+                background: rgba(17,17,17,0.98);
+                border-top: 1px solid var(--border-color);
+                border-bottom: 1px solid var(--border-color);
+                padding: 0.75rem;
             }
+            .header.open .nav-links { display: block; }
 
             .projects-grid {
                 gap: 2.5rem;
@@ -457,14 +476,19 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav">
+        <nav class="nav" aria-label="Navegação principal">
             <a href="index.html" class="logo">Bruno Oliveira</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="programacao-mecatronica.html">Programação & Mecatrônica</a></li>
-                <li><a href="producao-audiovisual-design.html" class="active">Audiovisual & Design</a></li>
-                <li><a href="producao-fonografica.html">Produção Fonográfica</a></li>
-            </ul>
+            <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <div class="mobile-menu" role="menu">
+                    <a class="nav-link" href="index.html" role="menuitem">Início</a>
+                    <a class="nav-link" href="programacao-mecatronica.html" role="menuitem">Programação &amp; Mecatrônica</a>
+                    <a class="nav-link active" href="producao-audiovisual-design.html" role="menuitem">Audiovisual &amp; Design</a>
+                    <a class="nav-link" href="producao-fonografica.html" role="menuitem">Produção Fonográfica</a>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -653,6 +677,26 @@
         // Observar todos os elementos com animação
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
+        });
+
+        // Toggle do menu mobile
+        const headerEl = document.querySelector('.header');
+        const toggleBtn = document.querySelector('.nav-toggle');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                const isOpen = headerEl.classList.toggle('open');
+                toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+        }
+
+        // Fechar menu ao clicar em link (mobile)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (headerEl.classList.contains('open')) {
+                    headerEl.classList.remove('open');
+                    toggleBtn && toggleBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
         });
 
         // Smooth scroll aprimorado
