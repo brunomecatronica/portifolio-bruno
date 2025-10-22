@@ -480,6 +480,139 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Modal de Galeria */
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
+        }
+
+        .gallery-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery-main-image {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-thumbnails {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            overflow-x: auto;
+            padding: 0.5rem;
+            max-width: 100%;
+        }
+
+        .gallery-thumbnail {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .gallery-thumbnail:hover,
+        .gallery-thumbnail.active {
+            opacity: 1;
+        }
+
+        .gallery-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .gallery-prev {
+            left: -60px;
+        }
+
+        .gallery-next {
+            right: -60px;
+        }
+
+        .mobile-gallery-trigger {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .mobile-gallery-trigger::after {
+            content: 'Ver Galeria';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-gallery-trigger:hover::after {
+            opacity: 1;
+        }
+
         /* Responsividade */
         @media (max-width: 768px) {
             .section {
@@ -516,6 +649,22 @@
 
             .multi-image-grid {
                 grid-template-columns: 1fr !important;
+            }
+
+            /* No mobile, esconder todas as imagens exceto a primeira */
+            .multi-image-grid .multi-secondary {
+                display: none !important;
+            }
+
+            .multi-image-grid .multi-main {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+                height: 250px !important;
+            }
+
+            /* Adicionar classe para trigger da galeria */
+            .multi-image-grid .multi-main {
+                cursor: pointer;
             }
 
             .vaso-grid {
@@ -590,6 +739,16 @@
 
             .social-links {
                 gap: 1rem;
+            }
+
+            /* Esconder setas de navegação em mobile */
+            .gallery-nav {
+                display: none;
+            }
+
+            .gallery-close {
+                top: 10px;
+                right: 10px;
             }
         }
 
@@ -673,7 +832,7 @@
                 <!-- Projeto da Leira -->
                 <div class="project-card fade-in">
                     <div class="multi-image-grid leira-grid">
-                        <img src="images/projeto-leira-uerj/leira-1-20240328_141041.jpg" alt="Projeto da Leira - Visão Geral" class="multi-main">
+                        <img src="images/projeto-leira-uerj/leira-1-20240328_141041.jpg" alt="Projeto da Leira - Visão Geral" class="multi-main mobile-gallery-trigger" data-gallery="leira">
                         <img src="images/projeto-leira-uerj/leira-2-IMG-20220423-WA0014.jpg" alt="Projeto da Leira - Detalhes" class="multi-secondary">
                         <img src="images/projeto-leira-uerj/leira-3-20240426_142716.jpg" alt="Projeto da Leira - Implementação" class="multi-secondary">
                         <img src="images/projeto-leira-uerj/leira-4-20240316_122711.jpg" alt="Projeto da Leira - Sistema" class="multi-secondary">
@@ -697,7 +856,7 @@
                 <!-- Cortina Automatizada -->
                 <div class="project-card fade-in">
                     <div class="multi-image-grid cortina-grid">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled-0.jpg" alt="Cortina Automatizada - Visão Geral" class="multi-main">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled-0.jpg" alt="Cortina Automatizada - Visão Geral" class="multi-main mobile-gallery-trigger" data-gallery="cortina">
                         <img src="images/desenvolvimento-cortina-automatizada/veled-1.jpg" alt="Cortina Automatizada - Sistema Principal" class="multi-secondary">
                         <img src="images/desenvolvimento-cortina-automatizada/veled-2.jpg" alt="Cortina Automatizada - Detalhes" class="multi-secondary">
                         <img src="images/desenvolvimento-cortina-automatizada/veled-3.jpg" alt="Cortina Automatizada - Componentes" class="multi-secondary">
@@ -721,7 +880,7 @@
                 <!-- E-Vaso Regui - Sistema de Vaso Automatizado -->
                 <div class="project-card fade-in">
                     <div class="multi-image-grid vaso-grid">
-                        <img src="images/vaso-automatizado/vaso-1.JPG" alt="E-Vaso Regui - Protótipo" class="multi-main">
+                        <img src="images/vaso-automatizado/vaso-1.JPG" alt="E-Vaso Regui - Protótipo" class="multi-main mobile-gallery-trigger" data-gallery="vaso">
                         <img src="images/vaso-automatizado/vaso-2.png" alt="E-Vaso Regui - Sistema de Sensores" class="multi-secondary">
                         <img src="images/vaso-automatizado/vaso-3.JPG" alt="E-Vaso Regui - Interface do App" class="multi-secondary">
                         <img src="images/vaso-automatizado/vaso-4.JPG" alt="E-Vaso Regui - Componentes" class="multi-secondary">
@@ -780,6 +939,57 @@
         </div>
     </footer>
 
+    <!-- Modais de Galeria -->
+    <!-- Galeria Leira -->
+    <div id="gallery-leira" class="gallery-modal">
+        <div class="gallery-content">
+            <div class="gallery-close">&times;</div>
+            <div class="gallery-nav gallery-prev">&lt;</div>
+            <div class="gallery-nav gallery-next">&gt;</div>
+            <img src="images/projeto-leira-uerj/leira-1-20240328_141041.jpg" alt="Projeto da Leira - Visão Geral" class="gallery-main-image">
+            <div class="gallery-thumbnails">
+                <img src="images/projeto-leira-uerj/leira-1-20240328_141041.jpg" alt="Projeto da Leira - Visão Geral" class="gallery-thumbnail active">
+                <img src="images/projeto-leira-uerj/leira-2-IMG-20220423-WA0014.jpg" alt="Projeto da Leira - Detalhes" class="gallery-thumbnail">
+                <img src="images/projeto-leira-uerj/leira-3-20240426_142716.jpg" alt="Projeto da Leira - Implementação" class="gallery-thumbnail">
+                <img src="images/projeto-leira-uerj/leira-4-20240316_122711.jpg" alt="Projeto da Leira - Sistema" class="gallery-thumbnail">
+                <img src="images/projeto-leira-uerj/leira-5-20220327_142119.jpg" alt="Projeto da Leira - Resultados" class="gallery-thumbnail">
+            </div>
+        </div>
+    </div>
+
+    <!-- Galeria Cortina -->
+    <div id="gallery-cortina" class="gallery-modal">
+        <div class="gallery-content">
+            <div class="gallery-close">&times;</div>
+            <div class="gallery-nav gallery-prev">&lt;</div>
+            <div class="gallery-nav gallery-next">&gt;</div>
+            <img src="images/desenvolvimento-cortina-automatizada/veled-0.jpg" alt="Cortina Automatizada - Visão Geral" class="gallery-main-image">
+            <div class="gallery-thumbnails">
+                <img src="images/desenvolvimento-cortina-automatizada/veled-0.jpg" alt="Cortina Automatizada - Visão Geral" class="gallery-thumbnail active">
+                <img src="images/desenvolvimento-cortina-automatizada/veled-1.jpg" alt="Cortina Automatizada - Sistema Principal" class="gallery-thumbnail">
+                <img src="images/desenvolvimento-cortina-automatizada/veled-2.jpg" alt="Cortina Automatizada - Detalhes" class="gallery-thumbnail">
+                <img src="images/desenvolvimento-cortina-automatizada/veled-3.jpg" alt="Cortina Automatizada - Componentes" class="gallery-thumbnail">
+                <img src="images/desenvolvimento-cortina-automatizada/veled-4.jpg" alt="Cortina Automatizada - Implementação" class="gallery-thumbnail">
+            </div>
+        </div>
+    </div>
+
+    <!-- Galeria Vaso -->
+    <div id="gallery-vaso" class="gallery-modal">
+        <div class="gallery-content">
+            <div class="gallery-close">&times;</div>
+            <div class="gallery-nav gallery-prev">&lt;</div>
+            <div class="gallery-nav gallery-next">&gt;</div>
+            <img src="images/vaso-automatizado/vaso-1.JPG" alt="E-Vaso Regui - Protótipo" class="gallery-main-image">
+            <div class="gallery-thumbnails">
+                <img src="images/vaso-automatizado/vaso-1.JPG" alt="E-Vaso Regui - Protótipo" class="gallery-thumbnail active">
+                <img src="images/vaso-automatizado/vaso-2.png" alt="E-Vaso Regui - Sistema de Sensores" class="gallery-thumbnail">
+                <img src="images/vaso-automatizado/vaso-3.JPG" alt="E-Vaso Regui - Interface do App" class="gallery-thumbnail">
+                <img src="images/vaso-automatizado/vaso-4.JPG" alt="E-Vaso Regui - Componentes" class="gallery-thumbnail">
+            </div>
+        </div>
+    </div>
+
     <script>
         
 
@@ -829,6 +1039,97 @@
                 this.innerHTML = '<div style="text-align: center;"><i class="fas fa-image" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>Imagem não encontrada</div>';
             });
         });
+
+        // Sistema de Galeria Mobile
+        function initGallery() {
+            // Abrir galeria ao clicar na imagem principal
+            document.querySelectorAll('.mobile-gallery-trigger').forEach(trigger => {
+                trigger.addEventListener('click', function() {
+                    const galleryId = this.getAttribute('data-gallery');
+                    const modal = document.getElementById(`gallery-${galleryId}`);
+                    if (modal) {
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            // Fechar galeria
+            document.querySelectorAll('.gallery-close').forEach(closeBtn => {
+                closeBtn.addEventListener('click', function() {
+                    const modal = this.closest('.gallery-modal');
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            // Fechar galeria clicando fora
+            document.querySelectorAll('.gallery-modal').forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+
+            // Navegação por setas
+            document.querySelectorAll('.gallery-nav').forEach(nav => {
+                nav.addEventListener('click', function() {
+                    const modal = this.closest('.gallery-modal');
+                    const mainImg = modal.querySelector('.gallery-main-image');
+                    const thumbnails = modal.querySelectorAll('.gallery-thumbnail');
+                    const currentIndex = Array.from(thumbnails).findIndex(thumb => thumb.classList.contains('active'));
+                    
+                    let newIndex;
+                    if (this.classList.contains('gallery-prev')) {
+                        newIndex = currentIndex > 0 ? currentIndex - 1 : thumbnails.length - 1;
+                    } else {
+                        newIndex = currentIndex < thumbnails.length - 1 ? currentIndex + 1 : 0;
+                    }
+                    
+                    // Atualizar imagem principal
+                    const newImg = thumbnails[newIndex];
+                    mainImg.src = newImg.src;
+                    mainImg.alt = newImg.alt;
+                    
+                    // Atualizar thumbnail ativo
+                    thumbnails.forEach(thumb => thumb.classList.remove('active'));
+                    newImg.classList.add('active');
+                });
+            });
+
+            // Navegação por thumbnails
+            document.querySelectorAll('.gallery-thumbnail').forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    const modal = this.closest('.gallery-modal');
+                    const mainImg = modal.querySelector('.gallery-main-image');
+                    const thumbnails = modal.querySelectorAll('.gallery-thumbnail');
+                    
+                    // Atualizar imagem principal
+                    mainImg.src = this.src;
+                    mainImg.alt = this.alt;
+                    
+                    // Atualizar thumbnail ativo
+                    thumbnails.forEach(thumb => thumb.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Fechar com ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const activeModal = document.querySelector('.gallery-modal.active');
+                    if (activeModal) {
+                        activeModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                }
+            });
+        }
+
+        // Inicializar galeria
+        initGallery();
 
         // Animação de loading inicial
         window.addEventListener('load', () => {
