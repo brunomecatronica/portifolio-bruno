@@ -229,6 +229,10 @@
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
             will-change: transform;
+            /* Garantir preenchimento completo */
+            min-height: 350px;
+            max-height: 350px;
+            display: block;
         }
 
         .project-card:hover .project-image {
@@ -253,10 +257,20 @@
             grid-column: 1;
             grid-row: 1;
             height: 200px;
+            min-height: 200px;
+            max-height: 200px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
         .cortina-grid .multi-secondary {
             height: 200px;
+            min-height: 200px;
+            max-height: 200px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
         .cortina-grid .multi-secondary:nth-child(3) {
@@ -289,10 +303,20 @@
             grid-column: 1;
             grid-row: 1;
             height: 200px;
+            min-height: 200px;
+            max-height: 200px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
         .vaso-grid .multi-secondary {
             height: 200px;
+            min-height: 200px;
+            max-height: 200px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
         .vaso-grid .multi-secondary:nth-child(3) {
@@ -325,10 +349,20 @@
             grid-column: 1;
             grid-row: 1;
             height: 200px;
+            min-height: 200px;
+            max-height: 200px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
         .leira-grid .multi-secondary {
             height: 200px;
+            min-height: 200px;
+            max-height: 200px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
         .leira-grid .multi-secondary:nth-child(3) {
@@ -363,6 +397,11 @@
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
             will-change: transform;
+            /* Garantir preenchimento completo */
+            min-height: 250px;
+            max-height: 250px;
+            width: 100%;
+            display: block;
         }
 
         .multi-secondary {
@@ -376,6 +415,11 @@
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
             will-change: transform;
+            /* Garantir preenchimento completo */
+            min-height: 150px;
+            max-height: 150px;
+            width: 100%;
+            display: block;
         }
 
         .project-content {
