@@ -239,249 +239,42 @@
             transform: scale(1.05);
         }
 
-        /* Layout especial para múltiplas imagens */
+        /* ========================================
+           SISTEMA PADRÃO DE GALERIA DE IMAGENS
+           Grid 4x2 (4 colunas, máximo 2 linhas)
+           ======================================== */
+        
         .multi-image-grid {
             display: grid;
-            gap: 1rem;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 0.75rem;
             padding: 1rem;
             background: var(--secondary-bg);
         }
 
-        .cortina-grid {
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: 1fr;
-            gap: 0.75rem;
-        }
-
-        .cortina-grid .multi-main {
-            grid-column: 1;
-            grid-row: 1;
-            height: 200px;
-            min-height: 200px;
-            max-height: 200px;
+        /* Todas as imagens do grid */
+        .multi-image-grid img {
             width: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .cortina-grid .multi-secondary {
-            height: 200px;
-            min-height: 200px;
-            max-height: 200px;
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .cortina-grid .multi-secondary:nth-child(3) {
-            grid-column: 2;
-            grid-row: 1;
-        }
-
-        .cortina-grid .multi-secondary:nth-child(4) {
-            grid-column: 3;
-            grid-row: 1;
-        }
-
-        .cortina-grid .multi-secondary:nth-child(5) {
-            grid-column: 4;
-            grid-row: 1;
-        }
-
-        .cortina-grid .multi-secondary:nth-child(6) {
-            grid-column: 5;
-            grid-row: 1;
-        }
-
-        .vaso-grid {
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: 1fr;
-            gap: 0.75rem;
-        }
-
-        .vaso-grid .multi-main {
-            grid-column: 1;
-            grid-row: 1;
-            height: 200px;
-            min-height: 200px;
-            max-height: 200px;
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .vaso-grid .multi-secondary {
-            height: 200px;
-            min-height: 200px;
-            max-height: 200px;
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .vaso-grid .multi-secondary:nth-child(3) {
-            grid-column: 2;
-            grid-row: 1;
-        }
-
-        .vaso-grid .multi-secondary:nth-child(4) {
-            grid-column: 3;
-            grid-row: 1;
-        }
-
-        .vaso-grid .multi-secondary:nth-child(5) {
-            grid-column: 4;
-            grid-row: 1;
-        }
-
-        .vaso-grid .multi-secondary:nth-child(6) {
-            grid-column: 5;
-            grid-row: 1;
-        }
-
-        .leira-grid {
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: 1fr;
-            gap: 0.75rem;
-        }
-
-        .snuggle-grid {
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 0.75rem;
-        }
-
-        .leira-grid .multi-main {
-            grid-column: 1;
-            grid-row: 1;
-            height: 200px;
-            min-height: 200px;
-            max-height: 200px;
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .leira-grid .multi-secondary {
-            height: 200px;
-            min-height: 200px;
-            max-height: 200px;
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .snuggle-grid .multi-main {
-            grid-column: 1;
-            grid-row: 1;
-            height: 200px;
-            min-height: 200px;
-            max-height: 200px;
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .snuggle-grid .multi-secondary {
-            height: 200px;
-            min-height: 200px;
-            max-height: 200px;
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .snuggle-grid .multi-secondary:nth-child(3) {
-            grid-column: 2;
-            grid-row: 1;
-        }
-
-        .snuggle-grid .multi-secondary:nth-child(4) {
-            grid-column: 3;
-            grid-row: 1;
-        }
-
-        .snuggle-grid .multi-secondary:nth-child(5) {
-            grid-column: 4;
-            grid-row: 1;
-        }
-
-        .snuggle-grid .multi-secondary:nth-child(6) {
-            grid-column: 1;
-            grid-row: 2;
-        }
-
-        .snuggle-grid .multi-secondary:nth-child(7) {
-            grid-column: 2;
-            grid-row: 2;
-        }
-
-        .snuggle-grid .multi-secondary:nth-child(8) {
-            grid-column: 3;
-            grid-row: 2;
-        }
-
-        .snuggle-grid .multi-secondary:nth-child(9) {
-            grid-column: 4;
-            grid-row: 2;
-        }
-
-        .leira-grid .multi-secondary:nth-child(3) {
-            grid-column: 2;
-            grid-row: 1;
-        }
-
-        .leira-grid .multi-secondary:nth-child(4) {
-            grid-column: 3;
-            grid-row: 1;
-        }
-
-        .leira-grid .multi-secondary:nth-child(5) {
-            grid-column: 4;
-            grid-row: 1;
-        }
-
-        .leira-grid .multi-secondary:nth-child(6) {
-            grid-column: 5;
-            grid-row: 1;
-        }
-
-        .multi-main {
-            grid-column: 1 / -1;
             height: 250px;
-            border-radius: 0.75rem;
-            object-fit: cover;
-            object-position: center;
-            /* Otimizações para performance */
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-            will-change: transform;
-            /* Garantir preenchimento completo */
             min-height: 250px;
             max-height: 250px;
-            width: 100%;
-            display: block;
-        }
-
-        .multi-secondary {
-            height: 150px;
-            border-radius: 0.75rem;
             object-fit: cover;
             object-position: center;
+            border-radius: 0.5rem;
             /* Otimizações para performance */
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
             will-change: transform;
-            /* Garantir preenchimento completo */
-            min-height: 150px;
-            max-height: 150px;
-            width: 100%;
-            display: block;
         }
+
+        /* Primeira imagem (principal) - clicável para galeria */
+        .multi-image-grid img:first-child {
+            cursor: pointer;
+        }
+
 
         .project-content {
             padding: 2rem;
@@ -795,102 +588,30 @@
                 padding: 1.5rem;
             }
 
+            /* ========================================
+               MOBILE: APENAS PRIMEIRA IMAGEM
+               Todas as outras ficam escondidas
+               ======================================== */
+            
             .multi-image-grid {
                 grid-template-columns: 1fr !important;
+                grid-template-rows: auto !important;
+                gap: 0 !important;
+                padding: 0 !important;
             }
 
-            /* No mobile, esconder todas as imagens exceto a primeira */
-            .multi-image-grid .multi-secondary {
-                display: none !important;
-            }
-
-            .multi-image-grid .multi-main {
-                grid-column: 1 !important;
-                grid-row: 1 !important;
-                height: 250px !important;
+            /* Primeira imagem - única visível no mobile */
+            .multi-image-grid img:first-child {
+                height: 300px !important;
+                min-height: 300px !important;
+                max-height: 300px !important;
+                border-radius: 0 !important;
                 cursor: pointer;
             }
 
-            .vaso-grid {
-                grid-template-columns: 1fr !important;
-                grid-template-rows: auto !important;
-                gap: 0.5rem !important;
-            }
-
-            .cortina-grid {
-                grid-template-columns: 1fr !important;
-                grid-template-rows: auto !important;
-                gap: 0.5rem !important;
-            }
-
-            .cortina-grid .multi-main {
-                grid-column: 1 !important;
-                grid-row: 1 !important;
-                height: 200px;
-            }
-
-            .cortina-grid .multi-secondary {
-                height: 200px;
-            }
-
-            .volx-grid .multi-main {
-                grid-column: 1 !important;
-                grid-row: 1 !important;
-                height: 200px;
-            }
-
-            .volx-grid .multi-secondary {
-                height: 200px;
-            }
-
-            .vaso-grid .multi-main {
-                grid-column: 1 !important;
-                grid-row: 1 !important;
-                height: 200px;
-            }
-
-            .vaso-grid .multi-secondary {
-                height: 200px;
-            }
-
-            .leira-grid {
-                grid-template-columns: 1fr !important;
-                grid-template-rows: auto !important;
-                gap: 0.5rem !important;
-            }
-
-            .snuggle-grid {
-                grid-template-columns: 1fr !important;
-                grid-template-rows: auto !important;
-                gap: 0.5rem !important;
-            }
-
-            .leira-grid .multi-main {
-                grid-column: 1 !important;
-                grid-row: 1 !important;
-                height: 200px;
-            }
-
-            .leira-grid .multi-secondary {
-                height: 150px;
-            }
-
-            .snuggle-grid .multi-main {
-                grid-column: 1 !important;
-                grid-row: 1 !important;
-                height: 200px;
-            }
-
-            .snuggle-grid .multi-secondary {
-                height: 200px;
-            }
-
-            .multi-main {
-                height: 200px;
-            }
-
-            .multi-secondary {
-                height: 150px;
+            /* Esconder todas as outras imagens no mobile */
+            .multi-image-grid img:not(:first-child) {
+                display: none !important;
             }
 
             .project-links {
@@ -955,15 +676,15 @@
             <div class="projects-grid">
                 <!-- Snuggle App -->
                 <div class="project-card fade-in">
-                    <div class="multi-image-grid snuggle-grid">
-                        <img src="images/snuggle-app/sunggle1.jpg" alt="Snuggle App - Interface Principal" class="multi-main mobile-gallery-trigger" data-gallery="snuggle">
-                        <img src="images/snuggle-app/sunggle2.jpeg" alt="Snuggle App - Funcionalidades" class="multi-secondary">
-                        <img src="images/snuggle-app/sunggle3.jpeg" alt="Snuggle App - Design" class="multi-secondary">
-                        <img src="images/snuggle-app/sunggle4.jpeg" alt="Snuggle App - UX" class="multi-secondary">
-                        <img src="images/snuggle-app/sunggle5.jpeg" alt="Snuggle App - Interface" class="multi-secondary">
-                        <img src="images/snuggle-app/sunggle6.jpeg" alt="Snuggle App - Recursos" class="multi-secondary">
-                        <img src="images/snuggle-app/sunggle7.jpeg" alt="Snuggle App - Navegação" class="multi-secondary">
-                        <img src="images/snuggle-app/sunggle8.jpeg" alt="Snuggle App - Finalização" class="multi-secondary">
+                    <div class="multi-image-grid" data-gallery="snuggle">
+                        <img src="images/snuggle-app/sunggle1.jpg" alt="Snuggle App - Interface Principal">
+                        <img src="images/snuggle-app/sunggle2.jpeg" alt="Snuggle App - Funcionalidades">
+                        <img src="images/snuggle-app/sunggle3.jpeg" alt="Snuggle App - Design">
+                        <img src="images/snuggle-app/sunggle4.jpeg" alt="Snuggle App - UX">
+                        <img src="images/snuggle-app/sunggle5.jpeg" alt="Snuggle App - Interface">
+                        <img src="images/snuggle-app/sunggle6.jpeg" alt="Snuggle App - Recursos">
+                        <img src="images/snuggle-app/sunggle7.jpeg" alt="Snuggle App - Navegação">
+                        <img src="images/snuggle-app/sunggle8.jpeg" alt="Snuggle App - Finalização">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Desenvolvimento Mobile & UX/UI</div>
@@ -998,12 +719,12 @@
 
                 <!-- Projeto da Leira -->
                 <div class="project-card fade-in">
-                    <div class="multi-image-grid leira-grid">
-                        <img src="images/projeto-leira-uerj/leira-1-20240328_141041.jpg" alt="Projeto da Leira - Visão Geral" class="multi-main mobile-gallery-trigger" data-gallery="leira">
-                        <img src="images/projeto-leira-uerj/leira-2-IMG-20220423-WA0014.jpg" alt="Projeto da Leira - Detalhes" class="multi-secondary">
-                        <img src="images/projeto-leira-uerj/leira-3-20240426_142716.jpg" alt="Projeto da Leira - Implementação" class="multi-secondary">
-                        <img src="images/projeto-leira-uerj/leira-4-20240316_122711.jpg" alt="Projeto da Leira - Sistema" class="multi-secondary">
-                        <img src="images/projeto-leira-uerj/leira-5-20220327_142119.jpg" alt="Projeto da Leira - Resultados" class="multi-secondary">
+                    <div class="multi-image-grid" data-gallery="leira">
+                        <img src="images/projeto-leira-uerj/leira-1-20240328_141041.jpg" alt="Projeto da Leira - Visão Geral">
+                        <img src="images/projeto-leira-uerj/leira-2-IMG-20220423-WA0014.jpg" alt="Projeto da Leira - Detalhes">
+                        <img src="images/projeto-leira-uerj/leira-3-20240426_142716.jpg" alt="Projeto da Leira - Implementação">
+                        <img src="images/projeto-leira-uerj/leira-4-20240316_122711.jpg" alt="Projeto da Leira - Sistema">
+                        <img src="images/projeto-leira-uerj/leira-5-20220327_142119.jpg" alt="Projeto da Leira - Resultados">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Desenvolvimento Web & Design</div>
@@ -1028,12 +749,12 @@
 
                 <!-- Cortina Automatizada -->
                 <div class="project-card fade-in">
-                    <div class="multi-image-grid cortina-grid">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled-0.jpg" alt="Cortina Automatizada - Visão Geral" class="multi-main mobile-gallery-trigger" data-gallery="cortina">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled-1.jpg" alt="Cortina Automatizada - Sistema Principal" class="multi-secondary">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled-2.jpg" alt="Cortina Automatizada - Detalhes" class="multi-secondary">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled-3.jpg" alt="Cortina Automatizada - Componentes" class="multi-secondary">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled-4.jpg" alt="Cortina Automatizada - Implementação" class="multi-secondary">
+                    <div class="multi-image-grid" data-gallery="cortina">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled-0.jpg" alt="Cortina Automatizada - Visão Geral">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled-1.jpg" alt="Cortina Automatizada - Sistema Principal">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled-2.jpg" alt="Cortina Automatizada - Detalhes">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled-3.jpg" alt="Cortina Automatizada - Componentes">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled-4.jpg" alt="Cortina Automatizada - Implementação">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Mecatrônica & Automação</div>
@@ -1052,11 +773,11 @@
 
                 <!-- E-Vaso Regui - Sistema de Vaso Automatizado -->
                 <div class="project-card fade-in">
-                    <div class="multi-image-grid vaso-grid">
-                        <img src="images/vaso-automatizado/vaso-1.JPG" alt="E-Vaso Regui - Protótipo" class="multi-main mobile-gallery-trigger" data-gallery="vaso">
-                        <img src="images/vaso-automatizado/vaso-2.png" alt="E-Vaso Regui - Sistema de Sensores" class="multi-secondary">
-                        <img src="images/vaso-automatizado/vaso-3.JPG" alt="E-Vaso Regui - Interface do App" class="multi-secondary">
-                        <img src="images/vaso-automatizado/vaso-4.JPG" alt="E-Vaso Regui - Componentes" class="multi-secondary">
+                    <div class="multi-image-grid" data-gallery="vaso">
+                        <img src="images/vaso-automatizado/vaso-1.JPG" alt="E-Vaso Regui - Protótipo">
+                        <img src="images/vaso-automatizado/vaso-2.png" alt="E-Vaso Regui - Sistema de Sensores">
+                        <img src="images/vaso-automatizado/vaso-3.JPG" alt="E-Vaso Regui - Interface do App">
+                        <img src="images/vaso-automatizado/vaso-4.JPG" alt="E-Vaso Regui - Componentes">
                     </div>
                     <div class="project-content">
                         <div class="project-category">IoT & Automação Residencial</div>
@@ -1233,20 +954,24 @@
             });
         });
 
-        // Sistema de Galeria Mobile
+        // Sistema de Galeria Padrão
         function initGallery() {
-            // Abrir galeria ao clicar na imagem principal
-            document.querySelectorAll('.mobile-gallery-trigger').forEach(trigger => {
-                trigger.addEventListener('click', function() {
-                    const galleryId = this.getAttribute('data-gallery');
-                    const modal = document.getElementById(`gallery-${galleryId}`);
-                    if (modal) {
-                        // Adicionar entrada no histórico do browser
-                        history.pushState({gallery: galleryId}, '', window.location.href);
-                        modal.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                    }
-                });
+            // Abrir galeria ao clicar na primeira imagem de qualquer grid
+            document.querySelectorAll('.multi-image-grid').forEach(grid => {
+                const galleryId = grid.getAttribute('data-gallery');
+                const firstImage = grid.querySelector('img:first-child');
+                
+                if (firstImage && galleryId) {
+                    firstImage.addEventListener('click', function() {
+                        const modal = document.getElementById(`gallery-${galleryId}`);
+                        if (modal) {
+                            // Adicionar entrada no histórico do browser
+                            history.pushState({gallery: galleryId}, '', window.location.href);
+                            modal.classList.add('active');
+                            document.body.style.overflow = 'hidden';
+                        }
+                    });
+                }
             });
 
             // Fechar galeria
