@@ -350,26 +350,6 @@
             background: var(--secondary-bg);
         }
 
-        .volx-grid {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: 1fr;
-            gap: 0.75rem;
-        }
-
-        .volx-grid .multi-main {
-            grid-column: 1;
-            grid-row: 1;
-            height: 200px;
-        }
-
-        .volx-grid .multi-secondary {
-            height: 200px;
-        }
-
-        .volx-grid .multi-secondary:nth-child(3) {
-            grid-column: 2;
-            grid-row: 1;
-        }
 
         .multi-main {
             grid-column: 1 / -1;
@@ -567,21 +547,6 @@
                 grid-template-columns: 1fr !important;
             }
 
-            .volx-grid {
-                grid-template-columns: 1fr !important;
-                grid-template-rows: auto !important;
-                gap: 0.5rem !important;
-            }
-
-            .volx-grid .multi-main {
-                grid-column: 1 !important;
-                grid-row: 1 !important;
-                height: 200px;
-            }
-
-            .volx-grid .multi-secondary {
-                height: 200px;
-            }
 
             .multi-main {
                 height: 200px;
@@ -729,11 +694,8 @@
 
                 <!-- VOLX -->
                 <div class="project-card fade-in">
-                    <div class="multi-image-grid volx-grid">
-                        <a href="https://www.volx.com.br/" target="_blank">
-                            <img src="images/desenvolvimento-de-ecommerce-volx/volx-1.png" alt="VOLX - Site Principal" class="multi-main">
-                        </a>
-                        <img src="images/desenvolvimento-de-ecommerce-volx/volx-2.png" alt="VOLX - Detalhes" class="multi-secondary">
+                    <div class="project-image-container">
+                        <img src="images/desenvolvimento-de-ecommerce-volx/volx-1.png" alt="VOLX - Site Principal" class="project-image" data-gallery="volx">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Marca & Identidade Visual</div>
@@ -838,6 +800,16 @@
         </div>
     </div>
 
+    <!-- Galeria Volx -->
+    <div id="gallery-volx" class="gallery-modal">
+        <div class="gallery-content">
+            <div class="gallery-close">&times;</div>
+            <div class="gallery-nav gallery-prev">&lt;</div>
+            <div class="gallery-nav gallery-next">&gt;</div>
+            <img src="images/desenvolvimento-de-ecommerce-volx/volx-1.png" alt="VOLX - Site Principal" class="gallery-main-image">
+        </div>
+    </div>
+
     <script>
         // Arrays de imagens para cada galeria
         const galleryImages = {
@@ -850,6 +822,10 @@
             ],
             'artefa': [
                 'images/artefa-producoes/artefa-1.png'
+            ],
+            'volx': [
+                'images/desenvolvimento-de-ecommerce-volx/volx-1.png',
+                'images/desenvolvimento-de-ecommerce-volx/volx-2.png'
             ]
         };
 
