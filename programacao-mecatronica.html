@@ -270,37 +270,36 @@
             will-change: transform;
         }
 
-        /* Primeira imagem (principal) - clicável para galeria */
-        .multi-image-grid img:first-child {
+        /* Todas as imagens são clicáveis para galeria */
+        .multi-image-grid img {
             cursor: pointer;
             position: relative;
+            transition: transform 0.3s ease;
         }
 
-        /* Indicador visual de galeria na primeira imagem */
-        .multi-image-grid img:first-child::after {
-            content: '🖼️ Ver Galeria';
+        /* Indicador visual de galeria em todas as imagens */
+        .multi-image-grid img::after {
+            content: '🖼️';
             position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 8px;
+            right: 8px;
             background: rgba(0, 0, 0, 0.8);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            font-size: 0.9rem;
+            padding: 0.3rem 0.5rem;
+            border-radius: 0.3rem;
+            font-size: 0.8rem;
             opacity: 0;
             transition: opacity 0.3s ease;
             pointer-events: none;
         }
 
-        .multi-image-grid img:first-child:hover::after {
+        .multi-image-grid img:hover::after {
             opacity: 1;
         }
 
-        /* Efeito hover na primeira imagem */
-        .multi-image-grid img:first-child:hover {
+        /* Efeito hover em todas as imagens */
+        .multi-image-grid img:hover {
             transform: scale(1.02);
-            transition: transform 0.3s ease;
         }
 
 
@@ -638,6 +637,13 @@
                 display: none !important;
             }
 
+            /* Manter indicador visual no mobile */
+            .multi-image-grid img::after {
+                opacity: 1 !important;
+                font-size: 1rem;
+                padding: 0.5rem;
+            }
+
             .project-links {
                 gap: 0.75rem;
             }
@@ -972,13 +978,26 @@
 
         // Função para abrir galeria com fallbacks
         function openGallery(galleryId) {
+            return openGalleryAtImage(galleryId, 0);
+        }
+
+        // Função para abrir galeria em uma imagem específica
+        function openGalleryAtImage(galleryId, imageIndex) {
             const modal = document.getElementById(`gallery-${galleryId}`);
             if (modal) {
                 // Inicializar índice da galeria
-                modal.dataset.currentIndex = '0';
+                modal.dataset.currentIndex = imageIndex.toString();
+                
+                // Atualizar imagem principal para a imagem clicada
+                const mainImg = modal.querySelector('.gallery-main-image');
+                const images = galleryImages[galleryId];
+                if (images && images[imageIndex]) {
+                    mainImg.src = images[imageIndex];
+                    mainImg.alt = `Imagem ${imageIndex + 1} de ${images.length}`;
+                }
                 
                 // Adicionar entrada no histórico do browser
-                history.pushState({gallery: galleryId}, '', window.location.href);
+                history.pushState({gallery: galleryId, index: imageIndex}, '', window.location.href);
                 
                 // Forçar exibição do modal
                 modal.style.display = 'flex';
@@ -1052,54 +1071,56 @@
 
         // Sistema de Galeria Padrão
         function initGallery() {
-            // Abrir galeria ao clicar na primeira imagem de qualquer grid
+            // Abrir galeria ao clicar em qualquer imagem de qualquer grid
             document.querySelectorAll('.multi-image-grid').forEach(grid => {
                 const galleryId = grid.getAttribute('data-gallery');
-                const firstImage = grid.querySelector('img:first-child');
+                const images = grid.querySelectorAll('img');
                 
-                if (firstImage && galleryId) {
-                    // Debug visual temporário
-                    firstImage.style.cursor = 'pointer';
-                    
-                    // Variáveis para controle de toque
-                    let touchStartTime = 0;
-                    let touchStartY = 0;
-                    let touchMoved = false;
-                    
-                    // Event listener para clique (desktop)
-                    firstImage.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        openGallery(galleryId);
-                    }, { passive: false, capture: true });
-                    
-                    // Event listener para touch start (mobile) - reduzir sensibilidade
-                    firstImage.addEventListener('touchstart', function(e) {
-                        touchStartTime = Date.now();
-                        touchStartY = e.touches[0].clientY;
-                        touchMoved = false;
-                    }, { passive: true });
-                    
-                    // Event listener para touch move (mobile) - detectar scroll
-                    firstImage.addEventListener('touchmove', function(e) {
-                        const touchY = e.touches[0].clientY;
-                        const deltaY = Math.abs(touchY - touchStartY);
-                        if (deltaY > 10) {
-                            touchMoved = true;
-                        }
-                    }, { passive: true });
-                    
-                    // Event listener para touch end (mobile) - só abre se não foi scroll
-                    firstImage.addEventListener('touchend', function(e) {
-                        const touchDuration = Date.now() - touchStartTime;
-                        const isQuickTap = touchDuration < 500 && !touchMoved;
+                if (images.length > 0 && galleryId) {
+                    images.forEach((img, index) => {
+                        // Debug visual temporário
+                        img.style.cursor = 'pointer';
                         
-                        if (isQuickTap) {
+                        // Variáveis para controle de toque
+                        let touchStartTime = 0;
+                        let touchStartY = 0;
+                        let touchMoved = false;
+                        
+                        // Event listener para clique (desktop)
+                        img.addEventListener('click', function(e) {
                             e.preventDefault();
                             e.stopPropagation();
-                            openGallery(galleryId);
-                        }
-                    }, { passive: false, capture: true });
+                            openGalleryAtImage(galleryId, index);
+                        }, { passive: false, capture: true });
+                        
+                        // Event listener para touch start (mobile) - reduzir sensibilidade
+                        img.addEventListener('touchstart', function(e) {
+                            touchStartTime = Date.now();
+                            touchStartY = e.touches[0].clientY;
+                            touchMoved = false;
+                        }, { passive: true });
+                        
+                        // Event listener para touch move (mobile) - detectar scroll
+                        img.addEventListener('touchmove', function(e) {
+                            const touchY = e.touches[0].clientY;
+                            const deltaY = Math.abs(touchY - touchStartY);
+                            if (deltaY > 10) {
+                                touchMoved = true;
+                            }
+                        }, { passive: true });
+                        
+                        // Event listener para touch end (mobile) - só abre se não foi scroll
+                        img.addEventListener('touchend', function(e) {
+                            const touchDuration = Date.now() - touchStartTime;
+                            const isQuickTap = touchDuration < 500 && !touchMoved;
+                            
+                            if (isQuickTap) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                openGalleryAtImage(galleryId, index);
+                            }
+                        }, { passive: false, capture: true });
+                    });
                 }
             });
 
