@@ -347,7 +347,7 @@
 
         .snuggle-grid {
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: 1fr;
+            grid-template-rows: repeat(2, 1fr);
             gap: 0.75rem;
         }
 
@@ -630,7 +630,7 @@
         .gallery-modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 9999;
             left: 0;
             top: 0;
             width: 100%;
@@ -652,6 +652,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            margin: 0 auto;
         }
 
         .gallery-main-image {
@@ -806,10 +808,6 @@
                 grid-column: 1 !important;
                 grid-row: 1 !important;
                 height: 250px !important;
-            }
-
-            /* Adicionar classe para trigger da galeria */
-            .multi-image-grid .multi-main {
                 cursor: pointer;
             }
 
@@ -1237,16 +1235,25 @@
 
         // Sistema de Galeria Mobile
         function initGallery() {
+            console.log('Inicializando galeria...');
+            console.log('Triggers encontrados:', document.querySelectorAll('.mobile-gallery-trigger').length);
+            
             // Abrir galeria ao clicar na imagem principal
             document.querySelectorAll('.mobile-gallery-trigger').forEach(trigger => {
+                console.log('Adicionando listener para:', trigger.getAttribute('data-gallery'));
                 trigger.addEventListener('click', function() {
                     const galleryId = this.getAttribute('data-gallery');
+                    console.log('Clicou na galeria:', galleryId);
                     const modal = document.getElementById(`gallery-${galleryId}`);
+                    console.log('Modal encontrado:', modal);
                     if (modal) {
                         // Adicionar entrada no histórico do browser
                         history.pushState({gallery: galleryId}, '', window.location.href);
                         modal.classList.add('active');
                         document.body.style.overflow = 'hidden';
+                        console.log('Galeria aberta:', galleryId);
+                    } else {
+                        console.error('Modal não encontrado:', `gallery-${galleryId}`);
                     }
                 });
             });
