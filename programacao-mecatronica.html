@@ -485,6 +485,7 @@
             justify-content: center;
             padding: 2rem;
             box-sizing: border-box;
+            margin: 0 auto;
         }
 
         .gallery-main-image {
@@ -646,20 +647,30 @@
             }
 
             /* Ajustar setas de navegação para mobile */
+            .gallery-content {
+                padding: 1rem;
+                max-width: 85vw;
+            }
+
+            .gallery-main-image {
+                max-height: 50vh;
+                margin: 0 60px;
+            }
+
             .gallery-nav {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-                left: 15px;
-                right: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+                top: 50%;
+                transform: translateY(-50%);
             }
 
             .gallery-prev {
-                left: 15px;
+                left: 5px;
             }
 
             .gallery-next {
-                right: 15px;
+                right: 5px;
             }
 
             .gallery-close {
@@ -963,6 +974,9 @@
         function openGallery(galleryId) {
             const modal = document.getElementById(`gallery-${galleryId}`);
             if (modal) {
+                // Inicializar índice da galeria
+                modal.dataset.currentIndex = '0';
+                
                 // Adicionar entrada no histórico do browser
                 history.pushState({gallery: galleryId}, '', window.location.href);
                 
@@ -1115,8 +1129,8 @@
                     const images = galleryImages[galleryId];
                     
                     if (images) {
-                        const currentSrc = mainImg.src;
-                        const currentIndex = images.findIndex(img => img === currentSrc.split('/').pop());
+                        // Usar data attribute para rastrear índice atual
+                        let currentIndex = parseInt(modal.dataset.currentIndex) || 0;
                         
                         let newIndex;
                         if (this.classList.contains('gallery-prev')) {
@@ -1128,6 +1142,9 @@
                         // Atualizar imagem principal
                         mainImg.src = images[newIndex];
                         mainImg.alt = `Imagem ${newIndex + 1} de ${images.length}`;
+                        
+                        // Salvar índice atual no modal
+                        modal.dataset.currentIndex = newIndex;
                     }
                 });
             });
