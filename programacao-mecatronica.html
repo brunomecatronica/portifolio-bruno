@@ -345,6 +345,12 @@
             gap: 0.75rem;
         }
 
+        .snuggle-grid {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr;
+            gap: 0.75rem;
+        }
+
         .leira-grid .multi-main {
             grid-column: 1;
             grid-row: 1;
@@ -363,6 +369,61 @@
             width: 100%;
             object-fit: cover;
             object-position: center;
+        }
+
+        .snuggle-grid .multi-main {
+            grid-column: 1;
+            grid-row: 1;
+            height: 200px;
+            min-height: 200px;
+            max-height: 200px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .snuggle-grid .multi-secondary {
+            height: 200px;
+            min-height: 200px;
+            max-height: 200px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .snuggle-grid .multi-secondary:nth-child(3) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .snuggle-grid .multi-secondary:nth-child(4) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .snuggle-grid .multi-secondary:nth-child(5) {
+            grid-column: 4;
+            grid-row: 1;
+        }
+
+        .snuggle-grid .multi-secondary:nth-child(6) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .snuggle-grid .multi-secondary:nth-child(7) {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .snuggle-grid .multi-secondary:nth-child(8) {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        .snuggle-grid .multi-secondary:nth-child(9) {
+            grid-column: 4;
+            grid-row: 2;
         }
 
         .leira-grid .multi-secondary:nth-child(3) {
@@ -800,6 +861,12 @@
                 gap: 0.5rem !important;
             }
 
+            .snuggle-grid {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto !important;
+                gap: 0.5rem !important;
+            }
+
             .leira-grid .multi-main {
                 grid-column: 1 !important;
                 grid-row: 1 !important;
@@ -808,6 +875,16 @@
 
             .leira-grid .multi-secondary {
                 height: 150px;
+            }
+
+            .snuggle-grid .multi-main {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+                height: 200px;
+            }
+
+            .snuggle-grid .multi-secondary {
+                height: 200px;
             }
 
             .multi-main {
@@ -880,8 +957,15 @@
             <div class="projects-grid">
                 <!-- Snuggle App -->
                 <div class="project-card fade-in">
-                    <div class="project-image-container">
-                        <img src="images/snuggle-app/snuggle-1.png" alt="Snuggle App" class="project-image">
+                    <div class="multi-image-grid snuggle-grid">
+                        <img src="images/snuggle-app/sunggle1.png" alt="Snuggle App - Interface Principal" class="multi-main mobile-gallery-trigger" data-gallery="snuggle">
+                        <img src="images/snuggle-app/sunggle2.jpeg" alt="Snuggle App - Funcionalidades" class="multi-secondary">
+                        <img src="images/snuggle-app/sunggle3.jpeg" alt="Snuggle App - Design" class="multi-secondary">
+                        <img src="images/snuggle-app/sunggle4.jpeg" alt="Snuggle App - UX" class="multi-secondary">
+                        <img src="images/snuggle-app/sunggle5.jpeg" alt="Snuggle App - Interface" class="multi-secondary">
+                        <img src="images/snuggle-app/sunggle6.jpeg" alt="Snuggle App - Recursos" class="multi-secondary">
+                        <img src="images/snuggle-app/sunggle7.jpeg" alt="Snuggle App - Navegação" class="multi-secondary">
+                        <img src="images/snuggle-app/sunggle8.jpeg" alt="Snuggle App - Finalização" class="multi-secondary">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Desenvolvimento Mobile & UX/UI</div>
@@ -1081,6 +1165,26 @@
         </div>
     </div>
 
+    <!-- Galeria Snuggle -->
+    <div id="gallery-snuggle" class="gallery-modal">
+        <div class="gallery-content">
+            <div class="gallery-close">&times;</div>
+            <div class="gallery-nav gallery-prev">&lt;</div>
+            <div class="gallery-nav gallery-next">&gt;</div>
+            <img src="images/snuggle-app/sunggle1.png" alt="Snuggle App - Interface Principal" class="gallery-main-image">
+            <div class="gallery-thumbnails">
+                <img src="images/snuggle-app/sunggle1.png" alt="Snuggle App - Interface Principal" class="gallery-thumbnail active">
+                <img src="images/snuggle-app/sunggle2.jpeg" alt="Snuggle App - Funcionalidades" class="gallery-thumbnail">
+                <img src="images/snuggle-app/sunggle3.jpeg" alt="Snuggle App - Design" class="gallery-thumbnail">
+                <img src="images/snuggle-app/sunggle4.jpeg" alt="Snuggle App - UX" class="gallery-thumbnail">
+                <img src="images/snuggle-app/sunggle5.jpeg" alt="Snuggle App - Interface" class="gallery-thumbnail">
+                <img src="images/snuggle-app/sunggle6.jpeg" alt="Snuggle App - Recursos" class="gallery-thumbnail">
+                <img src="images/snuggle-app/sunggle7.jpeg" alt="Snuggle App - Navegação" class="gallery-thumbnail">
+                <img src="images/snuggle-app/sunggle8.jpeg" alt="Snuggle App - Finalização" class="gallery-thumbnail">
+            </div>
+        </div>
+    </div>
+
     <script>
         
 
@@ -1243,7 +1347,14 @@
         // Preload de imagens para melhor performance
         function preloadImages() {
             const imageUrls = [
-                'images/snuggle-app/snuggle-1.png',
+                'images/snuggle-app/sunggle1.png',
+                'images/snuggle-app/sunggle2.jpeg',
+                'images/snuggle-app/sunggle3.jpeg',
+                'images/snuggle-app/sunggle4.jpeg',
+                'images/snuggle-app/sunggle5.jpeg',
+                'images/snuggle-app/sunggle6.jpeg',
+                'images/snuggle-app/sunggle7.jpeg',
+                'images/snuggle-app/sunggle8.jpeg',
                 'images/projeto-leira-uerj/leira-1-20240328_141041.jpg',
                 'images/projeto-leira-uerj/leira-2-IMG-20220423-WA0014.jpg',
                 'images/projeto-leira-uerj/leira-3-20240426_142716.jpg',
