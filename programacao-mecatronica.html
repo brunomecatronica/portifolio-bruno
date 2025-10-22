@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Programação & Mecatrônica - Bruno Oliveira</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,6 +34,21 @@
             background-color: var(--primary-bg);
             overflow-x: hidden;
             scroll-behavior: smooth;
+            /* Otimizações para rotação de tela */
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-perspective: 1000;
+            perspective: 1000;
+            transform: translateZ(0);
+        }
+
+        /* Classe para rotação de tela */
+        body.rotating {
+            transition: none !important;
+        }
+
+        body.rotating * {
+            transition: none !important;
         }
 
         /* Header */
@@ -183,6 +198,12 @@
             overflow: hidden;
             transition: all 0.4s ease;
             position: relative;
+            /* Otimizações para performance */
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            will-change: transform;
         }
 
         .project-card:hover {
@@ -202,6 +223,12 @@
             object-fit: cover;
             object-position: center;
             transition: transform 0.4s ease;
+            /* Otimizações para performance */
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            will-change: transform;
         }
 
         .project-card:hover .project-image {
@@ -330,6 +357,12 @@
             border-radius: 0.75rem;
             object-fit: cover;
             object-position: center;
+            /* Otimizações para performance */
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            will-change: transform;
         }
 
         .multi-secondary {
@@ -337,6 +370,12 @@
             border-radius: 0.75rem;
             object-fit: cover;
             object-position: center;
+            /* Otimizações para performance */
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            will-change: transform;
         }
 
         .project-content {
@@ -1150,6 +1189,52 @@
                 document.body.style.overflow = 'auto';
             }
         });
+
+        // Preload de imagens para melhor performance
+        function preloadImages() {
+            const imageUrls = [
+                'images/snuggle-app/snuggle-1.png',
+                'images/projeto-leira-uerj/leira-1-20240328_141041.jpg',
+                'images/projeto-leira-uerj/leira-2-IMG-20220423-WA0014.jpg',
+                'images/projeto-leira-uerj/leira-3-20240426_142716.jpg',
+                'images/projeto-leira-uerj/leira-4-20240316_122711.jpg',
+                'images/projeto-leira-uerj/leira-5-20220327_142119.jpg',
+                'images/desenvolvimento-cortina-automatizada/veled-0.jpg',
+                'images/desenvolvimento-cortina-automatizada/veled-1.jpg',
+                'images/desenvolvimento-cortina-automatizada/veled-2.jpg',
+                'images/desenvolvimento-cortina-automatizada/veled-3.jpg',
+                'images/desenvolvimento-cortina-automatizada/veled-4.jpg',
+                'images/vaso-automatizado/vaso-1.JPG',
+                'images/vaso-automatizado/vaso-2.png',
+                'images/vaso-automatizado/vaso-3.JPG',
+                'images/vaso-automatizado/vaso-4.JPG'
+            ];
+
+            imageUrls.forEach(url => {
+                const img = new Image();
+                img.src = url;
+            });
+        }
+
+        // Otimização para rotação de tela
+        let isRotating = false;
+        let rotationTimeout;
+
+        window.addEventListener('orientationchange', function() {
+            isRotating = true;
+            clearTimeout(rotationTimeout);
+            
+            // Adicionar classe para manter elementos visíveis durante rotação
+            document.body.classList.add('rotating');
+            
+            rotationTimeout = setTimeout(() => {
+                isRotating = false;
+                document.body.classList.remove('rotating');
+            }, 500);
+        });
+
+        // Preload das imagens
+        preloadImages();
 
         // Animação de loading inicial
         window.addEventListener('load', () => {
