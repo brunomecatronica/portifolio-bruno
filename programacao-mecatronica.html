@@ -451,7 +451,7 @@
         .gallery-modal {
             display: none;
             position: fixed;
-            z-index: 10000;
+            z-index: 999999;
             left: 0;
             top: 0;
             width: 100vw;
@@ -460,10 +460,16 @@
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             overflow: auto;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
         .gallery-modal.active {
             display: flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            z-index: 999999 !important;
             align-items: center;
             justify-content: center;
         }
@@ -1000,37 +1006,73 @@
             });
         });
 
+        // Função para abrir galeria com fallbacks
+        function openGallery(galleryId) {
+            const modal = document.getElementById(`gallery-${galleryId}`);
+            if (modal) {
+                // Adicionar entrada no histórico do browser
+                history.pushState({gallery: galleryId}, '', window.location.href);
+                
+                // Forçar exibição do modal
+                modal.style.display = 'flex';
+                modal.style.visibility = 'visible';
+                modal.style.opacity = '1';
+                modal.classList.add('active');
+                
+                // Bloquear scroll do body
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
+                document.body.style.height = '100%';
+                
+                return true;
+            }
+            return false;
+        }
+
+        // Função para fechar galeria
+        function closeGallery(modal) {
+            if (modal) {
+                modal.classList.remove('active');
+                modal.style.display = 'none';
+                modal.style.visibility = 'hidden';
+                modal.style.opacity = '0';
+                
+                // Restaurar scroll do body
+                document.body.style.overflow = 'auto';
+                document.body.style.position = 'static';
+                document.body.style.width = 'auto';
+                document.body.style.height = 'auto';
+                
+                // Voltar no histórico do browser
+                history.back();
+            }
+        }
+
         // Sistema de Galeria Padrão
         function initGallery() {
-            console.log('Inicializando sistema de galeria...');
-            
             // Abrir galeria ao clicar na primeira imagem de qualquer grid
             document.querySelectorAll('.multi-image-grid').forEach(grid => {
                 const galleryId = grid.getAttribute('data-gallery');
                 const firstImage = grid.querySelector('img:first-child');
                 
-                console.log(`Grid encontrado: ${galleryId}, Primeira imagem:`, firstImage);
-                
                 if (firstImage && galleryId) {
+                    // Debug visual temporário
+                    firstImage.style.cursor = 'pointer';
+                    
+                    // Event listener para clique (desktop)
                     firstImage.addEventListener('click', function(e) {
                         e.preventDefault();
                         e.stopPropagation();
-                        
-                        console.log(`Clicou na galeria: ${galleryId}`);
-                        const modal = document.getElementById(`gallery-${galleryId}`);
-                        console.log('Modal encontrado:', modal);
-                        
-                        if (modal) {
-                            // Adicionar entrada no histórico do browser
-                            history.pushState({gallery: galleryId}, '', window.location.href);
-                            modal.classList.add('active');
-                            modal.style.display = 'flex';
-                            document.body.style.overflow = 'hidden';
-                            console.log('Galeria aberta com sucesso!');
-                        } else {
-                            console.error(`Modal não encontrado: gallery-${galleryId}`);
-                        }
-                    }, { passive: false });
+                        openGallery(galleryId);
+                    }, { passive: false, capture: true });
+                    
+                    // Event listener para touch (mobile)
+                    firstImage.addEventListener('touchend', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        openGallery(galleryId);
+                    }, { passive: false, capture: true });
                 }
             });
 
@@ -1038,10 +1080,7 @@
             document.querySelectorAll('.gallery-close').forEach(closeBtn => {
                 closeBtn.addEventListener('click', function() {
                     const modal = this.closest('.gallery-modal');
-                    modal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                    // Voltar no histórico do browser
-                    history.back();
+                    closeGallery(modal);
                 });
             });
 
@@ -1049,10 +1088,7 @@
             document.querySelectorAll('.gallery-modal').forEach(modal => {
                 modal.addEventListener('click', function(e) {
                     if (e.target === this) {
-                        this.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                        // Voltar no histórico do browser
-                        history.back();
+                        closeGallery(this);
                     }
                 });
             });
@@ -1105,20 +1141,22 @@
                 if (e.key === 'Escape') {
                     const activeModal = document.querySelector('.gallery-modal.active');
                     if (activeModal) {
-                        activeModal.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                        // Voltar no histórico do browser
-                        history.back();
+                        closeGallery(activeModal);
                     }
                 }
             });
         }
 
-        // Inicializar galeria após DOM estar pronto
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initGallery);
-        } else {
+        // Inicializar galeria quando DOM estiver pronto
+        function initializeGallery() {
             initGallery();
+        }
+
+        // Inicialização única e confiável
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeGallery);
+        } else {
+            initializeGallery();
         }
 
         // Gerenciar botão voltar do browser
@@ -1126,8 +1164,7 @@
             // Se há uma galeria aberta, fechá-la
             const activeModal = document.querySelector('.gallery-modal.active');
             if (activeModal) {
-                activeModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
+                closeGallery(activeModal);
             }
         });
 
