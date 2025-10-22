@@ -198,7 +198,7 @@
 
         .project-image {
             width: 100%;
-            height: 350px;
+            height: 525px; /* 350px + 50% = 525px */
             object-fit: cover;
             object-position: center;
             transition: transform 0.4s ease;
@@ -206,6 +206,140 @@
 
         .project-card:hover .project-image {
             transform: scale(1.05);
+        }
+
+        /* Sistema de Galeria para Audiovisual & Design */
+        .project-image {
+            cursor: pointer;
+            position: relative;
+        }
+
+        /* Indicador visual de galeria */
+        .project-image::after {
+            content: '🖼️ Ver Galeria';
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .project-image:hover::after {
+            opacity: 1;
+        }
+
+        /* Modal de Galeria */
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            z-index: 999999;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            overflow: auto;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .gallery-modal.active {
+            display: flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            z-index: 999999 !important;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .gallery-main-image {
+            max-width: 100%;
+            max-height: 60vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1rem;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-nav:hover {
+            background: rgba(0, 212, 255, 0.9);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .gallery-prev {
+            left: 30px;
+        }
+
+        .gallery-next {
+            right: 30px;
+        }
+
+        .gallery-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-close:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         /* Layout especial para múltiplas imagens */
@@ -464,6 +598,40 @@
             .social-links {
                 gap: 1rem;
             }
+
+            /* Indicador visual sempre visível no mobile */
+            .project-image::after {
+                opacity: 1 !important;
+                font-size: 1rem;
+                padding: 0.7rem 1.2rem;
+            }
+
+            /* Ajustar setas de navegação para mobile */
+            .gallery-content {
+                padding: 1rem;
+                max-width: 85vw;
+            }
+
+            .gallery-main-image {
+                max-height: 50vh;
+                margin: 0 60px;
+            }
+
+            .gallery-nav {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .gallery-prev {
+                left: 5px;
+            }
+
+            .gallery-next {
+                right: 5px;
+            }
         }
 
         
@@ -509,9 +677,7 @@
                 <!-- Casa das Janas -->
                 <div class="project-card fade-in">
                     <div class="project-image-container">
-                        <a href="https://www.casadasjanas.com/" target="_blank">
-                            <img src="images/desenvolvimento-casa-das-janas/janas-1.png" alt="Casa das Janas" class="project-image">
-                        </a>
+                        <img src="images/desenvolvimento-casa-das-janas/janas-1.png" alt="Casa das Janas" class="project-image" data-gallery="janas">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Design & Desenvolvimento Web</div>
@@ -538,9 +704,7 @@
                 <!-- Amolde -->
                 <div class="project-card fade-in">
                     <div class="project-image-container">
-                        <a href="https://www.amolde.com.br/" target="_blank">
-                            <img src="images/desenvolvimento-ecommerce-amolde/amolde-1.png" alt="Amolde" class="project-image">
-                        </a>
+                        <img src="images/desenvolvimento-ecommerce-amolde/amolde-1.png" alt="Amolde" class="project-image" data-gallery="amolde">
                     </div>
                     <div class="project-content">
                         <div class="project-category">E-commerce & Branding</div>
@@ -595,9 +759,7 @@
                 <!-- Artefá Produções -->
                 <div class="project-card fade-in">
                     <div class="project-image-container">
-                        <a href="https://brunoaudiovisual.wixsite.com/back-up-artefa-2015" target="_blank">
-                            <img src="images/artefa-producoes/artefa-1.png" alt="Artefá" class="project-image">
-                        </a>
+                        <img src="images/artefa-producoes/artefa-1.png" alt="Artefá" class="project-image" data-gallery="artefa">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Produção Audiovisual</div>
@@ -646,8 +808,229 @@
         </div>
     </footer>
 
+    <!-- Galeria Casa das Janas -->
+    <div id="gallery-janas" class="gallery-modal">
+        <div class="gallery-content">
+            <div class="gallery-close">&times;</div>
+            <div class="gallery-nav gallery-prev">&lt;</div>
+            <div class="gallery-nav gallery-next">&gt;</div>
+            <img src="images/desenvolvimento-casa-das-janas/janas-1.png" alt="Casa das Janas - Página Principal" class="gallery-main-image">
+        </div>
+    </div>
+
+    <!-- Galeria Amolde -->
+    <div id="gallery-amolde" class="gallery-modal">
+        <div class="gallery-content">
+            <div class="gallery-close">&times;</div>
+            <div class="gallery-nav gallery-prev">&lt;</div>
+            <div class="gallery-nav gallery-next">&gt;</div>
+            <img src="images/desenvolvimento-ecommerce-amolde/amolde-1.png" alt="Amolde - E-commerce" class="gallery-main-image">
+        </div>
+    </div>
+
+    <!-- Galeria Artefá -->
+    <div id="gallery-artefa" class="gallery-modal">
+        <div class="gallery-content">
+            <div class="gallery-close">&times;</div>
+            <div class="gallery-nav gallery-prev">&lt;</div>
+            <div class="gallery-nav gallery-next">&gt;</div>
+            <img src="images/artefa-producoes/artefa-1.png" alt="Artefá - Produções Audiovisuais" class="gallery-main-image">
+        </div>
+    </div>
+
     <script>
-        
+        // Arrays de imagens para cada galeria
+        const galleryImages = {
+            'janas': [
+                'images/desenvolvimento-casa-das-janas/janas-1.png',
+                'images/desenvolvimento-casa-das-janas/janas-2.png'
+            ],
+            'amolde': [
+                'images/desenvolvimento-ecommerce-amolde/amolde-1.png'
+            ],
+            'artefa': [
+                'images/artefa-producoes/artefa-1.png'
+            ]
+        };
+
+        // Função para abrir galeria em uma imagem específica
+        function openGalleryAtImage(galleryId, imageIndex) {
+            const modal = document.getElementById(`gallery-${galleryId}`);
+            if (modal) {
+                // Inicializar índice da galeria
+                modal.dataset.currentIndex = imageIndex.toString();
+                
+                // Atualizar imagem principal para a imagem clicada
+                const mainImg = modal.querySelector('.gallery-main-image');
+                const images = galleryImages[galleryId];
+                if (images && images[imageIndex]) {
+                    mainImg.src = images[imageIndex];
+                    mainImg.alt = `Imagem ${imageIndex + 1} de ${images.length}`;
+                }
+                
+                // Adicionar entrada no histórico do browser
+                history.pushState({gallery: galleryId, index: imageIndex}, '', window.location.href);
+                
+                // Forçar exibição do modal
+                modal.style.display = 'flex';
+                modal.style.visibility = 'visible';
+                modal.style.opacity = '1';
+                modal.classList.add('active');
+                
+                // Bloquear scroll do body
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
+                document.body.style.height = '100%';
+                
+                return true;
+            }
+            return false;
+        }
+
+        // Função para fechar galeria
+        function closeGallery(modal) {
+            if (modal) {
+                modal.classList.remove('active');
+                modal.style.display = 'none';
+                modal.style.visibility = 'hidden';
+                modal.style.opacity = '0';
+                
+                // Restaurar scroll do body
+                document.body.style.overflow = 'auto';
+                document.body.style.position = 'static';
+                document.body.style.width = 'auto';
+                document.body.style.height = 'auto';
+                
+                // Voltar no histórico do browser
+                history.back();
+            }
+        }
+
+        // Sistema de Galeria
+        function initGallery() {
+            // Abrir galeria ao clicar em qualquer imagem
+            document.querySelectorAll('.project-image[data-gallery]').forEach(img => {
+                const galleryId = img.getAttribute('data-gallery');
+                
+                // Variáveis para controle de toque
+                let touchStartTime = 0;
+                let touchStartY = 0;
+                let touchMoved = false;
+                
+                // Event listener para clique (desktop)
+                img.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openGalleryAtImage(galleryId, 0);
+                }, { passive: false, capture: true });
+                
+                // Event listener para touch start (mobile) - reduzir sensibilidade
+                img.addEventListener('touchstart', function(e) {
+                    touchStartTime = Date.now();
+                    touchStartY = e.touches[0].clientY;
+                    touchMoved = false;
+                }, { passive: true });
+                
+                // Event listener para touch move (mobile) - detectar scroll
+                img.addEventListener('touchmove', function(e) {
+                    const touchY = e.touches[0].clientY;
+                    const deltaY = Math.abs(touchY - touchStartY);
+                    if (deltaY > 10) {
+                        touchMoved = true;
+                    }
+                }, { passive: true });
+                
+                // Event listener para touch end (mobile) - só abre se não foi scroll
+                img.addEventListener('touchend', function(e) {
+                    const touchDuration = Date.now() - touchStartTime;
+                    const isQuickTap = touchDuration < 500 && !touchMoved;
+                    
+                    if (isQuickTap) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        openGalleryAtImage(galleryId, 0);
+                    }
+                }, { passive: false, capture: true });
+            });
+
+            // Fechar galeria
+            document.querySelectorAll('.gallery-close').forEach(closeBtn => {
+                closeBtn.addEventListener('click', function() {
+                    const modal = this.closest('.gallery-modal');
+                    closeGallery(modal);
+                });
+            });
+
+            // Fechar galeria clicando fora
+            document.querySelectorAll('.gallery-modal').forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeGallery(this);
+                    }
+                });
+            });
+
+            // Navegação por setas
+            document.querySelectorAll('.gallery-nav').forEach(nav => {
+                nav.addEventListener('click', function() {
+                    const modal = this.closest('.gallery-modal');
+                    const galleryId = modal.id.replace('gallery-', '');
+                    const mainImg = modal.querySelector('.gallery-main-image');
+                    const images = galleryImages[galleryId];
+                    
+                    if (images && images.length > 1) {
+                        // Usar data attribute para rastrear índice atual
+                        let currentIndex = parseInt(modal.dataset.currentIndex) || 0;
+                        
+                        let newIndex;
+                        if (this.classList.contains('gallery-prev')) {
+                            newIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+                        } else {
+                            newIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+                        }
+                        
+                        // Atualizar imagem principal
+                        mainImg.src = images[newIndex];
+                        mainImg.alt = `Imagem ${newIndex + 1} de ${images.length}`;
+                        
+                        // Salvar índice atual no modal
+                        modal.dataset.currentIndex = newIndex;
+                    }
+                });
+            });
+
+            // Fechar com ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const activeModal = document.querySelector('.gallery-modal.active');
+                    if (activeModal) {
+                        closeGallery(activeModal);
+                    }
+                }
+            });
+        }
+
+        // Inicializar galeria quando DOM estiver pronto
+        function initializeGallery() {
+            initGallery();
+        }
+
+        // Inicialização única e confiável
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeGallery);
+        } else {
+            initializeGallery();
+        }
+
+        // Gerenciar botão voltar do browser
+        window.addEventListener('popstate', function(event) {
+            // Se há uma galeria aberta, fechá-la
+            const activeModal = document.querySelector('.gallery-modal.active');
+            if (activeModal) {
+                closeGallery(activeModal);
+            }
+        });
 
         // Toggle do menu mobile
         const headerEl = document.querySelector('.header');
