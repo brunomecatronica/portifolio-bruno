@@ -1050,6 +1050,8 @@
                     const galleryId = this.getAttribute('data-gallery');
                     const modal = document.getElementById(`gallery-${galleryId}`);
                     if (modal) {
+                        // Adicionar entrada no histórico do browser
+                        history.pushState({gallery: galleryId}, '', window.location.href);
                         modal.classList.add('active');
                         document.body.style.overflow = 'hidden';
                     }
@@ -1062,6 +1064,8 @@
                     const modal = this.closest('.gallery-modal');
                     modal.classList.remove('active');
                     document.body.style.overflow = 'auto';
+                    // Voltar no histórico do browser
+                    history.back();
                 });
             });
 
@@ -1071,6 +1075,8 @@
                     if (e.target === this) {
                         this.classList.remove('active');
                         document.body.style.overflow = 'auto';
+                        // Voltar no histórico do browser
+                        history.back();
                     }
                 });
             });
@@ -1125,6 +1131,8 @@
                     if (activeModal) {
                         activeModal.classList.remove('active');
                         document.body.style.overflow = 'auto';
+                        // Voltar no histórico do browser
+                        history.back();
                     }
                 }
             });
@@ -1132,6 +1140,16 @@
 
         // Inicializar galeria
         initGallery();
+
+        // Gerenciar botão voltar do browser
+        window.addEventListener('popstate', function(event) {
+            // Se há uma galeria aberta, fechá-la
+            const activeModal = document.querySelector('.gallery-modal.active');
+            if (activeModal) {
+                activeModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
 
         // Animação de loading inicial
         window.addEventListener('load', () => {
