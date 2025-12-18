@@ -840,25 +840,23 @@
                         <div class="project-category">IoT & Automação Residencial</div>
                         <h3 class="project-title">Regui - Vaso para plantas com sistema inteligente de irrigação automática com Monitoramento em Tempo Real</h3>
                         <p class="project-description">
-                            Vaso inteligente para plantas com sistema de irrigação automática que monitora continuamente a umidade do solo 
-                            e aciona a bomba automaticamente quando necessário, mantendo suas plantas sempre saudáveis. Sistema totalmente 
-                            autônomo que funciona 100% offline, sem necessidade de conexão Wi-Fi ou internet para operação básica. 
-                            Aplicativo Flutter intuitivo para monitorar sensores em tempo real, controlar a bomba manualmente e ajustar 
-                            configurações de qualquer lugar via MQTT. Inclui proteções de segurança que bloqueiam automaticamente a bomba 
-                            se o reservatório estiver vazio, além de detecção inteligente de sensores desconectados. Utiliza FreeRTOS para 
-                            multi-tarefa real-time com 11 tasks paralelas, controle thread-safe com mutexes, e modo pulsado da bomba 
-                            (1s ligada / 3s desligada) para prolongar vida útil e economizar energia.
+                            Vaso inteligente que monitora a umidade do solo continuamente e aciona a bomba automaticamente quando necessário. 
+                            Sistema totalmente autônomo que funciona 100% offline, com aplicativo Flutter para monitoramento remoto em tempo real 
+                            via MQTT. Inclui proteções de segurança, FreeRTOS para multi-tarefa real-time (11 tasks paralelas) e modo pulsado 
+                            da bomba para prolongar vida útil.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Desenvolver um vaso inteligente que integrasse irrigação automática inteligente, controle remoto total via 
-                            aplicativo móvel, funcionamento 100% offline autônomo, e proteções de segurança robustas. O sistema precisava 
-                            combinar múltiplas tarefas em tempo real usando FreeRTOS (11 tasks paralelas em 2 cores), comunicação MQTT 
-                            não-bloqueante para monitoramento em tempo real, gerenciamento Wi-Fi com portal de configuração, detecção inteligente 
-                            de sensores desconectados, controle thread-safe com mutexes para acesso seguro entre tasks, persistência de estados 
-                            em memória flash (NVS), e aplicativo Flutter com sincronização bidirecional. O desafio principal era garantir que 
-                            o sistema continuasse funcionando perfeitamente mesmo sem conexão, mantendo irrigação automática sempre ativa, 
-                            enquanto oferecia monitoramento remoto opcional quando conectado.</p>
+                            <p>Desenvolver um sistema IoT robusto integrando FreeRTOS (11 tasks paralelas), comunicação MQTT não-bloqueante, 
+                            funcionamento 100% offline autônomo, controle thread-safe com mutexes, e aplicativo Flutter com sincronização 
+                            bidirecional. O desafio principal era garantir irrigação automática sempre ativa, mesmo sem conexão, enquanto 
+                            oferecia monitoramento remoto opcional quando conectado.</p>
+                        </div>
+                        <div class="project-links" style="margin-top: 1rem;">
+                            <a href="https://brunomecatronica.github.io/regui_site/" target="_blank" class="project-link" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Site Completo
+                            </a>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">
