@@ -726,6 +726,45 @@
             <h2 class="section-title">Projetos de Programação & Mecatrônica</h2>
             
             <div class="projects-grid">
+                <!-- PlugAlerta - Monitor Inteligente de Energia -->
+                <div class="project-card fade-in">
+                    <div class="multi-image-grid" data-gallery="plugalerta">
+                        <img src="images/plugalerta_landing/plug1.png" alt="PlugAlerta - Monitor Inteligente de Energia">
+                        <img src="images/plugalerta_landing/plug2.png" alt="PlugAlerta - Sistema ESP32 e Sensor ZMPT101B">
+                        <img src="images/plugalerta_landing/plug3.png" alt="PlugAlerta - Aplicativo Flutter">
+                        <img src="images/plugalerta_landing/plug4.png" alt="PlugAlerta - Dashboard e Analytics">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">IoT & Monitoramento</div>
+                        <h3 class="project-title">PlugAlerta - Monitor Inteligente de Energia</h3>
+                        <p class="project-description">
+                            Sistema de monitoramento inteligente de energia que detecta quedas e restaurações de energia AC instantaneamente 
+                            através do sensor ZMPT101B no ESP32. Comunicação dupla: MQTT para dados em tempo real e HTTP para notificações 
+                            push garantidas via Firebase Cloud Messaging. Backend Django hospedado no Render com arquitetura escalável, 
+                            vinculação de dispositivos por QR Code, histórico e analytics no Firestore. Projeto com qualidade enterprise 
+                            (nota 10/10) com testes automatizados, cache, rate limiting e documentação completa.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Desenvolver um sistema IoT robusto que integrasse detecção de energia em tempo real (ESP32 + ZMPT101B), 
+                            comunicação dupla (MQTT para dados + HTTP para notificações), backend Django escalável no Render, notificações 
+                            push via Firebase mesmo com app fechado, vinculação por QR Code, e arquitetura enterprise com segurança, 
+                            performance otimizada e documentação completa. O desafio principal era garantir notificações instantâneas e 
+                            confiáveis mesmo em condições de queda de energia, mantendo baixo custo operacional (~US$ 0-10/mês).</p>
+                        </div>
+                        <div class="project-links" style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="https://brunomecatronica.github.io/plugalertasite/" target="_blank" class="project-link" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Site
+                            </a>
+                            <a href="https://plugalerta-beckend.onrender.com/admin/" target="_blank" class="project-link" rel="noopener noreferrer">
+                                <i class="fas fa-chart-line"></i>
+                                Dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Snuggle App -->
                 <div class="project-card fade-in">
                     <div class="multi-image-grid" data-gallery="snuggle">
@@ -845,7 +884,7 @@
                         <div class="project-category">IoT & Automação Residencial</div>
                         <h3 class="project-title">Regui - Vaso para plantas com sistema inteligente de irrigação automática com Monitoramento em Tempo Real</h3>
                         <p class="project-description">
-                            Vaso inteligente que monitora a umidade do solo continuamente e aciona a bomba automaticamente quando necessário. 
+                            Vaso inteligente para plantas que monitora a umidade do solo continuamente e aciona a bomba automaticamente quando necessário. 
                             Sistema totalmente autônomo que funciona 100% offline, com aplicativo Flutter para monitoramento remoto em tempo real 
                             via MQTT. Inclui proteções de segurança, FreeRTOS para multi-tarefa real-time (11 tasks paralelas) e modo pulsado 
                             da bomba para prolongar vida útil.
@@ -929,6 +968,16 @@
             <div class="gallery-nav gallery-prev">&lt;</div>
             <div class="gallery-nav gallery-next">&gt;</div>
             <img src="images/vaso-automatizado/regui3.png" alt="Regui - Sistema completo de irrigação inteligente" class="gallery-main-image">
+        </div>
+    </div>
+
+    <!-- Galeria PlugAlerta -->
+    <div id="gallery-plugalerta" class="gallery-modal">
+        <div class="gallery-content">
+            <div class="gallery-close">&times;</div>
+            <div class="gallery-nav gallery-prev">&lt;</div>
+            <div class="gallery-nav gallery-next">&gt;</div>
+            <img src="images/plugalerta_landing/plug1.png" alt="PlugAlerta - Monitor Inteligente de Energia" class="gallery-main-image">
         </div>
     </div>
 
@@ -1087,6 +1136,12 @@
                 'images/vaso-automatizado/regui7.png',
                 'images/vaso-automatizado/regui8.png',
                 'images/vaso-automatizado/regui9.png'
+            ],
+            'plugalerta': [
+                'images/plugalerta_landing/plug1.png',
+                'images/plugalerta_landing/plug2.png',
+                'images/plugalerta_landing/plug3.png',
+                'images/plugalerta_landing/plug4.png'
             ]
         };
 
@@ -1252,7 +1307,11 @@
                 'images/vaso-automatizado/regui5.png',
                 'images/vaso-automatizado/regui7.png',
                 'images/vaso-automatizado/regui8.png',
-                'images/vaso-automatizado/regui9.png'
+                'images/vaso-automatizado/regui9.png',
+                'images/plugalerta_landing/plug1.png',
+                'images/plugalerta_landing/plug2.png',
+                'images/plugalerta_landing/plug3.png',
+                'images/plugalerta_landing/plug4.png'
             ];
 
             imageUrls.forEach(url => {
