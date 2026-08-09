@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Programação & Mecatrônica - Bruno Oliveira</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -13,7 +16,7 @@
             --card-bg: #1a1a1a;
             --accent-color: #00d4ff;
             --text-primary: #ffffff;
-            --text-secondary: #b3b3b3;
+            --text-secondary: #ffffff;
             --text-muted: #666666;
             --border-color: #2a2a2a;
             --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
@@ -93,8 +96,14 @@
             font-weight: 500;
         }
 
-        .nav-link:hover { background: rgba(255,255,255,0.06); color: var(--text-primary); }
-        .nav-link.active { color: var(--accent-color); }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-primary);
+        }
+
+        .nav-link.active {
+            color: var(--accent-color);
+        }
 
         .nav-toggle {
             display: none;
@@ -120,8 +129,8 @@
             align-items: center;
             justify-content: center;
             background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(0, 153, 204, 0.05) 0%, transparent 50%),
-                        var(--primary-bg);
+                radial-gradient(circle at 80% 20%, rgba(0, 153, 204, 0.05) 0%, transparent 50%),
+                var(--primary-bg);
             position: relative;
             text-align: center;
             padding: 2rem;
@@ -152,9 +161,10 @@
             letter-spacing: 0.5px;
         }
 
+
         .hero-description {
             font-size: 1.1rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto 3rem;
             line-height: 1.8;
@@ -243,7 +253,7 @@
            SISTEMA PADRÃO DE GALERIA DE IMAGENS
            Grid 4x2 (4 colunas, máximo 2 linhas)
            ======================================== */
-        
+
         .multi-image-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -350,7 +360,7 @@
         }
 
         .project-challenge p {
-            color: var(--text-muted);
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
@@ -591,17 +601,31 @@
                 padding: 1rem;
             }
 
-            .nav-toggle { display: inline-flex; }
-            .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; padding: 0.75rem; }
+            .nav-toggle {
+                display: inline-flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                padding: 0.75rem;
+            }
+
             .mobile-menu {
                 display: grid;
                 gap: 0.5rem;
-                background: rgba(17,17,17,0.98);
+                background: rgba(17, 17, 17, 0.98);
                 border-top: 1px solid var(--border-color);
                 border-bottom: 1px solid var(--border-color);
                 padding: 0.75rem;
             }
-            .header.open .nav-links { display: block; }
+
+            .header.open .nav-links {
+                display: block;
+            }
 
             .projects-grid {
                 gap: 2.5rem;
@@ -615,7 +639,7 @@
                MOBILE: APENAS PRIMEIRA IMAGEM
                Todas as outras ficam escondidas
                ======================================== */
-            
+
             .multi-image-grid {
                 grid-template-columns: 1fr !important;
                 grid-template-rows: auto !important;
@@ -684,10 +708,9 @@
                 right: 10px;
             }
         }
-
-        
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -699,8 +722,10 @@
             <div class="nav-links">
                 <div class="mobile-menu" role="menu">
                     <a class="nav-link" href="index.html" role="menuitem">Início</a>
-                    <a class="nav-link active" href="programacao-mecatronica.html" role="menuitem">Programação &amp; Mecatrônica</a>
-                    <a class="nav-link" href="producao-audiovisual-design.html" role="menuitem">Audiovisual &amp; Design</a>
+                    <a class="nav-link active" href="programacao-mecatronica.html" role="menuitem">Programação &amp;
+                        Mecatrônica</a>
+                    <a class="nav-link" href="producao-audiovisual-design.html" role="menuitem">Audiovisual &amp;
+                        Design</a>
                     <a class="nav-link" href="producao-fonografica.html" role="menuitem">Produção Fonográfica</a>
                 </div>
             </div>
@@ -713,8 +738,8 @@
             <h1>Programação & Mecatrônica</h1>
             <p class="hero-subtitle">Desenvolvimento web, aplicações e sistemas automatizados</p>
             <p class="hero-description">
-                Criação de soluções tecnológicas inovadoras que conectam o mundo digital com o físico, 
-                desenvolvendo aplicações web, sistemas IoT e automação residencial. 
+                Criação de soluções tecnológicas inovadoras que conectam o mundo digital com o físico,
+                desenvolvendo aplicações web, sistemas IoT e automação residencial.
                 Formado como Técnico em Mecatrônica pelo SENAI (2020) com CFT ativo.
             </p>
         </div>
@@ -724,13 +749,110 @@
     <section class="section projects-section">
         <div class="container">
             <h2 class="section-title">Projetos de Programação & Mecatrônica</h2>
-            
+
             <div class="projects-grid">
+                <!-- Telona -->
+                <div class="project-card fade-in">
+                    <div class="multi-image-grid" data-gallery="telona">
+                        <img src="images/telona-images/telona1.jpeg" alt="Telona - Tema claro de alto contraste">
+                        <img src="images/telona-images/telona2.jpeg" alt="Telona - Tema escuro neon verde">
+                        <img src="images/telona-images/telona3.jpeg" alt="Telona - Tema escuro neon azul">
+                        <img src="images/telona-images/telona4.jpeg" alt="Telona - Tema com cores personalizadas por ícone">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Acessibilidade & Desenvolvimento Mobile</div>
+                        <h3 class="project-title">Telona - Launcher Android Acessível</h3>
+                        <p class="project-description">
+                            Launcher Android voltado para acessibilidade, criado para simplificar o uso do celular por
+                            idosos e pessoas com baixa visão. Tela inicial com botões grandes e apenas os atalhos
+                            essenciais (Telefone, Contatos, Câmera, Fotos, WhatsApp, Gmail, Mensagens e ChatGPT), além
+                            de um botão de Emergência sempre visível. Diversos temas de alto contraste e cores
+                            personalizáveis por ícone permitem adaptar a aparência mantendo a legibilidade.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Projetar uma interface radicalmente simplificada sem perder personalização, garantindo
+                                alvos de toque grandes, contraste adequado em todos os temas (claro, escuro e cores
+                                neon/personalizadas) e acesso instantâneo a uma função de emergência, atendendo um
+                                público com necessidades específicas de acessibilidade.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vestia -->
+                <div class="project-card fade-in">
+                    <div class="multi-image-grid" data-gallery="vestia">
+                        <img src="images/vestia-images/vest1.png" alt="Vestia - Tela inicial com login Google">
+                        <img src="images/vestia-images/vest2.png" alt="Vestia - Dashboard de catálogo de produtos gerados por IA">
+                        <img src="images/vestia-images/vest3.png" alt="Vestia - Geração de imagens e vídeos com modelos IA">
+                        <img src="images/vestia-images/vest4.jpg" alt="Vestia - Comparativo peça original vs. modelo gerado por IA">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">SaaS & Inteligência Artificial Generativa</div>
+                        <h3 class="project-title">Vestia - Estúdio de Moda com IA</h3>
+                        <p class="project-description">
+                            SaaS que transforma fotos de peças de roupa (em manequim ou still) em fotos realistas de
+                            modelos vestindo o produto, geradas por Inteligência Artificial. Marcas e lojistas de moda
+                            enviam o catálogo e recebem imagens e vídeos prontos para e-commerce e redes sociais, com
+                            login via Google, legendas geradas por IA, sistema de créditos/tokens e planos de
+                            assinatura.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Gerar imagens de modelos fotorrealistas preservando fielmente cor, textura, caimento e
+                                estampa da peça original, com diferentes tipos físicos e cenários, além de suportar
+                                também geração de vídeo. Foi necessário desenhar um sistema de créditos/tokens e planos
+                                de assinatura para controlar o custo das gerações de IA, mantendo uma experiência
+                                simples de catálogo e dashboard para o lojista.</p>
+                        </div>
+                        <div class="project-links" style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="https://vestia.tec.br" target="_blank" class="project-link"
+                                rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- X Pinball -->
+                <div class="project-card fade-in">
+                    <div class="multi-image-grid" data-gallery="pinball">
+                        <img src="images/pimball-images/pim1.jpeg" alt="X Pinball - Tela de login com Google">
+                        <img src="images/pimball-images/pim2.jpeg" alt="X Pinball - Mesa de pinball com física em tempo real">
+                        <img src="images/pimball-images/pim3.jpeg" alt="X Pinball - Editor de níveis com ferramentas de edição">
+                        <img src="images/pimball-images/pim4.jpeg" alt="X Pinball - Editor de posicionamento de flippers">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Jogos & Motor de Física</div>
+                        <h3 class="project-title">X Pinball</h3>
+                        <p class="project-description">
+                            Jogo de pinball para Android desenvolvido em Flutter com o motor Flame/Forge2D, simulando
+                            física realista de flippers, bumpers, slingshots e rampas com curvas Bezier. Inclui um
+                            editor de níveis completo embutido no próprio app (posicionamento, hitboxes, cores e
+                            curvas de rampa em tempo real), além de login com Google e sincronização de perfil,
+                            pontuação e ranking via Firebase Authentication e Firestore. Arquitetura white-label:
+                            logo, cores, tema e cenário da mesa são configuráveis, permitindo relançar o mesmo motor
+                            de jogo com identidade visual própria para diferentes marcas/clientes.
+                        </p>
+                        <div class="project-challenge">
+                            <h4>Desafio</h4>
+                            <p>Construir uma simulação de física de pinball convincente e responsiva usando Forge2D,
+                                ao mesmo tempo em que se desenvolvia um editor visual completo (drag-and-drop, curvas
+                                Bezier, ajuste fino de hitboxes) para permitir a criação e o ajuste da mesa diretamente
+                                no dispositivo, com persistência de cenários e progresso do jogador na nuvem — mantendo
+                                a base de código pronta para ser reaproveitada como produto white-label.</p>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- PlugAlerta - Monitor Inteligente de Energia -->
                 <div class="project-card fade-in">
                     <div class="multi-image-grid" data-gallery="plugalerta">
-                        <img src="images/plugalerta_landing/plug1.png" alt="PlugAlerta - Monitor Inteligente de Energia">
-                        <img src="images/plugalerta_landing/plug2.png" alt="PlugAlerta - Sistema ESP32 e Sensor ZMPT101B">
+                        <img src="images/plugalerta_landing/plug1.png"
+                            alt="PlugAlerta - Monitor Inteligente de Energia">
+                        <img src="images/plugalerta_landing/plug2.png"
+                            alt="PlugAlerta - Sistema ESP32 e Sensor ZMPT101B">
                         <img src="images/plugalerta_landing/plug3.png" alt="PlugAlerta - Aplicativo Flutter">
                         <img src="images/plugalerta_landing/plug4.png" alt="PlugAlerta - Dashboard e Analytics">
                     </div>
@@ -738,26 +860,37 @@
                         <div class="project-category">IoT & Monitoramento</div>
                         <h3 class="project-title">PlugAlerta - Monitor Inteligente de Energia</h3>
                         <p class="project-description">
-                            Sistema de monitoramento inteligente de energia que detecta quedas e restaurações de energia AC instantaneamente 
-                            através do sensor ZMPT101B no ESP32. Comunicação dupla: MQTT para dados em tempo real e HTTP para notificações 
-                            push garantidas via Firebase Cloud Messaging. Backend Django hospedado no Render com arquitetura escalável, 
-                            vinculação de dispositivos por QR Code, histórico e analytics no Firestore. Projeto com qualidade enterprise 
+                            Sistema de monitoramento inteligente de energia que detecta quedas e restaurações de energia
+                            AC instantaneamente
+                            através do sensor ZMPT101B no ESP32. Comunicação dupla: MQTT para dados em tempo real e HTTP
+                            para notificações
+                            push garantidas via Firebase Cloud Messaging. Backend Django hospedado no Render com
+                            arquitetura escalável,
+                            vinculação de dispositivos por QR Code, histórico e analytics no Firestore. Projeto com
+                            qualidade enterprise
                             (nota 10/10) com testes automatizados, cache, rate limiting e documentação completa.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Desenvolver um sistema IoT robusto que integrasse detecção de energia em tempo real (ESP32 + ZMPT101B), 
-                            comunicação dupla (MQTT para dados + HTTP para notificações), backend Django escalável no Render, notificações 
-                            push via Firebase mesmo com app fechado, vinculação por QR Code, e arquitetura enterprise com segurança, 
-                            performance otimizada e documentação completa. O desafio principal era garantir notificações instantâneas e 
-                            confiáveis mesmo em condições de queda de energia, mantendo baixo custo operacional (~US$ 0-10/mês).</p>
+                            <p>Desenvolver um sistema IoT robusto que integrasse detecção de energia em tempo real
+                                (ESP32 + ZMPT101B),
+                                comunicação dupla (MQTT para dados + HTTP para notificações), backend Django escalável
+                                no Render, notificações
+                                push via Firebase mesmo com app fechado, vinculação por QR Code, e arquitetura
+                                enterprise com segurança,
+                                performance otimizada e documentação completa. O desafio principal era garantir
+                                notificações instantâneas e
+                                confiáveis mesmo em condições de queda de energia, mantendo baixo custo operacional
+                                (~US$ 0-10/mês).</p>
                         </div>
                         <div class="project-links" style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                            <a href="https://brunomecatronica.github.io/plugalertasite/" target="_blank" class="project-link" rel="noopener noreferrer">
+                            <a href="https://brunomecatronica.github.io/plugalertasite/" target="_blank"
+                                class="project-link" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i>
                                 Ver Site
                             </a>
-                            <a href="https://plugalerta-beckend.onrender.com/admin/" target="_blank" class="project-link" rel="noopener noreferrer">
+                            <a href="https://plugalerta-beckend.onrender.com/admin/" target="_blank"
+                                class="project-link" rel="noopener noreferrer">
                                 <i class="fas fa-chart-line"></i>
                                 Dashboard
                             </a>
@@ -781,27 +914,34 @@
                         <div class="project-category">Desenvolvimento Mobile & UX/UI</div>
                         <h3 class="project-title">Snuggle - Birthday Manager</h3>
                         <p class="project-description">
-                            Aplicativo Flutter para gerenciamento de aniversários e datas importantes. Notificações inteligentes personalizáveis, 
-                            sincronização automática com Firebase, suporte multilíngue (8 idiomas), integração com contatos e compartilhamento 
+                            Aplicativo Flutter para gerenciamento de aniversários e datas importantes. Notificações
+                            inteligentes personalizáveis,
+                            sincronização automática com Firebase, suporte multilíngue (8 idiomas), integração com
+                            contatos e compartilhamento
                             via WhatsApp. Funciona offline e sincroniza automaticamente quando online.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Desenvolver um aplicativo multiplataforma que combinasse notificações inteligentes, sincronização em nuvem, 
-                            suporte multilíngue e integração com contatos, mantendo interface intuitiva e funcionamento offline confiável.</p>
+                            <p>Desenvolver um aplicativo multiplataforma que combinasse notificações inteligentes,
+                                sincronização em nuvem,
+                                suporte multilíngue e integração com contatos, mantendo interface intuitiva e
+                                funcionamento offline confiável.</p>
                         </div>
                         <div style="text-align: center; margin: 1rem 0;">
-                            <a href="https://brunomecatronica.github.io/snuggle-links-app/index.html" target="_blank" style="color: #00d4ff; text-decoration: none; font-weight: 500; font-size: 0.9rem;">
+                            <a href="https://brunomecatronica.github.io/snuggle-links-app/index.html" target="_blank"
+                                style="color: #00d4ff; text-decoration: none; font-weight: 500; font-size: 0.9rem;">
                                 <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
                                 Ver Documentação Completa
                             </a>
                         </div>
                         <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.brunomecatronica.snuggle&pcampaignid=web_share" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <a href="https://play.google.com/store/apps/details?id=com.brunomecatronica.snuggle&pcampaignid=web_share"
+                                class="project-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-google-play"></i>
                                 Google Play
                             </a>
-                            <a href="snuggle-app-store-em-breve.html" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <a href="snuggle-app-store-em-breve.html" class="project-link" target="_blank"
+                                rel="noopener noreferrer">
                                 <i class="fab fa-apple"></i>
                                 App Store
                             </a>
@@ -812,30 +952,44 @@
                 <!-- Projeto de Sensoriamento de Leira de Compostagem -->
                 <div class="project-card fade-in">
                     <div class="multi-image-grid" data-gallery="leira">
-                        <img src="images/projeto-leira-uerj/leira-1-20240328_141041.jpg" alt="Sensoriamento de Leira de Compostagem - Visão Geral">
-                        <img src="images/projeto-leira-uerj/leira-2-IMG-20220423-WA0014.jpg" alt="Sensoriamento de Leira - Sistema Arduino e Sensores">
-                        <img src="images/projeto-leira-uerj/leira-3-20240426_142716.jpg" alt="Sensoriamento de Leira - Implementação em Campo">
-                        <img src="images/projeto-leira-uerj/leira-4-20240316_122711.jpg" alt="Sensoriamento de Leira - Módulo de Conexão Web">
-                        <img src="images/projeto-leira-uerj/leira-5-20220327_142119.jpg" alt="Sensoriamento de Leira - Monitoramento de Dados">
+                        <img src="images/projeto-leira-uerj/leira-1-20240328_141041.jpg"
+                            alt="Sensoriamento de Leira de Compostagem - Visão Geral">
+                        <img src="images/projeto-leira-uerj/leira-2-IMG-20220423-WA0014.jpg"
+                            alt="Sensoriamento de Leira - Sistema Arduino e Sensores">
+                        <img src="images/projeto-leira-uerj/leira-3-20240426_142716.jpg"
+                            alt="Sensoriamento de Leira - Implementação em Campo">
+                        <img src="images/projeto-leira-uerj/leira-4-20240316_122711.jpg"
+                            alt="Sensoriamento de Leira - Módulo de Conexão Web">
+                        <img src="images/projeto-leira-uerj/leira-5-20220327_142119.jpg"
+                            alt="Sensoriamento de Leira - Monitoramento de Dados">
                     </div>
                     <div class="project-content">
                         <div class="project-category">IoT & Sensoriamento</div>
                         <h3 class="project-title">Projeto de Sensoriamento de Leira de Compostagem</h3>
                         <p class="project-description">
-                            Sistema de monitoramento baseado em Arduino com módulo de conexão web para medir temperatura e umidade do solo 
-                            em leiras de compostagem. Os dados coletados são enviados via MQTT para um backend que realiza o tratamento 
-                            e análise dos dados, permitindo monitoramento em tempo real das condições de compostagem e otimização do processo 
+                            Sistema de monitoramento baseado em Arduino com módulo de conexão web para medir temperatura
+                            e umidade do solo
+                            em leiras de compostagem. Os dados coletados são enviados via MQTT para um backend que
+                            realiza o tratamento
+                            e análise dos dados, permitindo monitoramento em tempo real das condições de compostagem e
+                            otimização do processo
                             de decomposição orgânica.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Desenvolver um sistema de sensoriamento robusto que integrasse Arduino com módulo de conexão web, comunicação 
-                            MQTT para transmissão de dados, e backend para processamento e análise. O desafio principal era garantir medições 
-                            precisas de temperatura e umidade do solo em condições de campo, com transmissão confiável dos dados e processamento 
-                            eficiente no backend para suportar decisões baseadas em dados no processo de compostagem.</p>
+                            <p>Desenvolver um sistema de sensoriamento robusto que integrasse Arduino com módulo de
+                                conexão web, comunicação
+                                MQTT para transmissão de dados, e backend para processamento e análise. O desafio
+                                principal era garantir medições
+                                precisas de temperatura e umidade do solo em condições de campo, com transmissão
+                                confiável dos dados e processamento
+                                eficiente no backend para suportar decisões baseadas em dados no processo de
+                                compostagem.</p>
                         </div>
                         <div style="text-align: center; margin: 1rem 0;">
-                            <a href="images/projeto-leira-uerj/Manutenção sistema sensoriamento de leira FAPERJ 2020.pptx" target="_blank" style="color: #00d4ff; text-decoration: none; font-weight: 500; font-size: 0.9rem;">
+                            <a href="images/projeto-leira-uerj/Manutenção sistema sensoriamento de leira FAPERJ 2020.pptx"
+                                target="_blank"
+                                style="color: #00d4ff; text-decoration: none; font-weight: 500; font-size: 0.9rem;">
                                 <i class="fas fa-file-powerpoint" style="margin-right: 0.5rem;"></i>
                                 Documentação Manutenção
                             </a>
@@ -846,24 +1000,31 @@
                 <!-- Cortina Automatizada -->
                 <div class="project-card fade-in">
                     <div class="multi-image-grid" data-gallery="cortina">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled1.png" alt="Cortina Automatizada - Sistema Principal">
-                        <img src="images/desenvolvimento-cortina-automatizada/valed2.png" alt="Cortina Automatizada - Detalhes">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled%203.png" alt="Cortina Automatizada - Componentes">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled4.png" alt="Cortina Automatizada - Implementação">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled5.jpg" alt="Cortina Automatizada - Sistema">
-                        <img src="images/desenvolvimento-cortina-automatizada/veled6.png" alt="Cortina Automatizada - Aplicação">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled1.png"
+                            alt="Cortina Automatizada - Sistema Principal">
+                        <img src="images/desenvolvimento-cortina-automatizada/valed2.png"
+                            alt="Cortina Automatizada - Detalhes">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled%203.png"
+                            alt="Cortina Automatizada - Componentes">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled4.png"
+                            alt="Cortina Automatizada - Implementação">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled5.jpg"
+                            alt="Cortina Automatizada - Sistema">
+                        <img src="images/desenvolvimento-cortina-automatizada/veled6.png"
+                            alt="Cortina Automatizada - Aplicação">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Mecatrônica & Automação</div>
                         <h3 class="project-title">Sistema de Cortina Automatizada</h3>
                         <p class="project-description">
-                            Desenvolvimento de sistema mecatrônico para automação de cortinas residenciais, 
+                            Desenvolvimento de sistema mecatrônico para automação de cortinas residenciais,
                             integrando sensores, atuadores e controle inteligente para conforto e eficiência energética.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Criar um sistema robusto e confiável que funcionasse em diferentes condições ambientais, 
-                            com interface de usuário intuitiva e integração com sistemas de automação residencial.</p>
+                            <p>Criar um sistema robusto e confiável que funcionasse em diferentes condições ambientais,
+                                com interface de usuário intuitiva e integração com sistemas de automação residencial.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -871,33 +1032,46 @@
                 <!-- Regui - Vaso para plantas com sistema inteligente de irrigação automática com Monitoramento em Tempo Real -->
                 <div class="project-card fade-in">
                     <div class="multi-image-grid" data-gallery="vaso">
-                        <img src="images/vaso-automatizado/regui3.png" alt="Regui - Sistema completo de irrigação inteligente">
-                        <img src="images/vaso-automatizado/regui1.png" alt="Regui - Sensores de umidade do solo e reservatório">
-                        <img src="images/vaso-automatizado/regui2.png" alt="Regui - Aplicativo Flutter para monitoramento remoto">
-                        <img src="images/vaso-automatizado/regui4.png" alt="Regui - ESP32 com FreeRTOS e componentes do sistema">
+                        <img src="images/vaso-automatizado/regui3.png"
+                            alt="Regui - Sistema completo de irrigação inteligente">
+                        <img src="images/vaso-automatizado/regui1.png"
+                            alt="Regui - Sensores de umidade do solo e reservatório">
+                        <img src="images/vaso-automatizado/regui2.png"
+                            alt="Regui - Aplicativo Flutter para monitoramento remoto">
+                        <img src="images/vaso-automatizado/regui4.png"
+                            alt="Regui - ESP32 com FreeRTOS e componentes do sistema">
                         <img src="images/vaso-automatizado/regui5.png" alt="Regui - Detalhes do hardware e sensores">
                         <img src="images/vaso-automatizado/regui7.png" alt="Regui - Bomba de água em modo pulsado">
-                        <img src="images/vaso-automatizado/regui8.png" alt="Regui - Sistema completo com display LCD e LEDs">
+                        <img src="images/vaso-automatizado/regui8.png"
+                            alt="Regui - Sistema completo com display LCD e LEDs">
                         <img src="images/vaso-automatizado/regui9.png" alt="Regui - Aplicação prática do sistema">
                     </div>
                     <div class="project-content">
                         <div class="project-category">IoT & Automação Residencial</div>
-                        <h3 class="project-title">Regui - Vaso para plantas com sistema inteligente de irrigação automática com Monitoramento em Tempo Real</h3>
+                        <h3 class="project-title">Regui - Vaso para plantas com sistema inteligente de irrigação
+                            automática com Monitoramento em Tempo Real</h3>
                         <p class="project-description">
-                            Vaso inteligente para plantas que monitora a umidade do solo continuamente e aciona a bomba automaticamente quando necessário. 
-                            Sistema totalmente autônomo que funciona 100% offline, com aplicativo Flutter para monitoramento remoto em tempo real 
-                            via MQTT. Inclui proteções de segurança, FreeRTOS para multi-tarefa real-time (11 tasks paralelas) e modo pulsado 
+                            Vaso inteligente para plantas que monitora a umidade do solo continuamente e aciona a bomba
+                            automaticamente quando necessário.
+                            Sistema totalmente autônomo que funciona 100% offline, com aplicativo Flutter para
+                            monitoramento remoto em tempo real
+                            via MQTT. Inclui proteções de segurança, FreeRTOS para multi-tarefa real-time (11 tasks
+                            paralelas) e modo pulsado
                             da bomba para prolongar vida útil.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Desenvolver um sistema IoT robusto integrando FreeRTOS (11 tasks paralelas), comunicação MQTT não-bloqueante, 
-                            funcionamento 100% offline autônomo, controle thread-safe com mutexes, e aplicativo Flutter com sincronização 
-                            bidirecional. O desafio principal era garantir irrigação automática sempre ativa, mesmo sem conexão, enquanto 
-                            oferecia monitoramento remoto opcional quando conectado.</p>
+                            <p>Desenvolver um sistema IoT robusto integrando FreeRTOS (11 tasks paralelas), comunicação
+                                MQTT não-bloqueante,
+                                funcionamento 100% offline autônomo, controle thread-safe com mutexes, e aplicativo
+                                Flutter com sincronização
+                                bidirecional. O desafio principal era garantir irrigação automática sempre ativa, mesmo
+                                sem conexão, enquanto
+                                oferecia monitoramento remoto opcional quando conectado.</p>
                         </div>
                         <div class="project-links" style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                            <a href="https://brunomecatronica.github.io/regui_site/" target="_blank" class="project-link" rel="noopener noreferrer">
+                            <a href="https://brunomecatronica.github.io/regui_site/" target="_blank"
+                                class="project-link" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i>
                                 Ver Site Completo
                             </a>
@@ -918,11 +1092,11 @@
             <div class="contact-content">
                 <h2 class="contact-title">Vamos Criar Juntos?</h2>
                 <p class="contact-text">
-                    Estou sempre aberto a novos desafios e colaborações criativas. 
-                    Se você tem um projeto de programação ou mecatrônica em mente ou quer explorar possibilidades, 
+                    Estou sempre aberto a novos desafios e colaborações criativas.
+                    Se você tem um projeto de programação ou mecatrônica em mente ou quer explorar possibilidades,
                     vamos conversar sobre como podemos transformar suas ideias em realidade.
                 </p>
-                
+
                 <div class="social-links">
                     <a href="https://wa.me/5522999094530" target="_blank" class="social-link" title="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
@@ -935,19 +1109,53 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Bruno Oliveira. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Bruno Oliveira. Todos os direitos reservados.</p>
             <p>Um criador inquieto e versátil, criando o futuro através da arte e tecnologia.</p>
         </div>
     </footer>
 
     <!-- Modais de Galeria -->
+    <!-- Galeria Telona -->
+    <div id="gallery-telona" class="gallery-modal">
+        <div class="gallery-content">
+            <div class="gallery-close">&times;</div>
+            <div class="gallery-nav gallery-prev">&lt;</div>
+            <div class="gallery-nav gallery-next">&gt;</div>
+            <img src="images/telona-images/telona1.jpeg" alt="Telona - Tema claro de alto contraste"
+                class="gallery-main-image">
+        </div>
+    </div>
+
+    <!-- Galeria Vestia -->
+    <div id="gallery-vestia" class="gallery-modal">
+        <div class="gallery-content">
+            <div class="gallery-close">&times;</div>
+            <div class="gallery-nav gallery-prev">&lt;</div>
+            <div class="gallery-nav gallery-next">&gt;</div>
+            <img src="images/vestia-images/vest1.png" alt="Vestia - Tela inicial com login Google"
+                class="gallery-main-image">
+        </div>
+    </div>
+
+    <!-- Galeria Pinball -->
+    <div id="gallery-pinball" class="gallery-modal">
+        <div class="gallery-content">
+            <div class="gallery-close">&times;</div>
+            <div class="gallery-nav gallery-prev">&lt;</div>
+            <div class="gallery-nav gallery-next">&gt;</div>
+            <img src="images/pimball-images/pim1.jpeg" alt="X Pinball - Tela de login com Google"
+                class="gallery-main-image">
+        </div>
+    </div>
+
     <!-- Galeria Leira -->
     <div id="gallery-leira" class="gallery-modal">
         <div class="gallery-content">
             <div class="gallery-close">&times;</div>
             <div class="gallery-nav gallery-prev">&lt;</div>
             <div class="gallery-nav gallery-next">&gt;</div>
-            <img src="images/projeto-leira-uerj/leira-1-20240328_141041.jpg" alt="Sensoriamento de Leira de Compostagem - Visão Geral" class="gallery-main-image">
+            <img src="images/projeto-leira-uerj/leira-1-20240328_141041.jpg"
+                alt="Sensoriamento de Leira de Compostagem - Visão Geral" class="gallery-main-image">
         </div>
     </div>
 
@@ -957,7 +1165,8 @@
             <div class="gallery-close">&times;</div>
             <div class="gallery-nav gallery-prev">&lt;</div>
             <div class="gallery-nav gallery-next">&gt;</div>
-            <img src="images/desenvolvimento-cortina-automatizada/veled1.png" alt="Cortina Automatizada - Sistema Principal" class="gallery-main-image">
+            <img src="images/desenvolvimento-cortina-automatizada/veled1.png"
+                alt="Cortina Automatizada - Sistema Principal" class="gallery-main-image">
         </div>
     </div>
 
@@ -967,7 +1176,8 @@
             <div class="gallery-close">&times;</div>
             <div class="gallery-nav gallery-prev">&lt;</div>
             <div class="gallery-nav gallery-next">&gt;</div>
-            <img src="images/vaso-automatizado/regui3.png" alt="Regui - Sistema completo de irrigação inteligente" class="gallery-main-image">
+            <img src="images/vaso-automatizado/regui3.png" alt="Regui - Sistema completo de irrigação inteligente"
+                class="gallery-main-image">
         </div>
     </div>
 
@@ -977,7 +1187,8 @@
             <div class="gallery-close">&times;</div>
             <div class="gallery-nav gallery-prev">&lt;</div>
             <div class="gallery-nav gallery-next">&gt;</div>
-            <img src="images/plugalerta_landing/plug1.png" alt="PlugAlerta - Monitor Inteligente de Energia" class="gallery-main-image">
+            <img src="images/plugalerta_landing/plug1.png" alt="PlugAlerta - Monitor Inteligente de Energia"
+                class="gallery-main-image">
         </div>
     </div>
 
@@ -987,12 +1198,13 @@
             <div class="gallery-close">&times;</div>
             <div class="gallery-nav gallery-prev">&lt;</div>
             <div class="gallery-nav gallery-next">&gt;</div>
-            <img src="images/snuggle-app/sunggle1.jpg" alt="Snuggle App - Interface Principal" class="gallery-main-image">
+            <img src="images/snuggle-app/sunggle1.jpg" alt="Snuggle App - Interface Principal"
+                class="gallery-main-image">
         </div>
     </div>
 
     <script>
-        
+
 
         // Toggle do menu mobile
         const headerEl = document.querySelector('.header');
@@ -1030,7 +1242,7 @@
 
         // Tratamento de erro para imagens
         document.querySelectorAll('.project-image').forEach(img => {
-            img.addEventListener('error', function() {
+            img.addEventListener('error', function () {
                 this.style.background = 'var(--secondary-bg)';
                 this.style.display = 'flex';
                 this.style.alignItems = 'center';
@@ -1052,7 +1264,7 @@
             if (modal) {
                 // Inicializar índice da galeria
                 modal.dataset.currentIndex = imageIndex.toString();
-                
+
                 // Atualizar imagem principal para a imagem clicada
                 const mainImg = modal.querySelector('.gallery-main-image');
                 const images = galleryImages[galleryId];
@@ -1060,22 +1272,22 @@
                     mainImg.src = images[imageIndex];
                     mainImg.alt = `Imagem ${imageIndex + 1} de ${images.length}`;
                 }
-                
+
                 // Adicionar entrada no histórico do browser
-                history.pushState({gallery: galleryId, index: imageIndex}, '', window.location.href);
-                
+                history.pushState({ gallery: galleryId, index: imageIndex }, '', window.location.href);
+
                 // Forçar exibição do modal
                 modal.style.display = 'flex';
                 modal.style.visibility = 'visible';
                 modal.style.opacity = '1';
                 modal.classList.add('active');
-                
+
                 // Bloquear scroll do body
                 document.body.style.overflow = 'hidden';
                 document.body.style.position = 'fixed';
                 document.body.style.width = '100%';
                 document.body.style.height = '100%';
-                
+
                 return true;
             }
             return false;
@@ -1088,13 +1300,13 @@
                 modal.style.display = 'none';
                 modal.style.visibility = 'hidden';
                 modal.style.opacity = '0';
-                
+
                 // Restaurar scroll do body
                 document.body.style.overflow = 'auto';
                 document.body.style.position = 'static';
                 document.body.style.width = 'auto';
                 document.body.style.height = 'auto';
-                
+
                 // Voltar no histórico do browser
                 history.back();
             }
@@ -1102,6 +1314,24 @@
 
         // Arrays de imagens para cada galeria
         const galleryImages = {
+            'telona': [
+                'images/telona-images/telona1.jpeg',
+                'images/telona-images/telona2.jpeg',
+                'images/telona-images/telona3.jpeg',
+                'images/telona-images/telona4.jpeg'
+            ],
+            'vestia': [
+                'images/vestia-images/vest1.png',
+                'images/vestia-images/vest2.png',
+                'images/vestia-images/vest3.png',
+                'images/vestia-images/vest4.jpg'
+            ],
+            'pinball': [
+                'images/pimball-images/pim1.jpeg',
+                'images/pimball-images/pim2.jpeg',
+                'images/pimball-images/pim3.jpeg',
+                'images/pimball-images/pim4.jpeg'
+            ],
             'snuggle': [
                 'images/snuggle-app/sunggle1.jpg',
                 'images/snuggle-app/sunggle2.jpeg',
@@ -1151,45 +1381,45 @@
             document.querySelectorAll('.multi-image-grid').forEach(grid => {
                 const galleryId = grid.getAttribute('data-gallery');
                 const images = grid.querySelectorAll('img');
-                
+
                 if (images.length > 0 && galleryId) {
                     images.forEach((img, index) => {
                         // Debug visual temporário
                         img.style.cursor = 'pointer';
-                        
+
                         // Variáveis para controle de toque
                         let touchStartTime = 0;
                         let touchStartY = 0;
                         let touchMoved = false;
-                        
+
                         // Event listener para clique (desktop)
-                        img.addEventListener('click', function(e) {
+                        img.addEventListener('click', function (e) {
                             e.preventDefault();
                             e.stopPropagation();
                             openGalleryAtImage(galleryId, index);
                         }, { passive: false, capture: true });
-                        
+
                         // Event listener para touch start (mobile) - reduzir sensibilidade
-                        img.addEventListener('touchstart', function(e) {
+                        img.addEventListener('touchstart', function (e) {
                             touchStartTime = Date.now();
                             touchStartY = e.touches[0].clientY;
                             touchMoved = false;
                         }, { passive: true });
-                        
+
                         // Event listener para touch move (mobile) - detectar scroll
-                        img.addEventListener('touchmove', function(e) {
+                        img.addEventListener('touchmove', function (e) {
                             const touchY = e.touches[0].clientY;
                             const deltaY = Math.abs(touchY - touchStartY);
                             if (deltaY > 10) {
                                 touchMoved = true;
                             }
                         }, { passive: true });
-                        
+
                         // Event listener para touch end (mobile) - só abre se não foi scroll
-                        img.addEventListener('touchend', function(e) {
+                        img.addEventListener('touchend', function (e) {
                             const touchDuration = Date.now() - touchStartTime;
                             const isQuickTap = touchDuration < 500 && !touchMoved;
-                            
+
                             if (isQuickTap) {
                                 e.preventDefault();
                                 e.stopPropagation();
@@ -1202,7 +1432,7 @@
 
             // Fechar galeria
             document.querySelectorAll('.gallery-close').forEach(closeBtn => {
-                closeBtn.addEventListener('click', function() {
+                closeBtn.addEventListener('click', function () {
                     const modal = this.closest('.gallery-modal');
                     closeGallery(modal);
                 });
@@ -1210,7 +1440,7 @@
 
             // Fechar galeria clicando fora
             document.querySelectorAll('.gallery-modal').forEach(modal => {
-                modal.addEventListener('click', function(e) {
+                modal.addEventListener('click', function (e) {
                     if (e.target === this) {
                         closeGallery(this);
                     }
@@ -1219,27 +1449,27 @@
 
             // Navegação por setas
             document.querySelectorAll('.gallery-nav').forEach(nav => {
-                nav.addEventListener('click', function() {
+                nav.addEventListener('click', function () {
                     const modal = this.closest('.gallery-modal');
                     const galleryId = modal.id.replace('gallery-', '');
                     const mainImg = modal.querySelector('.gallery-main-image');
                     const images = galleryImages[galleryId];
-                    
+
                     if (images) {
                         // Usar data attribute para rastrear índice atual
                         let currentIndex = parseInt(modal.dataset.currentIndex) || 0;
-                        
+
                         let newIndex;
                         if (this.classList.contains('gallery-prev')) {
                             newIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
                         } else {
                             newIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
                         }
-                        
+
                         // Atualizar imagem principal
                         mainImg.src = images[newIndex];
                         mainImg.alt = `Imagem ${newIndex + 1} de ${images.length}`;
-                        
+
                         // Salvar índice atual no modal
                         modal.dataset.currentIndex = newIndex;
                     }
@@ -1247,7 +1477,7 @@
             });
 
             // Fechar com ESC
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape') {
                     const activeModal = document.querySelector('.gallery-modal.active');
                     if (activeModal) {
@@ -1270,7 +1500,7 @@
         }
 
         // Gerenciar botão voltar do browser
-        window.addEventListener('popstate', function(event) {
+        window.addEventListener('popstate', function (event) {
             // Se há uma galeria aberta, fechá-la
             const activeModal = document.querySelector('.gallery-modal.active');
             if (activeModal) {
@@ -1281,6 +1511,18 @@
         // Preload de imagens para melhor performance
         function preloadImages() {
             const imageUrls = [
+                'images/telona-images/telona1.jpeg',
+                'images/telona-images/telona2.jpeg',
+                'images/telona-images/telona3.jpeg',
+                'images/telona-images/telona4.jpeg',
+                'images/vestia-images/vest1.png',
+                'images/vestia-images/vest2.png',
+                'images/vestia-images/vest3.png',
+                'images/vestia-images/vest4.jpg',
+                'images/pimball-images/pim1.jpeg',
+                'images/pimball-images/pim2.jpeg',
+                'images/pimball-images/pim3.jpeg',
+                'images/pimball-images/pim4.jpeg',
                 'images/snuggle-app/sunggle1.jpg',
                 'images/snuggle-app/sunggle2.jpeg',
                 'images/snuggle-app/sunggle3.jpeg',
@@ -1324,13 +1566,13 @@
         let isRotating = false;
         let rotationTimeout;
 
-        window.addEventListener('orientationchange', function() {
+        window.addEventListener('orientationchange', function () {
             isRotating = true;
             clearTimeout(rotationTimeout);
-            
+
             // Adicionar classe para manter elementos visíveis durante rotação
             document.body.classList.add('rotating');
-            
+
             rotationTimeout = setTimeout(() => {
                 isRotating = false;
                 document.body.classList.remove('rotating');
@@ -1346,4 +1588,5 @@
         });
     </script>
 </body>
+
 </html>

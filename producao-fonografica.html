@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produção Fonográfica - Bruno Oliveira</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -13,7 +16,7 @@
             --card-bg: #1a1a1a;
             --accent-color: #00d4ff;
             --text-primary: #ffffff;
-            --text-secondary: #b3b3b3;
+            --text-secondary: #ffffff;
             --text-muted: #666666;
             --border-color: #2a2a2a;
             --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
@@ -78,8 +81,14 @@
             font-weight: 500;
         }
 
-        .nav-link:hover { background: rgba(255,255,255,0.06); color: var(--text-primary); }
-        .nav-link.active { color: var(--accent-color); }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-primary);
+        }
+
+        .nav-link.active {
+            color: var(--accent-color);
+        }
 
         .nav-toggle {
             display: none;
@@ -105,8 +114,8 @@
             align-items: center;
             justify-content: center;
             background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(0, 153, 204, 0.05) 0%, transparent 50%),
-                        var(--primary-bg);
+                radial-gradient(circle at 80% 20%, rgba(0, 153, 204, 0.05) 0%, transparent 50%),
+                var(--primary-bg);
             position: relative;
             text-align: center;
             padding: 2rem;
@@ -139,7 +148,7 @@
 
         .hero-description {
             font-size: 1.1rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto 3rem;
             line-height: 1.8;
@@ -273,7 +282,7 @@
         }
 
         .project-challenge p {
-            color: var(--text-muted);
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
@@ -383,17 +392,31 @@
                 padding: 1rem;
             }
 
-            .nav-toggle { display: inline-flex; }
-            .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; padding: 0.75rem; }
+            .nav-toggle {
+                display: inline-flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                padding: 0.75rem;
+            }
+
             .mobile-menu {
                 display: grid;
                 gap: 0.5rem;
-                background: rgba(17,17,17,0.98);
+                background: rgba(17, 17, 17, 0.98);
                 border-top: 1px solid var(--border-color);
                 border-bottom: 1px solid var(--border-color);
                 padding: 0.75rem;
             }
-            .header.open .nav-links { display: block; }
+
+            .header.open .nav-links {
+                display: block;
+            }
 
             .projects-grid {
                 gap: 2.5rem;
@@ -411,10 +434,9 @@
                 gap: 1rem;
             }
         }
-
-        
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -426,8 +448,10 @@
             <div class="nav-links">
                 <div class="mobile-menu" role="menu">
                     <a class="nav-link" href="index.html" role="menuitem">Início</a>
-                    <a class="nav-link" href="programacao-mecatronica.html" role="menuitem">Programação &amp; Mecatrônica</a>
-                    <a class="nav-link" href="producao-audiovisual-design.html" role="menuitem">Audiovisual &amp; Design</a>
+                    <a class="nav-link" href="programacao-mecatronica.html" role="menuitem">Programação &amp;
+                        Mecatrônica</a>
+                    <a class="nav-link" href="producao-audiovisual-design.html" role="menuitem">Audiovisual &amp;
+                        Design</a>
                     <a class="nav-link active" href="producao-fonografica.html" role="menuitem">Produção Fonográfica</a>
                 </div>
             </div>
@@ -440,7 +464,7 @@
             <h1>Produção Fonográfica</h1>
             <p class="hero-subtitle">Criação e produção de conteúdo musical</p>
             <p class="hero-description">
-                Especializado em produção musical completa, desde a concepção criativa até a finalização técnica, 
+                Especializado em produção musical completa, desde a concepção criativa até a finalização técnica,
                 criando identidades sonoras únicas e produções de alta qualidade.
             </p>
         </div>
@@ -450,7 +474,7 @@
     <section class="section projects-section">
         <div class="container">
             <h2 class="section-title">Projetos de Produção Fonográfica</h2>
-            
+
             <div class="projects-grid">
                 <!-- Zambe -->
                 <div class="project-card fade-in">
@@ -461,16 +485,20 @@
                         <div class="project-category">Produção Fonográfica</div>
                         <h3 class="project-title">Zambe - Artista Musical</h3>
                         <p class="project-description">
-                            Produção fonográfica completa para artista friburguense, incluindo álbum "Encontro dos Rios" 
+                            Produção fonográfica completa para artista friburguense, incluindo álbum "Encontro dos Rios"
                             e desenvolvimento de identidade sonora que mistura hip-hop, trap e reggae.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Capturar a essência cultural do Cordoeira e traduzir em produção musical profissional, 
-                            mantendo a autenticidade do artista e criando material comercialmente viável.</p>
+                            <p>Capturar a essência cultural do Cordoeira e traduzir em produção musical profissional,
+                                mantendo a autenticidade do artista e criando material comercialmente viável.</p>
                         </div>
                         <div class="project-links">
-                            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4uxUCK33SOoLdanH61Ytwt?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            <iframe data-testid="embed-iframe" style="border-radius:12px"
+                                src="https://open.spotify.com/embed/track/4uxUCK33SOoLdanH61Ytwt?utm_source=generator"
+                                width="100%" height="352" frameBorder="0" allowfullscreen=""
+                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
@@ -478,25 +506,36 @@
                 <!-- Denise Pinaud -->
                 <div class="project-card fade-in">
                     <div class="project-image-container">
-                        <img src="images/producao-fonografica-denise-pinaud/denise-topo.png" alt="Denise Pinaud" class="project-image">
+                        <img src="images/producao-fonografica-denise-pinaud/denise-topo.png" alt="Denise Pinaud"
+                            class="project-image">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Produção Fonográfica</div>
                         <h3 class="project-title">Denise Pinaud</h3>
                         <p class="project-description">
-                            Produção fonográfica para artista, criando material musical que combina sensibilidade artística 
+                            Produção fonográfica para artista, criando material musical que combina sensibilidade
+                            artística
                             com qualidade técnica, desenvolvendo uma identidade sonora única e envolvente.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Desenvolver uma produção que capture a essência musical da artista, 
-                            equilibrando expressão artística com qualidade comercial e técnica profissional.</p>
+                            <p>Desenvolver uma produção que capture a essência musical da artista,
+                                equilibrando expressão artística com qualidade comercial e técnica profissional.</p>
                         </div>
                         <div class="project-links">
-                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/47120218&show_artwork=true"></iframe>
-                            
-                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/162422968&color=%238fadc5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/artef" title="Artefá" target="_blank" style="color: #cccccc; text-decoration: none;">Artefá</a> · <a href="https://soundcloud.com/artef/hino-de-nova-friburgo" title="Hino de Nova Friburgo" target="_blank" style="color: #cccccc; text-decoration: none;">Hino de Nova Friburgo</a></div>
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/47120218&show_artwork=true"></iframe>
+
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/162422968&color=%238fadc5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/artef" title="Artefá" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Artefá</a> · <a
+                                    href="https://soundcloud.com/artef/hino-de-nova-friburgo"
+                                    title="Hino de Nova Friburgo" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Hino de Nova Friburgo</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -504,29 +543,55 @@
                 <!-- Filipe Rocha -->
                 <div class="project-card fade-in">
                     <div class="project-image-container">
-                        <img src="images/producao-fonografica-filipe-rocha/filipe-rocha-topo.png" alt="Filipe Rocha" class="project-image">
+                        <img src="images/producao-fonografica-filipe-rocha/filipe-rocha-topo.png" alt="Filipe Rocha"
+                            class="project-image">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Produção Fonográfica</div>
                         <h3 class="project-title">Filipe Rocha</h3>
                         <p class="project-description">
-                            Produção fonográfica completa para artista, desenvolvendo identidade sonora única 
-                            e material musical de alta qualidade que reflete a personalidade artística e visão criativa do músico.
+                            Produção fonográfica completa para artista, desenvolvendo identidade sonora única
+                            e material musical de alta qualidade que reflete a personalidade artística e visão criativa
+                            do músico.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Capturar a essência musical do artista e traduzir em produção profissional, 
-                            mantendo a autenticidade e criando material comercialmente viável e artisticamente relevante.</p>
+                            <p>Capturar a essência musical do artista e traduzir em produção profissional,
+                                mantendo a autenticidade e criando material comercialmente viável e artisticamente
+                                relevante.</p>
                         </div>
                         <div class="project-links">
-                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100489253&color=%23a7ac91&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/filipe-rocha-2013" title="Filipe Rocha 2013" target="_blank" style="color: #cccccc; text-decoration: none;">Filipe Rocha 2013</a> · <a href="https://soundcloud.com/filipe-rocha-2013/selvagem-beleza" title="Selvagem Beleza" target="_blank" style="color: #cccccc; text-decoration: none;">Selvagem Beleza</a></div>
-                            
-                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100488623&color=%239c9c6c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/filipe-rocha-2013" title="Filipe Rocha 2013" target="_blank" style="color: #cccccc; text-decoration: none;">Filipe Rocha 2013</a> · <a href="https://soundcloud.com/filipe-rocha-2013/segundas-intenc-es" title="Segundas Intencões" target="_blank" style="color: #cccccc; text-decoration: none;">Segundas Intencões</a></div>
-                            
-                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100484400&color=%239c9c6c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/filipe-rocha-2013" title="Filipe Rocha 2013" target="_blank" style="color: #cccccc; text-decoration: none;">Filipe Rocha 2013</a> · <a href="https://soundcloud.com/filipe-rocha-2013/seus-olhos" title="Seus Olhos" target="_blank" style="color: #cccccc; text-decoration: none;">Seus Olhos</a></div>
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100489253&color=%23a7ac91&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/filipe-rocha-2013" title="Filipe Rocha 2013"
+                                    target="_blank" style="color: #cccccc; text-decoration: none;">Filipe Rocha 2013</a>
+                                · <a href="https://soundcloud.com/filipe-rocha-2013/selvagem-beleza"
+                                    title="Selvagem Beleza" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Selvagem Beleza</a>
+                            </div>
+
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100488623&color=%239c9c6c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/filipe-rocha-2013" title="Filipe Rocha 2013"
+                                    target="_blank" style="color: #cccccc; text-decoration: none;">Filipe Rocha 2013</a>
+                                · <a href="https://soundcloud.com/filipe-rocha-2013/segundas-intenc-es"
+                                    title="Segundas Intencões" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Segundas Intencões</a>
+                            </div>
+
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100484400&color=%239c9c6c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/filipe-rocha-2013" title="Filipe Rocha 2013"
+                                    target="_blank" style="color: #cccccc; text-decoration: none;">Filipe Rocha 2013</a>
+                                · <a href="https://soundcloud.com/filipe-rocha-2013/seus-olhos" title="Seus Olhos"
+                                    target="_blank" style="color: #cccccc; text-decoration: none;">Seus Olhos</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -535,27 +600,47 @@
                 <div class="project-card fade-in">
                     <div class="project-image-container">
                         <a href="https://soundcloud.com/user-655349270" target="_blank">
-                            <img src="images/producao-fonografica-subjetos/subjetos.png" alt="Subjetos" class="project-image">
+                            <img src="images/producao-fonografica-subjetos/subjetos.png" alt="Subjetos"
+                                class="project-image">
                         </a>
                     </div>
                     <div class="project-content">
                         <div class="project-category">Produção Fonográfica</div>
                         <h3 class="project-title">Subjetos Sonoros</h3>
                         <p class="project-description">
-                            Projeto musical experimental que explora diferentes dimensões sonoras e texturas, 
-                            criando uma experiência auditiva única através de composições inovadoras e técnicas de produção avançadas.
+                            Projeto musical experimental que explora diferentes dimensões sonoras e texturas,
+                            criando uma experiência auditiva única através de composições inovadoras e técnicas de
+                            produção avançadas.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Desenvolver uma identidade sonora que transcenda convenções musicais, 
-                            explorando novos territórios sonoros e criando uma experiência imersiva para o ouvinte.</p>
+                            <p>Desenvolver uma identidade sonora que transcenda convenções musicais,
+                                explorando novos territórios sonoros e criando uma experiência imersiva para o ouvinte.
+                            </p>
                         </div>
                         <div class="project-links">
-                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/314322108&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/user-655349270" title="Subjetos Sonoros" target="_blank" style="color: #cccccc; text-decoration: none;">Subjetos Sonoros</a> · <a href="https://soundcloud.com/user-655349270/1-subjetos-sonoros-do-hemisferio-criativo" title="1) Subjetos Sonoros Do Hemisfério Criativo" target="_blank" style="color: #cccccc; text-decoration: none;">1) Subjetos Sonoros Do Hemisfério Criativo</a></div>
-                            
-                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/314322054&color=%23fc9205&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/user-655349270" title="Subjetos Sonoros" target="_blank" style="color: #cccccc; text-decoration: none;">Subjetos Sonoros</a> · <a href="https://soundcloud.com/user-655349270/2-universos-por-ai" title="2) Universos Por Aí" target="_blank" style="color: #cccccc; text-decoration: none;">2) Universos Por Aí</a></div>
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/314322108&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/user-655349270" title="Subjetos Sonoros" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Subjetos Sonoros</a> · <a
+                                    href="https://soundcloud.com/user-655349270/1-subjetos-sonoros-do-hemisferio-criativo"
+                                    title="1) Subjetos Sonoros Do Hemisfério Criativo" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">1) Subjetos Sonoros Do Hemisfério
+                                    Criativo</a>
+                            </div>
+
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/314322054&color=%23fc9205&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/user-655349270" title="Subjetos Sonoros" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Subjetos Sonoros</a> · <a
+                                    href="https://soundcloud.com/user-655349270/2-universos-por-ai"
+                                    title="2) Universos Por Aí" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">2) Universos Por Aí</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -563,26 +648,42 @@
                 <!-- Project Strada -->
                 <div class="project-card fade-in">
                     <div class="project-image-container">
-                        <img src="images/producao-fonografica-project-strada/project-strada-1.png" alt="Project Strada" class="project-image">
+                        <img src="images/producao-fonografica-project-strada/project-strada-1.png" alt="Project Strada"
+                            class="project-image">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Produção Fonográfica</div>
                         <h3 class="project-title">Project Strada</h3>
                         <p class="project-description">
-                            Produção fonográfica para projeto musical inovador, 
+                            Produção fonográfica para projeto musical inovador,
                             combinando diferentes gêneros e técnicas de gravação para criar sonoridade única.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Fusão de estilos musicais distintos em uma produção coesa, 
-                            mantendo qualidade técnica e expressão artística autêntica.</p>
+                            <p>Fusão de estilos musicais distintos em uma produção coesa,
+                                mantendo qualidade técnica e expressão artística autêntica.</p>
                         </div>
                         <div class="project-links">
-                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/163166025&color=%23d8c4a2&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/strada-project" title="Strada Project" target="_blank" style="color: #cccccc; text-decoration: none;">Strada Project</a> · <a href="https://soundcloud.com/strada-project/ruas-de-ilusoes" title="Ruas de Ilusões" target="_blank" style="color: #cccccc; text-decoration: none;">Ruas de Ilusões</a></div>
-                            
-                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/163168052&color=%237eaca6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/strada-project" title="Strada Project" target="_blank" style="color: #cccccc; text-decoration: none;">Strada Project</a> · <a href="https://soundcloud.com/strada-project/ride-into-your-eyes" title="Ride into your eyes" target="_blank" style="color: #cccccc; text-decoration: none;">Ride into your eyes</a></div>
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/163166025&color=%23d8c4a2&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/strada-project" title="Strada Project" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Strada Project</a> · <a
+                                    href="https://soundcloud.com/strada-project/ruas-de-ilusoes" title="Ruas de Ilusões"
+                                    target="_blank" style="color: #cccccc; text-decoration: none;">Ruas de Ilusões</a>
+                            </div>
+
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/163168052&color=%237eaca6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/strada-project" title="Strada Project" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Strada Project</a> · <a
+                                    href="https://soundcloud.com/strada-project/ride-into-your-eyes"
+                                    title="Ride into your eyes" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Ride into your eyes</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -591,30 +692,56 @@
                 <div class="project-card fade-in">
                     <div class="project-image-container">
                         <a href="https://soundcloud.com/artef" target="_blank">
-                            <img src="images/producao-fonografica-artefa-soundtrack/aretfa-soundtrack-topo.png" alt="Artefá Soundtrack" class="project-image">
+                            <img src="images/producao-fonografica-artefa-soundtrack/aretfa-soundtrack-topo.png"
+                                alt="Artefá Soundtrack" class="project-image">
                         </a>
                     </div>
                     <div class="project-content">
                         <div class="project-category">Produção Fonográfica</div>
                         <h3 class="project-title">Artefá Soundtrack</h3>
                         <p class="project-description">
-                            Produção de trilha sonora para projetos audiovisuais, criando composições originais 
-                            que complementam e realçam a narrativa visual, desenvolvendo atmosferas sonoras únicas e envolventes.
+                            Produção de trilha sonora para projetos audiovisuais, criando composições originais
+                            que complementam e realçam a narrativa visual, desenvolvendo atmosferas sonoras únicas e
+                            envolventes.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Criar trilhas sonoras que se integrem perfeitamente ao conteúdo audiovisual, 
-                            transmitindo emoções e reforçando a narrativa através de composições musicais originais e impactantes.</p>
+                            <p>Criar trilhas sonoras que se integrem perfeitamente ao conteúdo audiovisual,
+                                transmitindo emoções e reforçando a narrativa através de composições musicais originais
+                                e impactantes.</p>
                         </div>
                         <div class="project-links">
-                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/196504523&color=%23959595&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/artef" title="Artefá" target="_blank" style="color: #cccccc; text-decoration: none;">Artefá</a> · <a href="https://soundcloud.com/artef/hip-hop-hempa" title="Artefá Soundtracks Future #1378" target="_blank" style="color: #cccccc; text-decoration: none;">Artefá Soundtracks Future #1378</a></div>
-                            
-                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/206094888%3Fsecret_token%3Ds-f44mm&color=%23646466&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/artef" title="Artefá" target="_blank" style="color: #cccccc; text-decoration: none;">Artefá</a> · <a href="https://soundcloud.com/artef/pela-estrada-sample/s-f44mm" title="Pela Estrada Sample" target="_blank" style="color: #cccccc; text-decoration: none;">Pela Estrada Sample</a></div>
-                            
-                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/161827797&color=%239c9c6c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/artef" title="Artefá" target="_blank" style="color: #cccccc; text-decoration: none;">Artefá</a> · <a href="https://soundcloud.com/artef/pedaco-de-vida" title="Pedaço de Vida" target="_blank" style="color: #cccccc; text-decoration: none;">Pedaço de Vida</a></div>
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/196504523&color=%23959595&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/artef" title="Artefá" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Artefá</a> · <a
+                                    href="https://soundcloud.com/artef/hip-hop-hempa"
+                                    title="Artefá Soundtracks Future #1378" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Artefá Soundtracks Future #1378</a>
+                            </div>
+
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/206094888%3Fsecret_token%3Ds-f44mm&color=%23646466&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/artef" title="Artefá" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Artefá</a> · <a
+                                    href="https://soundcloud.com/artef/pela-estrada-sample/s-f44mm"
+                                    title="Pela Estrada Sample" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Pela Estrada Sample</a>
+                            </div>
+
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/161827797&color=%239c9c6c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/artef" title="Artefá" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Artefá</a> · <a
+                                    href="https://soundcloud.com/artef/pedaco-de-vida" title="Pedaço de Vida"
+                                    target="_blank" style="color: #cccccc; text-decoration: none;">Pedaço de Vida</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -622,23 +749,33 @@
                 <!-- Caio Rama -->
                 <div class="project-card fade-in">
                     <div class="project-image-container">
-                        <img src="images/producao-fonografica-caio-rama/caio-topo.png" alt="Caio Rama" class="project-image">
+                        <img src="images/producao-fonografica-caio-rama/caio-topo.png" alt="Caio Rama"
+                            class="project-image">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Produção Fonográfica</div>
                         <h3 class="project-title">Caio Rama</h3>
                         <p class="project-description">
-                            Produção fonográfica para artista, desenvolvendo material musical que combina 
-                            criatividade artística com excelência técnica, criando uma identidade sonora única e marcante.
+                            Produção fonográfica para artista, desenvolvendo material musical que combina
+                            criatividade artística com excelência técnica, criando uma identidade sonora única e
+                            marcante.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Desenvolver uma produção que capture a essência musical do artista, 
-                            equilibrando inovação sonora com qualidade comercial e expressão artística autêntica.</p>
+                            <p>Desenvolver uma produção que capture a essência musical do artista,
+                                equilibrando inovação sonora com qualidade comercial e expressão artística autêntica.
+                            </p>
                         </div>
                         <div class="project-links">
-                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/51253155&color=%235e7681&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/artef" title="Artefá" target="_blank" style="color: #cccccc; text-decoration: none;">Artefá</a> · <a href="https://soundcloud.com/artef/rita-compositor-caio-rama" title="Rita" target="_blank" style="color: #cccccc; text-decoration: none;">Rita</a></div>
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/51253155&color=%235e7681&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/artef" title="Artefá" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Artefá</a> · <a
+                                    href="https://soundcloud.com/artef/rita-compositor-caio-rama" title="Rita"
+                                    target="_blank" style="color: #cccccc; text-decoration: none;">Rita</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -652,17 +789,27 @@
                         <div class="project-category">Produção Fonográfica</div>
                         <h3 class="project-title">Bild</h3>
                         <p class="project-description">
-                            Produção fonográfica para projeto musical, criando material que explora 
-                            diferentes texturas sonoras e atmosferas musicais, desenvolvendo uma identidade sonora distintiva e envolvente.
+                            Produção fonográfica para projeto musical, criando material que explora
+                            diferentes texturas sonoras e atmosferas musicais, desenvolvendo uma identidade sonora
+                            distintiva e envolvente.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Desenvolver uma produção que explore novas possibilidades sonoras, 
-                            criando uma experiência musical única que se destaque no cenário musical contemporâneo.</p>
+                            <p>Desenvolver uma produção que explore novas possibilidades sonoras,
+                                criando uma experiência musical única que se destaque no cenário musical contemporâneo.
+                            </p>
                         </div>
                         <div class="project-links">
-                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/47121751&color=%235e7681&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/artef" title="Artefá" target="_blank" style="color: #cccccc; text-decoration: none;">Artefá</a> · <a href="https://soundcloud.com/artef/pode-ficar-com-tudo-isso-bild" title="Pode ficar com tudo isso (Bild)" target="_blank" style="color: #cccccc; text-decoration: none;">Pode ficar com tudo isso (Bild)</a></div>
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/47121751&color=%235e7681&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/artef" title="Artefá" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Artefá</a> · <a
+                                    href="https://soundcloud.com/artef/pode-ficar-com-tudo-isso-bild"
+                                    title="Pode ficar com tudo isso (Bild)" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;">Pode ficar com tudo isso (Bild)</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -676,11 +823,11 @@
             <div class="contact-content">
                 <h2 class="contact-title">Vamos Criar Juntos?</h2>
                 <p class="contact-text">
-                    Estou sempre aberto a novos desafios e colaborações criativas. 
-                    Se você tem um projeto musical em mente ou quer explorar possibilidades, 
+                    Estou sempre aberto a novos desafios e colaborações criativas.
+                    Se você tem um projeto musical em mente ou quer explorar possibilidades,
                     vamos conversar sobre como podemos transformar suas ideias em realidade.
                 </p>
-                
+
                 <div class="social-links">
                     <a href="https://wa.me/5522999094530" target="_blank" class="social-link" title="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
@@ -693,13 +840,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Bruno Oliveira. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Bruno Oliveira. Todos os direitos reservados.</p>
             <p>Um criador inquieto e versátil, criando o futuro através da arte e tecnologia.</p>
         </div>
     </footer>
 
     <script>
-        
+
 
         // Toggle do menu mobile
         const headerEl = document.querySelector('.header');
@@ -737,7 +884,7 @@
 
         // Tratamento de erro para imagens
         document.querySelectorAll('.project-image').forEach(img => {
-            img.addEventListener('error', function() {
+            img.addEventListener('error', function () {
                 this.style.background = 'var(--secondary-bg)';
                 this.style.display = 'flex';
                 this.style.alignItems = 'center';
@@ -754,4 +901,5 @@
         });
     </script>
 </body>
+
 </html>

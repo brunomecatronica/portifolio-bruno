@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bruno Oliveira - Criador Audiovisual & Tecnológico</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -13,7 +16,7 @@
             --card-bg: #1a1a1a;
             --accent-color: #00d4ff;
             --text-primary: #ffffff;
-            --text-secondary: #b3b3b3;
+            --text-secondary: #ffffff;
             --text-muted: #666666;
             --border-color: #2a2a2a;
             --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
@@ -84,7 +87,9 @@
             font-weight: 500;
         }
 
-        .nav-link:hover { background: rgba(255,255,255,0.08); }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
 
         .nav-toggle {
             display: none;
@@ -135,7 +140,7 @@
             align-items: center;
             justify-content: center;
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-                        url('images/home-images/Alien-home.jpg');
+                url('images/home-images/Alien-home.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -188,8 +193,15 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateX(-50%) translateY(0px); }
-            50% { transform: translateX(-50%) translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0px);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-10px);
+            }
         }
 
         /* Container Global */
@@ -636,17 +648,31 @@
                 padding: 0.75rem 1rem;
             }
 
-            .nav-toggle { display: inline-flex; }
-            .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; padding: 0.75rem; }
+            .nav-toggle {
+                display: inline-flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                padding: 0.75rem;
+            }
+
             .mobile-menu {
                 display: grid;
                 gap: 0.5rem;
-                background: rgba(17,17,17,0.98);
+                background: rgba(17, 17, 17, 0.98);
                 border-top: 1px solid var(--border-color);
                 border-bottom: 1px solid var(--border-color);
                 padding: 0.75rem;
             }
-            .header.open .nav-links { display: block; }
+
+            .header.open .nav-links {
+                display: block;
+            }
 
             .whatsapp-header {
                 width: 45px;
@@ -766,10 +792,9 @@
                 gap: 1rem;
             }
         }
-
-        
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -781,8 +806,10 @@
             <div class="nav-links">
                 <div class="mobile-menu" role="menu">
                     <a class="nav-link" href="index.html" role="menuitem">Início</a>
-                    <a class="nav-link" href="programacao-mecatronica.html" role="menuitem">Programação &amp; Mecatrônica</a>
-                    <a class="nav-link" href="producao-audiovisual-design.html" role="menuitem">Audiovisual &amp; Design</a>
+                    <a class="nav-link" href="programacao-mecatronica.html" role="menuitem">Programação &amp;
+                        Mecatrônica</a>
+                    <a class="nav-link" href="producao-audiovisual-design.html" role="menuitem">Audiovisual &amp;
+                        Design</a>
                     <a class="nav-link" href="producao-fonografica.html" role="menuitem">Produção Fonográfica</a>
                 </div>
             </div>
@@ -795,10 +822,12 @@
             <h1>Bruno Oliveira</h1>
             <p class="hero-subtitle">Criador Audiovisual & Tecnológico</p>
             <p class="hero-description">
-                Um criador inquieto e versátil, especializado em conectar mundos distintos através da tecnologia e da arte. 
-                Produtor de conteúdo audiovisual, designer de sistemas mecatrônicos e criador de experiências digitais inovadoras 
-                que transformam ideias complexas em soluções práticas e impactantes. 
-                Formado em Tecnologias de Gravação e Produção Fonográfica pela UNESA, Técnico em Mecatrônica pelo SENAI, 
+                Um criador inquieto e versátil, especializado em conectar mundos distintos através da tecnologia e da
+                arte.
+                Produtor de conteúdo audiovisual, designer de sistemas mecatrônicos e criador de experiências digitais
+                inovadoras
+                que transformam ideias complexas em soluções práticas e impactantes.
+                Formado em Tecnologias de Gravação e Produção Fonográfica pela UNESA, Técnico em Mecatrônica pelo SENAI,
                 autodidata e apaixonado por tecnologia e inteligência artificial.
             </p>
         </div>
@@ -813,35 +842,38 @@
             <div class="about-content">
                 <h2 class="section-title">Sobre Mim</h2>
                 <p class="about-text">
-                    Sou um criador que transforma ideias em soluções tecnológicas e artísticas funcionais. 
-                    Desenvolvo desde sistemas de automação e aplicativos mobile até produções musicais completas e identidades visuais para marcas. 
-                    Minha abordagem combina conhecimento técnico profundo com sensibilidade artística, resultando em projetos que atendem tanto às necessidades comerciais quanto à expressão criativa. 
-                    Especializo-me em conectar diferentes áreas do conhecimento para criar soluções únicas e impactantes.
+                    Sou um criador que transforma ideias em soluções tecnológicas e artísticas funcionais.
+                    Desenvolvo desde sistemas de automação e aplicativos mobile até produções musicais completas e
+                    identidades visuais para marcas.
+                    Minha abordagem combina conhecimento técnico profundo com sensibilidade artística, resultando em
+                    projetos que atendem tanto às necessidades comerciais quanto à expressão criativa.
+                    Especializo-me em conectar diferentes áreas do conhecimento para criar soluções únicas e
+                    impactantes.
                 </p>
-                
-        <div class="skills-grid">
-            <div class="skill-item" onclick="window.location.href='programacao-mecatronica.html'">
-                <div class="skill-icon">
-                    <i class="fas fa-code"></i>
+
+                <div class="skills-grid">
+                    <div class="skill-item" onclick="window.location.href='programacao-mecatronica.html'">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="skill-title">Programação & Mecatrônica</h3>
+                        <p class="skill-description">Desenvolvimento web, aplicações e sistemas automatizados</p>
+                    </div>
+                    <div class="skill-item" onclick="window.location.href='producao-audiovisual-design.html'">
+                        <div class="skill-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="skill-title">Produção Audiovisual & Design</h3>
+                        <p class="skill-description">Vídeos, filmes, design e identidade visual</p>
+                    </div>
+                    <div class="skill-item" onclick="window.location.href='producao-fonografica.html'">
+                        <div class="skill-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3 class="skill-title">Produção Fonográfica</h3>
+                        <p class="skill-description">Criação e produção de conteúdo musical</p>
+                    </div>
                 </div>
-                <h3 class="skill-title">Programação & Mecatrônica</h3>
-                <p class="skill-description">Desenvolvimento web, aplicações e sistemas automatizados</p>
-            </div>
-            <div class="skill-item" onclick="window.location.href='producao-audiovisual-design.html'">
-                <div class="skill-icon">
-                    <i class="fas fa-video"></i>
-                </div>
-                <h3 class="skill-title">Produção Audiovisual & Design</h3>
-                <p class="skill-description">Vídeos, filmes, design e identidade visual</p>
-            </div>
-            <div class="skill-item" onclick="window.location.href='producao-fonografica.html'">
-                <div class="skill-icon">
-                    <i class="fas fa-music"></i>
-                </div>
-                <h3 class="skill-title">Produção Fonográfica</h3>
-                <p class="skill-description">Criação e produção de conteúdo musical</p>
-            </div>
-        </div>
             </div>
         </div>
     </section>
@@ -853,11 +885,11 @@
             <div class="contact-content">
                 <h2 class="contact-title">Vamos Criar Juntos?</h2>
                 <p class="contact-text">
-                    Estou sempre aberto a novos desafios e colaborações criativas. 
-                    Se você tem um projeto em mente ou quer explorar possibilidades, 
+                    Estou sempre aberto a novos desafios e colaborações criativas.
+                    Se você tem um projeto em mente ou quer explorar possibilidades,
                     vamos conversar sobre como podemos transformar suas ideias em realidade.
                 </p>
-                
+
                 <div class="social-links">
                     <a href="https://wa.me/5522999094530" target="_blank" class="social-link" title="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
@@ -870,13 +902,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Bruno Oliveira. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Bruno Oliveira. Todos os direitos reservados.</p>
             <p>Um criador inquieto e versátil, criando o futuro através da arte e tecnologia.</p>
         </div>
     </footer>
 
     <script>
-        
+
 
         // Toggle do menu mobile
         const headerEl = document.querySelector('.header');
@@ -914,16 +946,16 @@
 
         // Parallax sutil para o hero
         let ticking = false;
-        
+
         function updateParallax() {
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
-            
+
             if (hero && scrolled < window.innerHeight) {
                 const rate = scrolled * -0.3;
                 hero.style.transform = `translateY(${rate}px)`;
             }
-            
+
             ticking = false;
         }
 
@@ -934,9 +966,9 @@
             }
         });
 
-        
 
-        
+
+
 
         // Animação de loading inicial
         window.addEventListener('load', () => {
@@ -944,4 +976,5 @@
         });
     </script>
 </body>
+
 </html>

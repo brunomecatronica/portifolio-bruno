@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produção Audiovisual & Design - Bruno Oliveira</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -13,7 +16,7 @@
             --card-bg: #1a1a1a;
             --accent-color: #00d4ff;
             --text-primary: #ffffff;
-            --text-secondary: #b3b3b3;
+            --text-secondary: #ffffff;
             --text-muted: #666666;
             --border-color: #2a2a2a;
             --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
@@ -78,8 +81,14 @@
             font-weight: 500;
         }
 
-        .nav-link:hover { background: rgba(255,255,255,0.06); color: var(--text-primary); }
-        .nav-link.active { color: var(--accent-color); }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-primary);
+        }
+
+        .nav-link.active {
+            color: var(--accent-color);
+        }
 
         .nav-toggle {
             display: none;
@@ -105,8 +114,8 @@
             align-items: center;
             justify-content: center;
             background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(0, 153, 204, 0.05) 0%, transparent 50%),
-                        var(--primary-bg);
+                radial-gradient(circle at 80% 20%, rgba(0, 153, 204, 0.05) 0%, transparent 50%),
+                var(--primary-bg);
             position: relative;
             text-align: center;
             padding: 2rem;
@@ -139,7 +148,7 @@
 
         .hero-description {
             font-size: 1.1rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto 3rem;
             line-height: 1.8;
@@ -205,7 +214,8 @@
 
         .project-image {
             width: 100%;
-            height: 525px; /* 350px + 50% = 525px */
+            height: 525px;
+            /* 350px + 50% = 525px */
             object-fit: cover;
             object-position: top;
             transition: transform 0.4s ease;
@@ -310,7 +320,7 @@
         }
 
         .project-challenge p {
-            color: var(--text-muted);
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
@@ -420,17 +430,31 @@
                 padding: 1rem;
             }
 
-            .nav-toggle { display: inline-flex; }
-            .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; padding: 0.75rem; }
+            .nav-toggle {
+                display: inline-flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                padding: 0.75rem;
+            }
+
             .mobile-menu {
                 display: grid;
                 gap: 0.5rem;
-                background: rgba(17,17,17,0.98);
+                background: rgba(17, 17, 17, 0.98);
                 border-top: 1px solid var(--border-color);
                 border-bottom: 1px solid var(--border-color);
                 padding: 0.75rem;
             }
-            .header.open .nav-links { display: block; }
+
+            .header.open .nav-links {
+                display: block;
+            }
 
             .projects-grid {
                 gap: 2.5rem;
@@ -465,10 +489,9 @@
             }
 
         }
-
-        
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -480,8 +503,10 @@
             <div class="nav-links">
                 <div class="mobile-menu" role="menu">
                     <a class="nav-link" href="index.html" role="menuitem">Início</a>
-                    <a class="nav-link" href="programacao-mecatronica.html" role="menuitem">Programação &amp; Mecatrônica</a>
-                    <a class="nav-link active" href="producao-audiovisual-design.html" role="menuitem">Audiovisual &amp; Design</a>
+                    <a class="nav-link" href="programacao-mecatronica.html" role="menuitem">Programação &amp;
+                        Mecatrônica</a>
+                    <a class="nav-link active" href="producao-audiovisual-design.html" role="menuitem">Audiovisual &amp;
+                        Design</a>
                     <a class="nav-link" href="producao-fonografica.html" role="menuitem">Produção Fonográfica</a>
                 </div>
             </div>
@@ -494,7 +519,7 @@
             <h1>Produção Audiovisual & Design</h1>
             <p class="hero-subtitle">Vídeos, filmes, design e identidade visual</p>
             <p class="hero-description">
-                Criação de conteúdo audiovisual impactante e design visual que conecta marcas com seu público, 
+                Criação de conteúdo audiovisual impactante e design visual que conecta marcas com seu público,
                 combinando criatividade artística com estratégia de comunicação.
             </p>
         </div>
@@ -504,26 +529,28 @@
     <section class="section projects-section">
         <div class="container">
             <h2 class="section-title">Projetos de Produção Audiovisual & Design</h2>
-            
+
             <div class="projects-grid">
                 <!-- Casa das Janas -->
                 <div class="project-card fade-in">
                     <div class="project-image-container">
                         <a href="https://www.casadasjanas.com/" target="_blank">
-                            <img src="images/desenvolvimento-casa-das-janas/janas-1.png" alt="Casa das Janas" class="project-image">
+                            <img src="images/desenvolvimento-casa-das-janas/janas-1.png" alt="Casa das Janas"
+                                class="project-image">
                         </a>
                     </div>
                     <div class="project-content">
                         <div class="project-category">Design & Desenvolvimento Web</div>
                         <h3 class="project-title">Casa das Janas</h3>
                         <p class="project-description">
-                            Website completo para pousada boutique em Trancoso-BA, incluindo sistema de reservas, 
+                            Website completo para pousada boutique em Trancoso-BA, incluindo sistema de reservas,
                             galeria de fotos e design responsivo que captura a essência acolhedora do local.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Criar uma experiência digital que transmitisse a atmosfera intimista e descontraída da pousada, 
-                            mantendo funcionalidade para reservas online e navegação intuitiva.</p>
+                            <p>Criar uma experiência digital que transmitisse a atmosfera intimista e descontraída da
+                                pousada,
+                                mantendo funcionalidade para reservas online e navegação intuitiva.</p>
                         </div>
                         <div class="project-links">
                             <a href="https://www.casadasjanas.com/" target="_blank" class="project-link">
@@ -539,20 +566,22 @@
                 <div class="project-card fade-in">
                     <div class="project-image-container">
                         <a href="https://www.amolde.com.br/" target="_blank">
-                            <img src="images/desenvolvimento-ecommerce-amolde/amolde-1.png" alt="Amolde" class="project-image">
+                            <img src="images/desenvolvimento-ecommerce-amolde/amolde-1.png" alt="Amolde"
+                                class="project-image">
                         </a>
                     </div>
                     <div class="project-content">
                         <div class="project-category">E-commerce & Branding</div>
                         <h3 class="project-title">Amolde</h3>
                         <p class="project-description">
-                            Plataforma de e-commerce especializada em moldes profissionais para moda íntima, 
-                            com sistema de categorização avançada e identidade visual que transmite profissionalismo e confiança.
+                            Plataforma de e-commerce especializada em moldes profissionais para moda íntima,
+                            com sistema de categorização avançada e identidade visual que transmite profissionalismo e
+                            confiança.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Desenvolver uma plataforma que facilitasse a busca e compra de moldes técnicos, 
-                            criando uma experiência de usuário intuitiva para confeccionistas profissionais.</p>
+                            <p>Desenvolver uma plataforma que facilitasse a busca e compra de moldes técnicos,
+                                criando uma experiência de usuário intuitiva para confeccionistas profissionais.</p>
                         </div>
                         <div class="project-links">
                             <a href="https://www.amolde.com.br/" target="_blank" class="project-link">
@@ -567,20 +596,22 @@
                 <div class="project-card fade-in">
                     <div class="project-image-container">
                         <a href="https://www.volx.com.br/" target="_blank">
-                            <img src="images/desenvolvimento-de-ecommerce-volx/volx-1.png" alt="VOLX - Site Principal" class="project-image">
+                            <img src="images/desenvolvimento-de-ecommerce-volx/volx-1.png" alt="VOLX - Site Principal"
+                                class="project-image">
                         </a>
                     </div>
                     <div class="project-content">
                         <div class="project-category">Marca & Identidade Visual</div>
                         <h3 class="project-title">VOLX</h3>
                         <p class="project-description">
-                            Criação de marca e identidade visual para linha de camisetas, 
+                            Criação de marca e identidade visual para linha de camisetas,
                             desenvolvendo conceito visual que reflete a essência urbana e contemporânea da marca.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Desenvolver uma identidade visual única e memorável que se destacasse no mercado de moda urbana, 
-                            criando conexão emocional com o público-alvo.</p>
+                            <p>Desenvolver uma identidade visual única e memorável que se destacasse no mercado de moda
+                                urbana,
+                                criando conexão emocional com o público-alvo.</p>
                         </div>
                         <div class="project-links">
                             <a href="https://www.volx.com.br/" target="_blank" class="project-link">
@@ -602,13 +633,13 @@
                         <div class="project-category">Produção Audiovisual</div>
                         <h3 class="project-title">Artefá - Produções Audiovisuais</h3>
                         <p class="project-description">
-                            Estúdio de produção audiovisual especializado em conteúdo musical, 
+                            Estúdio de produção audiovisual especializado em conteúdo musical,
                             videoclipes e produções cinematográficas com equipamentos profissionais.
                         </p>
                         <div class="project-challenge">
                             <h4>Desafio</h4>
-                            <p>Estabelecer um estúdio completo que atendesse às demandas do mercado audiovisual local, 
-                            oferecendo qualidade profissional e criatividade artística.</p>
+                            <p>Estabelecer um estúdio completo que atendesse às demandas do mercado audiovisual local,
+                                oferecendo qualidade profissional e criatividade artística.</p>
                         </div>
                     </div>
                 </div>
@@ -623,11 +654,11 @@
             <div class="contact-content">
                 <h2 class="contact-title">Vamos Criar Juntos?</h2>
                 <p class="contact-text">
-                    Estou sempre aberto a novos desafios e colaborações criativas. 
-                    Se você tem um projeto audiovisual ou de design em mente ou quer explorar possibilidades, 
+                    Estou sempre aberto a novos desafios e colaborações criativas.
+                    Se você tem um projeto audiovisual ou de design em mente ou quer explorar possibilidades,
                     vamos conversar sobre como podemos transformar suas ideias em realidade.
                 </p>
-                
+
                 <div class="social-links">
                     <a href="https://wa.me/5522999094530" target="_blank" class="social-link" title="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
@@ -640,7 +671,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Bruno Oliveira. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Bruno Oliveira. Todos os direitos reservados.</p>
             <p>Um criador inquieto e versátil, criando o futuro através da arte e tecnologia.</p>
         </div>
     </footer>
@@ -684,7 +715,7 @@
 
         // Tratamento de erro para imagens
         document.querySelectorAll('.project-image').forEach(img => {
-            img.addEventListener('error', function() {
+            img.addEventListener('error', function () {
                 this.style.background = 'var(--secondary-bg)';
                 this.style.display = 'flex';
                 this.style.alignItems = 'center';
@@ -701,4 +732,5 @@
         });
     </script>
 </body>
+
 </html>
